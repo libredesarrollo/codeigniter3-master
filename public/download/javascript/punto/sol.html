@@ -1,0 +1,75 @@
+<html><head>
+        <link rel="stylesheet" href="example.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>¿Cómo crear un punto luminoso con JavaScript y Canvas?</title>
+        <style>
+            body {
+                width: 100%;
+                margin: 0;
+                overflow: hidden;
+                background: hsla(0, 0%, 0%, 1);
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-image: radial-gradient(top, circle cover, hsla(330, 90%, 10%, .8) 20%, hsla(0, 0%, 0%, 1) 80%);
+            }
+
+            canvas {
+                left: 50%;
+                position: absolute;
+                top: 50%;
+                transform: translate( -50%, -50%);
+                cursor: move;
+            }
+        </style>
+    </head>
+    <body>
+        <header><h1>¿Cómo crear un punto luminoso con JavaScript y Canvas?</h1></header>
+        <canvas id="canv"  
+                style="width: 1200px; height: 600px;">
+        </canvas>
+        <script>
+            var _w = 800;
+            var _h = 400;
+            var circle;
+
+            var c = document.getElementById('canv');
+            var $ = c.getContext('2d');
+            $.fillRect(0, 0, c.width, c.height);
+
+            var set = function () {
+                circle = new Circle(100, 100, 15);
+                point();
+            }
+
+            var point = function () {
+
+                var id = $.getImageData(0, 0, _w, _h);
+                var pxl = id.data;
+                for (var x = 0; x < _w; x++) {
+                    for (var y = 0; y < _h; y++) {
+                        var dens = circle.dim / dist(x, y, circle.cx, circle.cy);
+                        var idx = x * _w * 4 + y * 4;
+
+                        pxl[idx] = dens * 70;
+                        pxl[idx + 1] = (dens * 70);
+                        pxl[idx + 2] = (dens * 70) * 0.55;
+                        pxl[idx + 3] = 255;
+                    }
+                }
+                $.putImageData(id, 0, 0);
+            }
+            var Circle = function (_x, _y, _dim) {
+                this.cx = _x;
+                this.cy = _y;
+                this.dim = _dim;
+            };
+
+            var dist = function (x1, y1, x2, y2) {
+                var x = x1 - x2;
+                var y = y1 - y2;
+                return Math.sqrt(x * x + y * y);
+            }
+            set();
+        </script>
+    </body>
+</html>

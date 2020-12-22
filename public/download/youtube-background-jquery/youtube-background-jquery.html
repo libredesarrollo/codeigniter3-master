@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>¿Cómo colocar vídeos de Youtube como fondo (Background) con jQuery?</title>
+        <!-- styles for video player -->
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+        <div id="background-video" class="background-video">
+            <img src="placeholder.jpg" alt="" class="placeholder-image">
+        </div>
+
+        <section>
+                <h1>jQuery Youtube Background Video</h1>
+                <p>¿Cómo colocar vídeos de Youtube como fondo (Background) con jQuery?</p>
+        </section>
+
+        <script src="jquery.min.js"></script>
+        <script src="jquery.youtubebackground.js"></script>
+
+        <script>
+            $('#background-video').YTPlayer({
+                fitToBackground: true,
+                videoId: 'LSmgKRx5pBo'
+            });
+        </script>
+    </body>
+</html>	

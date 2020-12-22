@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title></title>
+        <script>
+            function copiar(id_elemento) {
+
+			  // Crea un campo de texto "oculto"
+			  var aux = document.createElement("input");
+
+			  // Asigna el contenido del elemento especificado al valor del campo
+                    aux.setAttribute("value", document.getElementById(id_elemento).innerHTML);
+
+                    // Añade el campo a la página
+                    document.body.appendChild(aux);
+
+                    // Selecciona el contenido del campo
+                    aux.select();
+
+                    // Copia el texto seleccionado
+                    document.execCommand("copy");
+
+                    // Elimina el campo de la página
+                    document.body.removeChild(aux);
+
+                    console.log("texto copiado")
+
+                }
+        </script>
+    </head>
+    <body>
+        <p id="texto" contenteditable="true">Texto que quiero copiar</p>
+        <button onclick="copiar('texto')">Copiar al portapapeles</button>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+body {
+    background:#CEF;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #4CF;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+    min-height:80px;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0px 0px 3px #888;
+}
+
+section {
+    width: 90%;
+    min-width: 220px;
+    max-width: 1200px;
+    min-height:500px;
+    padding: 200px 10px 10px 10px;
+    background: #4CF;
+    box-shadow: 0px 0px 3px #888;
+    margin: 90px auto;
+}
+
+h1{ 
+    text-align: center;
+    font-size: 50px;
+    color: #000;
+}
+
+

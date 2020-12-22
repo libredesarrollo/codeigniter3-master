@@ -1,0 +1,144 @@
+<html><head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+            }
+            body > a:link, body > a:visited {
+                width: 40%;
+                text-decoration: none;
+                display: block;
+                background: rgba(221,34,0,0.8);
+                border:3px solid rgba(221,34,0,0.8);
+                padding: 10px 15px;
+                border-radius: 3px;
+                margin: 5px auto 0 auto;
+                text-align: center;
+                font-weight: bold;
+                transition: 1s all;
+                color: #FFF;
+            }
+            body > a:hover {
+                background: rgba(221,34,0,1);
+            }
+            input{
+                padding: 4px 5px;
+                border: 1px solid rgba(0,178,255,1);
+                background: rgba(0,178,255,0.2);
+                color:#FFF;
+            }
+            ::-webkit-input-placeholder {
+                color: #FFF;
+            }
+            ::-moz-input-placeholder {
+                color: #FFF;
+            }   
+            button{
+                border: 1px solid rgba(0,178,255,1);
+                background: rgba(0,178,255,0.8);
+                padding: 5px 10px;
+                border-radius: 3px;
+                color:#FFF;
+            }
+
+            table {
+                margin: 10px auto;
+            }
+
+            table tr:first-child td{
+                background: rgba(0,178,255,0.5);
+            }
+
+            table tr td{
+                font-weight: bold;
+                padding: 5px;
+                margin: 5px;
+                background: rgba(0,178,255,0.2);
+            }
+
+            table tr td a:link,  table tr td a:visited{
+                color:rgba(221,34,0,1);
+            }
+            .new_user{
+                padding: 10px;
+                background: rgba(0,178,255,0.3);
+                border-bottom: 3px solid rgba(0,178,255,0.8);
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            var db;
+            var TABLENAME = 'usuario';
+            function createOpenDB() {
+                db = openDatabase('miDB', '1.0', 'mi primera BD', 2 * 1024 * 1024);
+            }
+
+            function insertUser(nombre, usuario) {
+                // inserta un registro
+                db.transaction(function (tx) {
+                    tx.executeSql('CREATE TABLE IF NOT EXISTS ' + TABLENAME + ' (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, usuario TEXT UNIQUE)');
+                    tx.executeSql('INSERT INTO ' + TABLENAME + ' (nombre,usuario) VALUES (?,?)', [nombre, usuario]);
+                });
+            }
+
+            function deleteUser(id) {
+                // borra un registro
+                db.transaction(function (tx) {
+                    tx.executeSql('DELETE FROM ' + TABLENAME + ' WHERE id =?', [id]);
+                });
+            }
+
+            function getAllUser() {
+                // obtiene todos los registros
+                db.transaction(function (tx) {
+                    tx.executeSql('SELECT * FROM ' + TABLENAME, [], function (tx, results) {
+                        var len = results.rows.length, i;
+                        var guide = document.getElementById('tableGuide');
+                        var aux = ""
+                        aux = '<table><tr><td>Id</td><td>Nombre</td><td>Cuenta</td><td>Acción</td></tr>';
+                        for (i = 0; i < len; i++) {
+                            aux += '<tr><td>' + results.rows.item(i).id + '</td>';
+                            aux += '<td>' + results.rows.item(i).nombre + '</td>';
+                            aux += '<td>' + results.rows.item(i).usuario + '</td>';
+                            aux += '<td><a onclick="borrarUsuario(' + results.rows.item(i).id + ')" href="#">Borrar</a></td></tr>';
+                        }
+                        aux += '</table>';
+                        guide.innerHTML = aux;
+                    })
+                });
+            }
+
+            function borrarUsuario(id) {
+                deleteUser(id);
+                getAllUser();
+            }
+
+            function guardarUsuario(id) {
+
+                nombre = document.getElementById("nombre").value;
+                usuario = document.getElementById("usuario").value;
+
+                if (nombre !== "" && usuario !== "") {
+                    insertUser(nombre, usuario);
+                    getAllUser();
+                }
+            }
+
+            createOpenDB();
+
+        </script>
+        <div class="new_user">
+            <input placeholder="nombre" id="nombre" value=""/>
+            <input placeholder="usuario" id="usuario" value=""/>
+            <button onclick="guardarUsuario()">Crear</button>
+        </div>
+
+        <a onclick="getAllUser()" href="#">Cargar Usuarios</a>
+        <div id="tableGuide"></div>
+
+    </body>
+</html>

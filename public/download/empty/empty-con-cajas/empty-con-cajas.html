@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta http-equiv='Content-Type' content='Type=text/html; charset=utf-8'>
+        <title>La pseudo-class :empty en CSS - Ejemplo 3</title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            div{
+                width:22%;
+                min-height:200px;
+                margin: 0 1% 1% 0;
+                display:inline-block;
+                float:left;
+                background: blue;
+                padding:1%;
+                box-shadow: 0px 0px 3px #888;
+                border-radius: 5px;
+                color:#FFF;
+                font-size: 18px;
+                text-shadow: 0px 0px #999;
+            }
+            p {
+                color: #FFF;
+            }
+            div:empty{
+                background: red;
+            }
+        </style>
+    </head>
+    <body>
+        <header><h1>La pseudo-class :empty en CSS</h1></header>
+        <section>
+            <div></div>
+            <div><p></p></div>
+            <div><br></div>
+            <div>Algún texto.</div>
+            <div><p>Más texto.</p></div>
+            <div></div>
+            <div></div>
+            <div><img src=""/></div>
+            <div></div>
+        </section>
+    </body>
+</html>

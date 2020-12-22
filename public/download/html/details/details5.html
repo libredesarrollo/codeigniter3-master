@@ -1,0 +1,97 @@
+<html><head>
+        <link rel="stylesheet" href="example.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Mostrar contenido bajo demanda con solo HTML - Ejemplo 5</title>
+        <style>
+            .ejemplo5 details {
+                width:500px;
+                display: block;
+                margin:0 auto;
+                border-radius:5px;
+                background-color: #EEE;
+            }
+
+            .ejemplo5 details summary{
+                font-size:110%;
+                padding:5px 8px;
+                font-weight:bold;
+                color:#222;
+                background-color: #EEE;
+                transition: background-color 1s,color 1s;
+            }
+
+            .ejemplo5 details summary:before {
+                display: inline-block;
+                width: 32px;
+                height: 18px;
+                margin-right: 8px;
+                content: "";
+                float:left;
+                background-image: url(navigation_collapse.png);
+            }
+
+            .ejemplo5 details[open] summary:before {
+                display: inline-block;
+                width: 32px;
+                height: 18px;
+                margin-right: 8px;
+                float:left;
+                content: "";
+                background-image: url(navigation_expand.png);
+            }
+            .ejemplo5 details[open] summary{
+                background-color: #08B;
+                color:#FFF;
+                border-radius:5px 5px 0 0;
+            }
+
+            .ejemplo5 details summary::details-marker {
+                display: none;
+            }
+
+            .ejemplo5 details summary::-webkit-details-marker {
+                display: none;
+            }
+
+            .ejemplo5 details > ul{
+                list-style: none;
+                padding: 15px 0 15px 0;	
+                margin: 0 0 0 120px;
+            }
+
+            .ejemplo5 details > ul li{
+                display: inline;
+                padding-right: 15px
+            }
+
+            .ejemplo5 details > ul a, details > ul a:link, details > ul a:visited{
+                text-decoration: none;
+                color: #0BF;
+                font-size:130%;
+            }
+
+            .ejemplo5 details > table td {
+                margin-top:15px;
+            }
+
+            .ejemplo5 details > table td:first-child {
+                font-weight:bold;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Mostrar contenido bajo demanda con solo HTML - Ejemplo 5</h1>
+        </header>
+        <section class="ejemplo5">
+            <details>
+                <summary>Menú</summary>
+                <ul>
+                    <li><a href="#Comprar">Comprar</a></li>
+                    <li><a href="#Devolver">Devolver</a></li>
+                    <li><a href="#Comparar">Comparar</a></li>
+                </ul>
+            </details>
+        </section>
+    </body>
+</html>

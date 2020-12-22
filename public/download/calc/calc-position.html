@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title>Ejemplo de la función calc en CSS - alinear contenedores con position</title>
+        <script
+        src="jquery-1.11.2.min.js"></script>
+        <link rel="stylesheet" href="example.css">
+
+        <style>
+
+            .example1 div{
+                position: absolute;
+                width : 25%;
+                height : 60%;
+                background:#CCC;
+                top:calc(50% - 60% / 2);
+                border: 1px solid #F00;
+            }
+            .example1 div:nth-child(1) {
+                left : calc(0% + 6.25%);
+            }
+            .example1 div:nth-child(2) {
+                left : calc(25% + 6.50%*2);
+            }
+            .example1 div:nth-child(3) {
+                left : calc(50% + 6.25%*3);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Ejemplo de la función calc en CSS - alinear contenedores con position</h1>
+        </header>
+        <div class="example1">
+            <div>
+            </div>
+
+            <div>
+            </div>
+
+            <div>
+            </div>
+        </div>
+    </body>
+</html>

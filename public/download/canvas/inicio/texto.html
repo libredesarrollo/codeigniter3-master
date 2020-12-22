@@ -1,0 +1,40 @@
+<html><head>
+        <link rel="stylesheet" href="example.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Dibujando una texto en Canvas</title>
+        <style>
+            canvas{
+                border: 1px solid #000;
+		margin: 0 auto;
+		display:block;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Dibujando texto en Canvas</h1>
+        </header>
+        <section class="ejemplo5">
+            <canvas id="myCanvas" width="350" height="80">
+                <p>Su navegador no soporta canvas :(</p>
+            </canvas>
+		<br><br>
+            <canvas id="myCanvas2" width="350" height="80">
+                <p>Su navegador no soporta canvas :(</p>
+            </canvas>
+        </section>
+        <script>
+		var myCanvas = document.getElementById("myCanvas");
+		var ctx=myCanvas.getContext("2d");
+
+		ctx.font="30px Arial";
+		ctx.fillText("Texto con fillText()",20,50);
+
+		var myCanvas2 = document.getElementById("myCanvas2");
+		var ctx2=myCanvas2.getContext("2d");
+
+		ctx2.font="30px Arial";
+		ctx2.strokeText("Texto con strokeText()",20,50);
+        </script>
+    </body>
+</html>

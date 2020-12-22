@@ -1,0 +1,46 @@
+<html lang="es">
+    <head>
+        <title></title>
+
+        <meta name="keywords" content="">
+
+        <meta name="description" content="">
+
+        <link href="mododiurno.css" id="pagestyle" media="all" rel="stylesheet" type="text/css" />
+
+        <script>
+            ;
+            (function() {
+                window.addEventListener("devicelight", function(event) {
+                    var lux = event.value;
+
+                    // oscuro
+                    if (lux <= 30)
+                        document.getElementById('pagestyle').setAttribute('href', 'modonocturno.css');
+
+                    else
+                        document.getElementById('pagestyle').setAttribute('href', 'mododiurno.css');
+
+                    document.getElementById("lux").innerHTML = lux + " lux";
+
+                });
+            })();
+        </script>
+
+
+    </head>
+
+    <body>
+        <header></header>
+        <section>
+
+            <h1>Nivel de luz: <span id="lux"></span></h1>
+            <h1>Modo: <span id="modo"></span></h1>
+
+        </section>	
+
+    </body>
+</html>
+
+
+

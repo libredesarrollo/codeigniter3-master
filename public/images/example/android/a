@@ -1,0 +1,87 @@
+<p>Un Canvas no es más que una superficie o lienzo en el cual se puede dibujar; <span class="black">con ayuda de las primitivas que ofrece la API de Canvas en Android es posible dibujar gráficos como líneas, círculos, óvalos, cuadrados, rectángulos e incluso textos;</span> así como variar el color, trazado y tamaño; en esta entrada daremos los primeros pasos con la clase Canvas en Android.</p>
+
+<h2>Empezando con el Canvas en Android -el método onDraw()-</h2>
+
+<p>Primero hay que definir una clase que extienda de <code>View</code> la cual puede estar contenida dentro de la misma actividad o fuera de ella; a la clase la llamaremos <code>MyView</code> que sobreescriba el método <code>onDraw(Canvas)</code>:</p>
+
+<pre class="highlight">
+	public class MyView extends View {
+		public MyView(Context context) {
+			super(context);
+		}
+
+		@Override
+		protected void onDraw(Canvas canvas) {
+		}
+	}
+
+</pre>
+
+<h3>El método onDraw()</h3>
+
+<p>El método <code>onDraw(Canvas canvas)</code> especifica un parámetro Canvas cuya clase es la que permite dibujar las primitivas: líneas, círculos, rectángulos, etc.</p>
+
+<h4>Dibujando una figura en tres pasos:</h4>
+
+<p>Para dibujar una sencilla figura, debemos especificar una serie de métodos los cuales permiten especificar parámetros como el estilo de líneas, colores, formas, etc:</p> 
+
+<ul>
+    <li>Definir un paint/pintar para especificar parámetros como el color, grosor del trazo, etc; veamos algunos de ellos:
+        <ul>
+            <li><code>Paint.setColor</code>: Establece un color para pintar; el método recibe como parámetro de tipo color; por ejemplo: <code>Color.WHITE</code></li>
+            <li><code>Paint.setStyle</code>: Establece un estilo para pintar; el método recibe un parámetro de tipo <code>Paint.Style</code> los cuales pueden ser:
+                <ul>
+                    <li>FILL: Dibuja una figura rellena:
+                        <img src="/public/images/example/android/android-canvas-fill.png" alt="CAnvas en ANdroid -FILL-" title="CAnvas en ANdroid -FILL-" />
+                    </li>
+                    <li>STROKE: Dibuja solo el contorno de la figura:
+                        <img src="/public/images/example/android/android-canvas-stroke.png" alt="CAnvas en ANdroid -STROKE-" title="CAnvas en ANdroid -STROKE-" />
+                    </li>
+                    <li>FILL_AND_STROKE: Combinación de los dos anteriores.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p>Puede encontrar más información sobre Paint en el <a href="http://developer.android.com/reference/android/graphics/Paint.html" target="blank">siguiente enlace</a>.</p>
+    </li>
+    <li>
+        El Canvas define los colores y formas geométricas a dibujar:
+        <ul>
+            <li><code>Canvas.drawColor()</code> Define un color.</li>
+            <li><code>Canvas.drawCircle(X,Y,Radius,Paint)</code> Dibuja un círculo según:
+                La posición (X y Y) radio (Radius) y Paint especificados.</li>
+            <li><code>Canvas.drawLine(startX,startY,stopX,stopY,Paint)</code> Dibuja una línea según el segmento (startX,startY,stopX,stopY) y Paint especificados.</li>
+            <li><code>Canvas.drawRect(left, top, right, bottom, paint))</code> Dibuja un rectángulo según la posición (left, top, right, bottom) y Paint especificados.</li>
+            <li><code>Canvas.drawPaint(Paint)</code>: Pinta todo el Canvas según el Paint especificado</li>
+        </ul>
+
+        <p>Puede encontrar más información sobre Paint en el <a href="http://developer.android.com/reference/android/graphics/Canvas.html" target="blank">siguiente enlace</a>.</p>
+
+    </li>
+</ul>
+<h2>Asociando el Canvas en la actividad</h2>
+
+<p>Una vez que que hayamos definido la vista la cual va a dibujar en una vista a través del Canvas; el siguiente paso consiste en asociar una instancia de la clase View y esta dibuja en una vista en el Canvas en la actividad mediante el método <code>setContentView()</code>:</p>
+
+<pre class="highlight">
+setContentView(new MyView(this));
+</pre>
+
+<p>Cuando queremos dibujar gráficos en Android podemos hacerlo dentro de la vista usando un layout (la manera tradicional de referencia un layout en Android):</p>
+
+<pre class="highlight">
+setContentView(R.layout.activity_main);
+</pre>
+
+<p>O dibujar los gráficos directamente en un Canvas como hemos realizado en esta entrada:</p>
+
+<pre class="highlight">
+setContentView(new MyView(this));
+</pre>
+
+<p>Como podrás notar, para ambos paso empleamos el método <code>setContentView()</code> pero con resultados muy diferentes.</p>
+
+<h3>¿Dibujar gráficos dentro de los layout o en el Canvas?</h3>
+
+<p>Android recomienda dibujar los gráficos en layout cuando se van a manejar gráficos simples sin mucho movimiento; pero, cuando se desea crear gráficos más ricos con más animaciones, movimientos,refrescamiento de los dibujos y un mayor rendimiento Android recomienda emplear el Canvas en su lugar.</p>
+

@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta http-equiv='Content-Type' content='Type=text/html; charset=utf-8'>
+        <title>La API Battery (Batería) en HTML5 - Ejemplo</title>
+        <link rel="stylesheet" href="example.css">
+        <script>
+            var battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery;
+            window.onload = function() {
+
+                document.querySelector('#charging').textContent = battery.charging ? 'Cargando' : 'No esta cargando';
+                document.querySelector('#chargingTime').textContent = battery.chargingTime + ' tiempo de carga';
+                document.querySelector('#dischargingTime').textContent = battery.dischargingTime + ' tiempo para descargase';
+                document.querySelector('#level').textContent = (battery.level * 100) + '% nivel de la batería';
+                document.getElementById("bateria").value = battery.level * 100;
+
+		// eventos
+                battery.addEventListener("chargingchange", function(e) {
+                    document.querySelector('#charging').textContent = battery.charging ? 'Cargando' : 'No esta cargando';
+                }, false);
+
+                battery.addEventListener("chargingtimechange", function(e) {
+                    document.querySelector('#chargingTime').textContent = (battery.chargingTime / 60) + ' tiempo de carga';
+
+                }, false);
+                battery.addEventListener("dischargingtimechange", function(e) {
+                    document.querySelector('#dischargingTime').textContent = (battery.dischargingTime / 60) + ' tiempo para descargase';
+                }, false);
+                battery.addEventListener("levelchange", function(e) {
+                    document.querySelector('#level').textContent = (battery.level * 100) + '% nivel de la batería';
+                    document.getElementById("bateria").value = (battery.level * 100);
+                }, false);
+            }
+        </script>
+    </head>
+    <body>
+        <header><h1>La API Battery (Batería) en HTML5</h1></header>
+        <section>
+            <div class="big" id="charging">¿Cargando?... Desconocido</div>
+            <div class="big" id="dischargingTime">Tiempo para descargar... Desconocido</div>
+            <div class="big" id="chargingTime">Tiempo para cargar... Desconocido</div>
+            <hr>
+            <div class="big" id="level">Nivel de la batería... Desconocido</div>
+            <meter id="bateria" min="0" max="100"></meter>
+
+        </section>
+    </body></html>

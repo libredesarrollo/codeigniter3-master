@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            html, body
+            {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            .fondo { 
+                width: 100%;
+                height: 100%;
+                overflow:hidden;
+                background: rgb(91, 91, 91);
+                float: left;
+                background-image: url('tigre2.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: right bottom; 
+                animation: transitionImage 10s infinite;
+                -moz-animation: transitionImage 10s infinite;
+                -webkit-animation: transitionImage 10s infinite;
+            }
+
+            @keyframes transitionImage {
+                0% {background-position: right bottom;}
+            50% {background-position: left bottom;}
+            100% {background-position: right bottom;}
+            }
+
+            @-webkit-keyframes transitionImage {
+                0% {background-position: right bottom;}
+            50% {background-position: left bottom;}
+            100% {background-position: right bottom;}
+            }
+
+            @-moz-keyframes transitionImage {
+                0% {background-position: right bottom;}
+            50% {background-position: left bottom;}
+            100% {background-position: right bottom;}
+            }
+
+            section{
+                margin:70px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="fondo"></div>
+    </body>
+</html>

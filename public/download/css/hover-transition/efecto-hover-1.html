@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title>Efectos con hover y transition en CSS (parte 1)</title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            .cuerpo {
+                width: 200px;
+                height: 200px;
+                margin:30px auto 0 auto;
+            }
+            .cuerpo img{
+                width:inherit;
+                height:inherit;
+                border-radius:50%;
+                object-fit: cover;
+            }
+            .cuerpo:before {
+                display: block;
+                border-radius: 50%;
+                content: '';	
+                box-shadow: inset 0 0 0 10px rgba(255, 255, 255, 0.5);
+                width: inherit;
+                height: inherit;
+                position: absolute;
+            }
+            .cuerpo:after {
+                display: table-cell; 
+                border-radius: 50%;
+                box-shadow: inset 0 0 0 10px rgba(255, 255, 255, 0.5);
+                width: inherit;
+                height: inherit;
+                position: absolute;
+                background: rgba(0, 0, 0, 0.8);
+                transition: all 1s;
+                -webkit-transition: all 1s;
+                -moz-transition: all 1s;
+                opacity:0;
+                content:"";
+                color:#FFF;
+                text-align:center;
+                font-family: Arial;
+                font-size: 12px;
+                font-weight: bold;
+                line-height: 50px;
+            }
+
+            .derecha:after {
+                transform:translate(300px,-200px);
+                -webkit-transform:translate(300px,-200px);
+                -moz-transform:translate(300px,-200px);
+            }
+            .izquierda:after {
+                transform:translate(-300px,-200px);
+                -webkit-transform:translate(-300px,-200px);
+                -moz-transform:translate(-300px,-200px);
+            }
+            .arriba:after {
+                transform:translate(0,-500px);
+                -webkit-transform:translate(0,-500px);
+                -moz-transform:translate(0,-500px);
+            }
+            .abajo:after {
+                transform:translate(0,300px);
+                -webkit-transform:translate(0,300px);
+                -moz-transform:translate(0,300px);
+            }
+            .lateral1:after {
+                transform:translate(-300px,-300px);
+                -webkit-transform:translate(-300px,-300px);
+                -moz-transform:translate(-300px,-300px);
+            }
+            .lateral2:after {
+                transform:translate(300px,-300px);
+                -webkit-transform:translate(300px,-300px);
+                -moz-transform:translate(300px,-300px);
+            }
+            .lateral3:after {
+                transform:translate(300px,300px);
+                -webkit-transform:translate(300px,300px);
+                -moz-transform:translate(300px,300px);
+            }
+            .lateral4:after {
+                transform:translate(-300px,300px);
+                -webkit-transform:translate(-300px,300px);
+                -moz-transform:translate(-300px,300px);
+            }
+            .derecha:hover:after {
+                transform:translate(0px,-200px);
+                -webkit-transform:translate(0px,-200px);
+                -moz-transform:translate(0px,-200px);
+                opacity:1;
+            }
+            .izquierda:hover:after {
+                transform:translate(0px,-200px);
+                -webkit-transform:translate(0px,-200px);
+                -moz-transform:translate(0px,-200px);
+                opacity:1;
+            }
+            .arriba:hover:after {
+                transform:translate(0px,-200px);
+                -webkit-transform:translate(0px,-200px);
+                -moz-transform:translate(0px,-200px);
+                opacity:1;
+            }
+            .abajo:hover:after {
+                transform:translate(0px,-200px);
+                -webkit-transform:translate(0px,-200px);
+                -moz-transform:translate(0px,-200px);
+                opacity:1;
+            }
+            .lateral1:hover:after {
+                transform:translate(0px,-200px);
+                -webkit-transform:translate(0px,-200px);
+                -moz-transform:translate(0px,-200px);
+                opacity:1;
+            }
+            .lateral2:hover:after {
+                transform:translate(0px,-200px);
+                -webkit-transform:translate(0px,-200px);
+                -moz-transform:translate(0px,-200px);
+                opacity:1;
+            }
+            .lateral3:hover:after {
+                transform:translate(0px,-200px);
+                -webkit-transform:translate(0px,-200px);
+                -moz-transform:translate(0px,-200px);
+                opacity:1;
+            }
+            .lateral4:hover:after {
+                transform:translate(0px,-200px);
+                -webkit-transform:translate(0px,-200px);
+                -moz-transform:translate(0px,-200px);
+                opacity:1;
+            }
+
+            .leon:after {
+                content:"León";
+            }
+            .chita:after {
+                content:"Chita";
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Efectos con hover y transition en CSS (parte 1)</h1>
+        </header>
+        <section>
+            <div class="cuerpo leon derecha">
+                <img src="leon-200.jpg" />
+            </div>
+            <div class="cuerpo chita izquierda">
+                <img src="chita-200.jpg" />
+            </div>
+            <div class="cuerpo leon arriba">
+                <img src="leon-200.jpg" />
+            </div>
+            <div class="cuerpo chita abajo">
+                <img src="chita-200.jpg" />
+            </div>
+            <div class="cuerpo leon lateral1">
+                <img src="leon-200.jpg" />
+            </div>
+            <div class="cuerpo chita lateral2">
+                <img src="chita-200.jpg" />
+            </div>
+            <div class="cuerpo leon lateral3">
+                <img src="leon-200.jpg" />
+            </div>
+            <div class="cuerpo chita lateral4">
+                <img src="chita-200.jpg" />
+            </div>
+        </section>
+    </body>
+</html>
+

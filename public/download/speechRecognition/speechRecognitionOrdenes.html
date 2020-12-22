@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="example.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+        <title>La API de Reconocimiento de Voz en JavaScript: speechRecognition()</title>
+        <script>
+            var commands = {
+                // annyang will capture anything after a splat (*) and pass it to the function.
+                // e.g. saying "Show me Batman and Robin" is the same as calling showFlickr('Batman and Robin');
+                'show me *tag': showFlickr,
+
+                // A named variable is a one word variable, that can fit anywhere in your command.
+                // e.g. saying "calculate October stats" will call calculateStats('October');
+                'calculate :month stats': calculateStats,
+
+                // By defining a part of the following command as optional, annyang will respond to both:
+                // "say hello to my little friend" as well as "say hello friend"
+                'say hello (to my little) friend': greeting
+            };
+
+            var showFlickr = function (tag) {
+                $('#frace').text("Tag: " + tag);
+                console.log("Tag: " + tag)
+            }
+
+            var calculateStats = function (month) {
+                $('#frace').text("Data de " + month);
+                console.log("Data de " + month)
+            }
+
+            var greeting = function () {
+                $('#frace').text("Hola Mundo");
+                console.log("Hola Mundo")
+            }
+
+            // Agregamos nuestros comandos a annyang.
+            annyang.addCommands(commands);
+
+            //Establecemos el lenguaje, en mi caso es español de México (puedes ver la lista completa de lenguajes soportados aquí).
+//            annyang.setLanguage("es-MX");
+
+            // Empezmaos a escuchar.
+            annyang.start();
+
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <h1>La API de Reconocimiento de Voz en JavaScript: speechRecognition()</h1>
+        </header>
+        <section>
+
+
+            <div class="example">
+                <h3 id="frace"></h3>
+                <button onclick="procesar()" id="procesar">Escuchar</button>
+            </div>
+        </section>
+    </body>
+
+</html>

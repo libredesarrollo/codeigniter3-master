@@ -1,0 +1,46 @@
+<html class=" -webkit-">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="example.css">
+        <title>Cargas asíncronas de imágenes con jQuery en una web</title>
+    </head>
+
+    <style>
+        img {
+            width:48%;
+            padding:0 2% 0 0;
+            float:right;
+        }
+    </style>
+
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+
+    <body>
+        <header>
+            <h1>Cargas asíncronas de imágenes con jQuery en una web</h1>
+        </header>
+        <section>
+            <div class="imagenes">
+                <img src="behemoth_blackhole_pequena.jpg" src2="behemoth_blackhole_grande.jpg">  
+                <img src="pia18362-1041_pequena.jpg" src2="pia18362-1041_grande.jpg">
+            </div>
+        </section>
+        <script>
+            // recorro todas las imagenes de un grupo
+            $.each($('.imagenes img'), function (index, value) {
+
+                // creo una imagen y le asigno el fuente de la imagen final
+                var imgFinal = new Image();
+                imgFinal.src = $(this).attr('src2');
+
+                // establece una clase al estar cargada la imagen
+                imgFinal.onload = function () {
+                    $(imgFinal).addClass('cargada');
+                };
+
+                // reemplazo la imagen pequena por la imagen final
+                $(this).replaceWith(imgFinal);
+            });
+        </script>
+    </body>
+</html>

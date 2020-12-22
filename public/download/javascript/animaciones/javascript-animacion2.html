@@ -1,0 +1,65 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <link rel="stylesheet" href="example.css">
+        <title>El secreto de las animaciones en JavaScript (requestAnimationFrame()) 2</title>
+        <style>
+            body {
+                width: 100%;
+                overflow: hidden;
+            }
+
+            #canvas2 {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+
+    </head>
+    <body>
+        <header>
+            <h1>El secreto de las animaciones en JavaScript (requestAnimationFrame()) 2</h1>
+        </header>
+        <section>
+            <canvas id="canvas2"></canvas>
+        </section>
+        <script>
+            var canvas2 = document.getElementById('canvas2');
+            var ctx2 = canvas2.getContext('2d');
+
+            // obtenemos las dimensiones del canvas
+            var width2 = canvas2.width;
+            var height2 = canvas2.height;
+
+            // posiciones
+            var x2 = 0;
+            var y2 = 0;
+
+            // velocidad
+            var vx2 = 3;
+            var vy2 = 1;
+
+            // animation loop
+            function animar2() {
+                // limpia canvas
+                // ctx.clearRect(0, 0, width, height);
+                // dibuja un cuadrado de 10x10
+                ctx2.fillRect(x2, y2, 5, 5);
+
+                // actualizamos la posicion
+                x2 += vx2;
+                y2 += vy2;
+
+                // animamos
+                  requestAnimationFrame(animar2);
+
+                // verificamos que no se salga de rango
+                if (y2 > height2 || x2 > width2) {
+                    x2 = 0;
+                    y2 = 0;
+                }
+            }
+
+            animar2();
+        </script>
+    </body>
+</html>

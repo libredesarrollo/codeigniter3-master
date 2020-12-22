@@ -1,0 +1,61 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>¿Cómo cubrir todo el fondo con una imagen con CSS?</title>
+<style>
+
+h1 {
+  color: #efefef;
+  text-transform: uppercase;
+  font-size: 50px;
+  text-align: center;
+  margin:20% 0 0 0;
+  padding:0;
+  text-shadow: 0 0 10px #000;
+}
+
+p {
+  color: #efefef;
+  text-transform: uppercase;
+  font-size: 20px;
+  text-align: center;
+  margin:2% 0 0 0;
+  padding:0;
+  text-shadow: 0 0 10px #000;
+}
+
+
+body {
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  background-image: url(img/background_2500.jpg);
+}
+
+@media only screen and (max-width: 1980px) {
+  body {
+    background-image: url(img/background_1980.jpg);
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  body {
+    background-image: url(img/background_1280.jpg);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    background-image: url(img/background_480.jpg);
+  }
+}
+
+</style>
+</head>
+<body>
+
+<h1>¿Cómo cubrir todo el fondo con una imagen con CSS?</h1>
+<p>Redimensiona la ventana y verás que carga distintas imágenes según la resolución de pantalla</p>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <script src="js/jquery.min.js"></script>
+        <style>
+
+            .hamburger 
+            {
+                min-height: 30px;
+                max-width: 50px;
+            }
+
+            .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+                background-color: #48C;
+                position: absolute;
+                width: 40px;
+                height: 4px;
+                border-radius: 5px;
+                content: '';
+                transition-timing-function: ease;
+                transition-duration: .2s;
+                transition-property: opacity,-webkit-transform;
+                transition-property: transform,opacity;
+                transition-property: transform,opacity,-webkit-transform;
+            }
+
+            .hamburger-inner:before {
+                top: 10px;
+            }
+
+            .hamburger-inner:after {
+                top: 20px;
+            }
+
+            .hamburger.open .hamburger-inner {
+                -webkit-transform: translate3d(0,10px,0) rotate(45deg);
+                transform: translate3d(0,10px,0) rotate(45deg);
+            }
+
+            .hamburger.open .hamburger-inner:after {
+                -webkit-transform: translate3d(0,-20px,0) rotate(-90deg);
+                transform: translate3d(0,-20px,0) rotate(-90deg);
+            }
+
+            .hamburger.open .hamburger-inner:before {
+                -webkit-transform: translate3d(0,-20px,0) rotate(90deg);
+                transform: translate3d(0,-20px,0) rotate(90deg);
+                opacity: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hamburger">
+            <div class="hamburger-inner"></div>
+        </div>
+        <script>
+            $(function () {
+                $('.hamburger').click(function () {
+                    $('.hamburger').toggleClass('open');
+                });
+            });
+        </script>
+    </body>
+</html>

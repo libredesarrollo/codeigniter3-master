@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <meta http-equiv='Content-Type' content='Type=text/html; charset=utf-8'>
+        <title>La pseudo-class :empty en CSS con tablas - Ejemplo 3</title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            table {
+                display: block;
+                margin:0 auto;
+                font-size:17px;
+                font-weight:bold;
+            }
+            td {
+                background: #48C;
+                padding: 5px;
+                min-width:100px;
+                color:#FFF;
+            }
+            td:empty{
+                background: #DDD;
+            }
+        </style>
+    </head>
+    <body>
+        <header><h1>La pseudo-class :empty con tablas en CSS</h1></header>
+        <section>
+            <table>
+                <tr>
+                    <th>Casa Baratheon</th>
+                    <th>Casa Greyjoy</th>
+                    <th>Casa Stark</th>
+                    <th>Casa Martell</th>
+                    <th>Casa Tully</th>
+                </tr>
+                <tr>
+                    <td>Stannis Baratheon</td>
+                    <td></td>
+                    <td>Arya Stark</td>
+                    <td></td>
+                    <td>Cathelyn Tully</td>
+                </tr>
+                <tr>
+                    <td>Renly Baratheon</td>
+                    <td>Balon Greyjoy</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Joffrey Baratheon</td>
+                    <td>Maron Greyjoy</td>
+                    <td>Bran Stark</td>
+                    <td>Trystane</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Tommen Baratheon</td>
+                    <td></td>
+                    <td>Rickon Stark</td>
+                    <td>Quentyn</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Eddard Stark</td>
+                    <td>Arianne</td>
+                    <td>Bryden Tully</td>
+                </tr>
+            </table>
+        </section>
+    </body>
+</html>

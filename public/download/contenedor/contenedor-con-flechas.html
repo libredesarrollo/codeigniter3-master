@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title>Truco CSS: Construir flechas en los contenedores HTML</title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+
+            .cuerpo {
+                width: 100px;
+                height: 100px;
+                background: red;
+                position: relative;
+            }
+            .arriba-izquierda:before {
+                content: "";
+                position: absolute;
+                top: -25px;
+                left: 0;
+                width: 0;
+                height: 0;
+                border-width: 0 25px 25px;
+                border-style: solid;
+                border-color: transparent transparent red;
+            }
+            .arriba-derecha:before {
+                content: "";
+                position: absolute;
+                top: -25px;
+                left: 50px;
+                width: 0;
+                height: 0;
+                border-width: 0 25px 25px;
+                border-style: solid;
+                border-color: transparent transparent red;
+            }
+            .lado-derecha-arriba:before {
+		  content: "";
+		  position: absolute;
+		  top: 0;
+		  left: 100px;
+		  width: 0;
+		  height: 0;
+		  border-width: 25px;
+		  border-style: solid;
+		  border-color:  transparent transparent transparent red;
+            }
+            .lado-derecha-abajo:before {
+		  content: "";
+		  position: absolute;
+		  top: 50px;
+		  left: 100px;
+		  width: 0;
+		  height: 0;
+		  border-width: 25px;
+		  border-style: solid;
+		  border-color:  transparent transparent transparent red;
+            }
+            .lado-izquierda-arriba:before {
+                content: "";
+                position: absolute;
+                top: 0px;
+                left: -50px;
+                width: 0;
+                height: 0;
+                border-width: 25px;
+                border-style: solid;
+                border-color: transparent red transparent transparent;
+            }
+            .lado-izquierda-abajo:before {
+                content: "";
+                position: absolute;
+                top: 50px;
+                left: -50px;
+                width: 0;
+                height: 0;
+                border-width: 25px;
+                border-style: solid;
+                border-color: transparent red transparent transparent;
+            }
+
+            .abajo-izquierda:before {
+                content: "";
+                position: absolute;
+                bottom: -25px;
+                left: 0;
+                width: 0;
+                height: 0;
+                border-width: 25px 25px 0;
+                border-style: solid;
+                border-color: red transparent transparent;
+            }
+            .abajo-derecha:before {
+                content: "";
+                position: absolute;
+                bottom: -25px;
+                left: 50px;
+                width: 0;
+                height: 0;
+                border-width: 25px 25px 0;
+                border-style: solid;
+                border-color: red transparent transparent;
+            }
+     
+
+            .cuerpo{
+                margin:50px auto;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Truco CSS: Construir flechas en los contenedores HTML</h1>
+        </header>
+        <section>
+            <div class="cuerpo arriba-izquierda"></div>
+            <div class="cuerpo arriba-derecha"></div>
+            <div class="cuerpo lado-derecha-arriba"></div>
+            <div class="cuerpo lado-derecha-abajo"></div>
+            <div class="cuerpo lado-izquierda-arriba"></div>
+            <div class="cuerpo lado-izquierda-abajo"></div>
+            <div class="cuerpo abajo-izquierda"></div>
+            <div class="cuerpo abajo-derecha"></div>
+        </section>
+    </body>
+</html>
+

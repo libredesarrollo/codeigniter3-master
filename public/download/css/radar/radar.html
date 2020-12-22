@@ -1,0 +1,89 @@
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title>¿Cómo crear un efecto radar con las animaciones en CSS?</title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            body{
+                background:rgba(38,104,127,1);
+            }
+            .radar {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                border-radius: 50%;
+                border: 10px solid #fff;
+                width: 75px;
+                height: 75px;
+                -webkit-transform: translate(-50%,-50%);
+                transform: translate(-50%,-50%);
+                -webkit-animation: radar 2s infinite;
+                animation: radar 2s infinite;
+                opacity: 0;
+                overflow:hidden;
+            }
+
+            .radar:nth-child(2) {
+                animation-delay: .4s;
+            }
+
+            .radar:nth-child(3) {
+                animation-delay: .9s;
+            }
+
+            .radar:nth-child(4) {
+                animation-delay: .15s;
+            }
+
+            .bg
+            {
+                background:rgba(38,104,127,1);
+                width:100%;
+                height:100%;
+                overflow: hidden; 
+                -webkit-transform: translate3d(0,0,0);
+                -moz-transform: translate3d(0,0,0);
+                transform: translate3d(0,0,0);
+            }
+            @keyframes radar{
+                0%{
+                    width:75px;
+                    height:75px;
+                    border:40px solid #fff;
+                    opacity:0
+                }50%{
+                    opacity:.1
+                }
+                90%{
+                    width:750px;
+                    height:750px
+                }
+                90%,100%{
+                    border:2px 
+                        solid #fff;
+                    opacity:0
+                }100%{
+                    width:1500px;
+                    height:1500px
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>¿Cómo crear un efecto radar con las animaciones en CSS?</h1>
+        </header>
+        <section>
+            <div class="bg">
+                <div class="radar">
+                </div>
+                <div class="radar">
+                </div>
+                <div class="radar">
+                </div>
+                <div class="radar">
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

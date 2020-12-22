@@ -1,0 +1,90 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+nav {
+    position: fixed;
+    left: 40px;
+    top: 0;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10;
+}
+
+nav li {
+    padding: 10px 0;
+}
+
+nav li a {
+    position: relative;
+    display: block;
+}
+
+nav li a:after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #FFF;
+    transition: 0.2s;
+}
+
+nav li.active a:after {
+    background: #FFF;
+}
+
+nav.dark li a:after {		
+    border: 2px solid #444;
+}
+
+nav.dark li.active a:after {
+    background: #444;
+}
+
+.polyscape-background {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;		
+    display: flex;
+    justify-content: center;
+    align-items: center;		
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;		
+}
+
+.polyscape-background > div {
+    position: absolute;
+}
+
+#polyscape-1 {
+    background-image: url(../images/polyscape-1/mountain.jpg) ;
+}
+
+#polyscape-2 {
+    background-image: url(../images/polyscape-2/mist.jpg) ;
+}
+
+#polyscape-3 {
+    background-image: url(../images/polyscape-3/space.jpg) ;
+}
+
+#polyscape-4 {
+    background-image: url(../images/polyscape-4/lake.jpg) ;
+    filter: grayscale(25%);
+}
+
+#polyscape-5 {
+    background-image: url(../images/polyscape-5/mountain.jpg) ;
+}

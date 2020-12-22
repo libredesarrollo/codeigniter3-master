@@ -1,0 +1,4 @@
+<div class="container">
+    <h3 class="mt-3">Sociales</h3>
+    <ul class="social mt-3"> <li><a target="blank" href="https://twitter.com/LibreDesarrollo"><i class="twitter_50_color"></i></a></li> <li><a target="blank" href="https://www.facebook.com/desarrollolibre.net"><i class="fb_50_color"></i></a></li> <li><a target="blank" href="https://www.youtube.com/channel/UCx2k2IT5x9j5MRXhMrlL96A"><i class="yt_50_color"></i></a></li> <li><a target="blank" href="https://github.com/libredesarrollo"><i class="git_50_color"></i></a></li> <li><a target="blank" href="https://es.pinterest.com/desarrollolibre/"><i class="pin_50_color"></i></a></li> <li><a target="blank" href="https://ve.linkedin.com/pub/andrés-cruz/92/964/239"><i class="in_50_color"></i></a></li> <li><a target="blank" href="<?php echo base_url() ?>blog/rss"><i class="rss_50_color"></i></a></li> </ul> 
+</div>

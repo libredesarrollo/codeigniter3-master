@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title>Selector :target - Transiciones en CSS</title>
+        <link rel="stylesheet" href="example.css">
+        <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+        <style>
+            .example4 > ul{
+                border:1px solid #DDD;
+                background:#CCC;
+                width:200px;
+                margin: 0 auto;
+            }
+            .example4 li{
+                width:100px;
+                list-style: none;
+            }
+            .example4 ul > li > ul {
+                padding:10px;
+                background:#F00;
+            }
+            .example4 ul > li > ul > li{
+                width:110px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>ul > li > ul > li</h1>
+        </header>
+        <section>
+            <div class="example4">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Nuevo</a>
+                        <ul>
+                            <li><a href="#">Inicio</a></li>
+                            <li><a href="#">Nuevo</a></li>
+                            <li><a href="#">Sobre nosotros</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Sobre nosotros</a></li>
+                </ul>
+            </div>
+        </section>
+    </body>
+</html>

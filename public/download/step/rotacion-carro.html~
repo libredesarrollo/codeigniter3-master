@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title>Mis bordes internoss con un poco de CSS.</title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+.car {
+	display: block;
+	margin: 0 auto;
+   	animation: rotation-car 4s steps(4) infinite;
+   	-webkit-animation: rotation-car 4s steps(4) infinite;
+}
+
+@-webkit-keyframes rotation-car {
+    0% { 
+    	-webkit-transform: rotate(0deg); 
+    	transform: rotate(0deg);
+    }
+    100% { 
+    	-webkit-transform: rotate(360deg); 
+    	transform: rotate(360deg);
+    }
+}
+@keyframes rotation-car {
+    0% { 
+    	-webkit-transform: rotate(0deg); 
+    	transform: rotate(0deg);
+    }
+    100% { 
+    	-webkit-transform: rotate(360deg); 
+    	transform: rotate(360deg);
+    }
+}
+
+        </style>
+    </head>
+    <body>
+        <header><h1>4 pasos para una rotación</h1></header>
+        <div class="ejemplo1">
+            <section>
+		<img class="car" src="car.png"/>
+            </section>
+        </div>
+    </body>
+</html>

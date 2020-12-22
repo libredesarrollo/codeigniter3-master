@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="author" content="Aurelio De Rosa">
+        <title>Introducción a la API de Orientación de Pantalla en JavaScript</title>
+        <style>
+            *
+            {
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+
+            body
+            {
+                max-width: 500px;
+                margin: 2em auto;
+                padding: 0 0.5em;
+                font-size: 20px;
+            }
+
+            h1
+            {
+                text-align: center;
+            }
+
+            .api-support
+            {
+                display: block;
+            }
+
+            .hidden
+            {
+                display: none;
+            }
+
+            .value
+            {
+                font-weight: bold;
+            }
+
+            .button-demo
+            {
+                padding: 0.5em;
+                margin: 1em;
+            }
+
+            .author
+            {
+                display: block;
+                margin-top: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Introducción a la API de Orientación de Pantalla en JavaScript</h1>
+
+        <span id="so-unsupported" class="api-support hidden">API no soportada</span>
+
+        <div id="so-results">
+            <p>
+                La orientación del dispositivo es <span id="orientation" class="value">no disponible</span>
+            </p>
+            <form id="form-orientation">
+                <label for="orientation">Bloquear en:</label>
+                <select id="orientation-type">
+                    <option value="portrait">portrait</option>
+                    <option value="landscape">landscape</option>
+                    <option value="portrait-primary">portrait-primary</option>
+                    <option value="portrait-secondary">portrait-secondary</option>
+                    <option value="landscape-primary">landscape-primary</option>
+                    <option value="landscape-secondary">landscape-secondary</option>
+                </select>
+                <br />
+                <input class="button-demo" id="lock-button" type="submit" value="Lock!" />
+                <button class="button-demo" id="unlock-button">Unlock!</button>
+            </form>
+        </div>
+
+        <script>
+            var prefix = 'orientation' in screen ? '' :
+                    'mozOrientation' in screen ? 'moz' :
+                    'webkitOrientation' in screen ? 'webkit' :
+                    'msOrientation' in screen ? 'ms' :
+                    null;
+
+            // no hay soporte de la API
+            if (prefix === null) {
+                document.getElementById('so-unsupported').classList.remove('hidden');
+
+                ['lock-button', 'unlock-button'].forEach(function(elementId) {
+                    document.getElementById(elementId).setAttribute('disabled', 'disabled');
+                });
+            } else {
+                var form = document.getElementById('form-orientation');
+                var select = document.getElementById('orientation-type');
+
+                // funcion necesaria para que se active el bloqueo de pantalla
+                // activa el FullScreen
+                function launchFullscreen(element) {
+                    if (element.requestFullscreen) {
+                        element.requestFullscreen();
+                    } else if (element.mozRequestFullScreen) {
+                        element.mozRequestFullScreen();
+                    } else if (element.webkitRequestFullscreen) {
+                        element.webkitRequestFullscreen();
+                    } else if (element.msRequestFullscreen) {
+                        element.msRequestFullscreen();
+                    }
+                }
+
+                // desactiva el FullScreen
+                function exitFullscreen() {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                    } else if (document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                    } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                    }
+                }
+
+                function orientationHandler() {
+                    var orientationProperty = prefix + (prefix === '' ? 'o' : 'O') + 'rientation';
+                    document.getElementById('orientation').textContent = screen[orientationProperty];
+                }
+
+                // activa el evento manejador
+                screen.addEventListener(prefix + 'orientationchange', orientationHandler);
+
+                // bloquea la pantalla y activa el FullScreen
+                document.getElementById('lock-button').addEventListener('click', function(event) {
+                    event.preventDefault();
+                    launchFullscreen(document.documentElement);
+
+                    setTimeout(function() {
+                        screen[prefix + (prefix === '' ? 'l' : 'L') + 'ockOrientation'](select.value);
+                    }, 1);
+                });
+
+                // desbloquea la pantalla y desactiva el FullScreen
+                document.getElementById('unlock-button').addEventListener('click', function() {
+                    exitFullscreen();
+                    screen[prefix + (prefix === '' ? 'u' : 'U') + 'nlockOrientation']();
+                });
+
+                orientationHandler();
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <link rel="stylesheet" href="example.css">
+        <title>¿Cómo mostrar imágenes pixeladas con CSS3?</title>
+        <style>
+            .example2 .box {
+                color: #FFF;
+                background-color: #006bd6;
+                border-color: #0061c2;
+                width:1010px;
+                padding:10px;
+                margin-top:40px;
+                border-radius:5px;
+            }
+            .example2 .box img{
+                width:500px;
+                height:500px;
+                margin:0;
+                padding:0;
+                border-radius:5px;
+            }
+            .example2 .box img:nth-child(1){
+            }
+            .example2 .box img:nth-child(2){
+                image-rendering: pixelated;
+            }
+            .example2 .box h3,p{
+                color: #FFF;
+                text-align:center;
+            }
+            .example2 .box p{
+                font-weight:bold;
+            }
+        </style>
+
+    </head>
+    <body>
+        <header>
+            <h1>¿Cómo mostrar imágenes pixeladas con CSS3?</h1>
+        </header>
+        <section class="example2">
+            <div class="box">
+                <h3>pixelated vs renderizado por defecto de los navegadores</h3>
+                <img src="tigre-200.jpg" alt="tigre blanco" title="tigre blanco">
+                <img src="tigre-200.jpg" alt="tigre blanco" title="tigre blanco">
+                <p>(Tamaño natural de la imagen 200x200 píxeles)</p>
+            </div>
+            <div class="box">
+                <h3>pixelated vs renderizado por defecto de los navegadores</h3>
+                <img src="tigre-100.jpg" alt="tigre blanco" title="tigre blanco">
+                <img src="tigre-100.jpg" alt="tigre blanco" title="tigre blanco">
+                <p>(Tamaño natural de la imagen 100x100 píxeles)</p>
+            </div>
+            <div class="box">
+                <h3>pixelated vs renderizado por defecto de los navegadores</h3>
+                <img src="tigre-50.jpg" alt="tigre blanco" title="tigre blanco">
+                <img src="tigre-50.jpg" alt="tigre blanco" title="tigre blanco">
+                <p>(Tamaño natural de la imagen 50x50 píxeles)</p>
+            </div>
+        </section>
+    </body>
+</html>

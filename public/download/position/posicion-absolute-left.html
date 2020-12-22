@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>Posicionamiento absolute - left</title>
+<link rel="stylesheet" href="example.css">
+<style>
+section {
+	background: #FFFFFF;
+	width: 680px;
+	font-family: 'Open Sans', arial;
+	height:400px;
+}
+
+.parte {
+	opacity: 0;
+	background: rgba(255, 0, 0, 0.1);
+	transition: opacity 1s;
+	-webkit-transition: opacity 1s;
+}
+
+.parte:target {
+	opacity: 1;
+}
+
+.padre{
+	background:rgba(255,0,0,0.5);
+	width:100%;
+	border:5px solid #CCC;
+	height:100%;
+}
+
+.hijo{
+	background:rgba(0,0,255,1);
+	width:200px;
+	border:5px solid #666;
+	height:100px;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+.hijo p{
+	color:#FFF;
+	font-size:50px;
+	margin: 20px 2px;
+}
+</style>
+</head>
+<body>
+	<section>
+		<div class="padre">
+			<div class="hijo" id="hijo">
+				<p id="hijoLeft"></p>
+			</div>
+		</div>
+	</section>
+</body>
+<script>
+var move=0;
+n=1;
+function cambiarPosicion(){
+
+	document.getElementById("hijo").style.left = move+"%";
+	document.getElementById("hijoLeft").innerHTML= "left:"+move+"%";
+	move+=n;
+
+	// evita salirse de rango
+	if(move > 100 || move<0){
+		n*=-1;
+		setTimeout(cambiarPosicion, 3000);
+	}else
+		setTimeout(cambiarPosicion, 25);
+
+}
+cambiarPosicion()
+</script>
+</html>

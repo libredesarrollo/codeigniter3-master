@@ -1,0 +1,29 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>¿Cómo cubrir todo el fondo con una imagen con CSS?</title>
+<style>
+
+h1 {
+  color: #efefef;
+  text-transform: uppercase;
+  font-size: 50px;
+  text-align: center;
+  margin:20% 0 0 0;
+  padding:0;
+  text-shadow: 0 0 10px #000;
+}
+
+body {
+  background-image: url(img/background_1280.jpg);
+  background-size: cover;
+}
+
+</style>
+</head>
+<body>
+
+<h1>Ejemplo de background-size: cover</h1>
+</body>
+</html>

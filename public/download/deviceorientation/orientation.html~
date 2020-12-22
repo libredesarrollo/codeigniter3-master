@@ -1,0 +1,104 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+    <head>
+        <style>
+            body {
+                background:#CEF;
+                margin: 0;
+                padding: 0;
+            }
+
+            header {
+                background: #4CF;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: auto;
+                min-height:80px;
+                margin: 0;
+                padding: 0;
+                box-shadow: 0px 0px 3px #888;
+            }
+
+            section {
+                width: 90%;
+                min-width: 220px;
+                max-width: 1200px;
+                min-height:500px;
+                padding: 200px 10px 10px 10px;
+                background: #4CF;
+                box-shadow: 0px 0px 3px #888;
+                margin: 90px auto;
+            }
+
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            h1{ 
+                text-align: center;
+                font-size: 50px;
+                color: #000;
+            }
+            
+            input{
+                width: 30px;
+                height: 30px;
+            }
+        </style>
+       
+    </head>
+    <body>
+        <section>
+            <img src="/public/images/example/html/html5-logo.png"/>
+            <h1>Alpha: <span id="alpha"></span> <input id="blockAlpha" type="checkbox" /></h1>
+            <h1>Beta: <span id="beta"></span> <input id="blockBeta" type="checkbox" /></h1>
+            <h1>Gamma: <span id="gamma"></span> <input id="blockGamma" type="checkbox" /></h1>
+        </section>	
+    </body>
+ <script>
+			// verificamos si el navegador soporta Device Orientation
+			if (!window.DeviceOrientationEvent)
+				alert("Device Orientation no soportadas por tu navegador");
+ 
+            window.addEventListener("deviceorientation", handleOrientation, true);
+
+            function handleOrientation(event) {
+			
+				// la data de rotacion
+		var beta = event.beta; //X
+                var gamma = event.gamma;//Y
+                var alpha = event.alpha; //Z
+
+				// imagen a rotar
+                var img = document.querySelector('img');
+				
+				// los encabezados donde se colocaran los grados.
+                var alphaTag = document.getElementById('alpha');
+                var betaTag = document.getElementById('beta');
+                var gammaTag = document.getElementById('gamma');
+				
+				// checkbox para bloquear algunos o todos los ejes
+                var blockAlpha = document.getElementById('blockAlpha');
+                var blockBeta = document.getElementById('blockBeta');
+                var blockGamma = document.getElementById('blockGamma');
+
+				// rotamos
+                if (!blockBeta.checked) {
+                    img.style.webkitTransform = "rotateX(" + beta + "deg)";
+                    betaTag.innerHTML = beta;
+                }
+                if (!blockGamma.checked) {
+                    img.style.webkitTransform = "rotateZ(" + gamma + "deg)";
+                    gammaTag.innerHTML = gamma;
+                }
+                if (!blockAlpha.checked) {
+                    img.style.webkitTransform = "rotateY(" + alpha + "deg)";
+					alphaTag.innerHTML = alpha;
+                }
+            }
+        </script>
+
+</html>
+

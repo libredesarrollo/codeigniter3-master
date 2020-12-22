@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title></title>
+        <style>
+
+            body {
+                color: rgba(255, 255, 255, 0);
+                font-size:20px;
+                font-family: sans-serif;
+                margin: 0;
+                padding: 0;
+                background: #f25648;
+            }
+
+            li img{
+                opacity:0;
+                width:200px;
+                display: block;
+                margin: 30% auto;
+                transition:opacity 1s; 
+            }
+
+            li:hover img{
+                opacity:1;
+            }
+
+            li {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                float:left;
+                width:20%;
+                height:100%;
+                transition:width 1s,color 1s; 
+            }
+            ul {
+                margin: 0;
+                padding: 0;
+                display: block;
+                width:100%;
+                height:100%;
+                overflow:hidden;
+            }
+            li:hover{
+                width:40%;
+                color:rgba(255, 255, 255, 1);
+            }
+            li:nth-child(1) {
+                background: #aaAA33;
+            }
+
+            li:nth-child(2) {
+                background: #22AAff;
+            }
+
+            li:nth-child(3) {
+                background: #EEEEEE;
+            }
+
+            li:nth-child(4) {
+                background: #111111;
+            }
+
+            li:hover {
+                color: rgba(255, 255, 255, 1);
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <ul>
+            <li>
+                <p>Android</p>
+                <img src="android.png"/>
+            </li>
+            <li>
+                <p>Windows Phone 8</p>
+                <img src="windows-8-phone.png"/>
+            </li>
+            <li>
+                <p>IOS</p>
+                <img src="ios.png"/>
+            </li>
+            <li>
+                <p>BlackBerry</p>
+                <img src="blackberry.png"/>
+            </li>
+        </ul>
+    </body>
+</html>

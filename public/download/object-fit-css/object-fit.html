@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title>La propiedad object-fit en CSS - Ejemplo</title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            .example1 img {
+                width: 400px;
+                height: 100px;
+                border: 2px solid #fff;
+            }
+
+            .example1 div {
+                float: left;
+                margin: 1% 0 1% 1%;
+            }
+            .example1 span{
+                position:relative;
+                width: 200px;
+                height: 20px;	
+                background:rgba(0,0,0,0.5);
+                color:#FFF;
+                display:block;
+                text-align:center;
+                font-weight: bold;
+                left:100px;
+                border-radius:15px;
+            }
+            .example1 img.uno {
+                object-fit: fill;
+            }
+
+            .example1 img.dos {
+                object-fit: contain;
+            }
+
+            .example1 img.tres{
+                object-fit: cover;
+            }
+
+            .example1 img.cuatro{
+                object-fit: none;
+            }
+
+            .example1 img.cinco{
+                object-fit: scale-down;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>La propiedad object-fit en CSS - Ejemplo</h1>
+        </header>
+        <section style="">
+            <div class="example1">
+                <div>
+                    <img class="uno" src="tigre.png">
+                    <span>object-fit: fill;</span>
+                </div>
+                <div>
+                    <img class="dos" src="tigre.png">
+                    <span>object-fit: contain;</span>
+                </div>
+                <div>
+                    <img class="tres" src="tigre.png">
+                    <span>object-fit: cover;</span>
+                </div>
+                <div>
+                    <img class="cuatro" src="tigre.png">
+                    <span>object-fit: none;</span>
+                </div>
+                <div>
+                    <img class="cinco" src="tigre.png">
+                    <span>object-fit: scale-down;</span>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Creando un archivo descargable con JavaScript</title>
+        <link rel="stylesheet" href="example.css">
+        <script type="text/JavaScript">
+            window.onload = function() {
+            // ontengo el contenido del textarea
+            var txt = document.getElementById('txt');
+            txt.value = window.onload + '';
+
+            // se genera y descarga el archivo
+            document.getElementById('link').onclick = function(code) {
+            this.href = 'data:text/plain;charset=utf-8,'
+            + encodeURIComponent(txt.value);
+            };
+            };
+        </script>
+    </head>
+    <body>
+        <header><h1>Creando un archivo descargable con JavaScript</h1></header>
+        <section>
+            <textarea id="txt"></textarea>
+            <a href="" id="link" download="contenido.txt">Descargar el contenido del textarea</a>
+        </section>
+    </body>
+</html>

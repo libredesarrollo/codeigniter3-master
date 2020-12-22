@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title>Reloj clásico con CSS - Segundero</title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            .circle-clock {
+                width: 140px;
+                height: 140px;
+                border: 6px solid rgba(204, 0, 0, 0.6);
+                border-radius: 50%;
+                margin-right: auto;
+                margin-left: auto;
+                position: relative;
+                background-color: #fff;
+            }
+
+            @-webkit-keyframes circle-clock {
+                from { 
+                -webkit-transform: rotate(0deg); 
+                transform: rotate(0deg);
+            }
+            to { 
+                -webkit-transform: rotate(360deg); 
+                transform: rotate(360deg);
+            }
+            }
+            @keyframes circle-clock {
+                from { 
+                -webkit-transform: rotate(0deg); 
+                transform: rotate(0deg);
+            }
+            to { 
+                -webkit-transform: rotate(360deg); 
+                transform: rotate(360deg);
+            }
+            }
+            .circle-clock .second {
+                height: 3px;
+                position: absolute;
+                top: 50%;
+                -webkit-transform-origin: 100% 50%;
+                transform-origin: 100% 50%;
+                width: 50%;
+                background-color: rgba(204, 0, 0, 1);
+                -webkit-animation: circle-clock 60s infinite;
+                animation: circle-clock 60s infinite;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header><h1>Reloj clásico con CSS - Segundero</h1></header>
+        <div class="ejemplo1">
+            <section>
+                <div class="circle-clock">
+                    <div class="second"></div>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,157 @@
+<html>
+    <head>
+        <meta http-equiv='Content-Type' content='Type=text/html; charset=utf-8'>
+	<link href="example.css" rel="stylesheet">
+        <title>La propiedad clip-path en CSS para seleccionar regiones a mostrar en elementos - Todos los ejemplos</title>
+    </head>
+    <style>
+	img {
+		width:600px; 
+		height:auto;
+		display:block;
+		margin: 0 auto;
+	}
+	img.rectangulo{
+		-webkit-clip-path: polygon(0% 57%, 100% 57%, 100% 100%, 0% 100%); /*personajes*/
+		-moz-clip-path: polygon(0% 57%, 100% 57%, 100% 100%, 0% 100%); /*personajes*/
+		clip-path: polygon(0% 57%, 100% 57%, 100% 100%, 0% 100%); /*personajes*/
+	}
+	img.rectangulo2{
+		-webkit-clip-path: inset(10% 12% 14% 16%);
+		-moz-clip-path: inset(10% 12% 14% 16%);
+		clip-path: inset(10% 12% 14% 16%);
+	}
+	img.rectangulo3{
+		-webkit-clip-path: inset(10% 12% 14%);
+		-moz-clip-path: inset(10% 12% 14%);
+		clip-path: inset(10% 12% 14%);
+	}
+	img.rectangulo4{
+		-webkit-clip-path: inset(10%);
+		-moz-clip-path: inset(10%);
+		clip-path: inset(10%);
+	}
+	img.circulo{
+		-webkit-clip-path: circle(48%, 78%, 57px); /*robert*/
+		-moz-clip-path: circle(48%, 78%, 57px); /*robert*/
+		clip-path: circle(48%, 78%, 57px); /*robert*/
+	}
+	img.otros{
+		-webkit-clip-path: polygon(5% 5%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+		-moz-clip-path: polygon(5% 5%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+		clip-path: polygon(5% 5%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+	}
+
+	img.elipse{
+		-webkit-clip-path: ellipse(50%, 30%, 50%,28%); /*Juego de tronos*/
+		-moz-clip-path: ellipse(50%, 30%, 50%,28%); /*Juego de tronos*/
+		clip-path: ellipse(50%, 30%, 50%,28%); /*Juego de tronos*/
+	}		
+	img.animacion1{
+	  -webkit-clip-path: polygon(35% 57%, 41% 57%, 44% 100%, 35% 100%); /*personajes*/
+	  -webkit-animation: animation-clip-path 3s infinite;
+	  -moz-clip-path: polygon(0% 57%, 100% 57%, 100% 100%, 0% 100%); /*personajes*/
+	  -moz-animation: animation-clip-path 3s infinite;
+	  clip-path: polygon(0% 57%, 100% 57%, 100% 100%, 0% 100%); /*personajes*/
+	  animation: animation-clip-path 3s infinite;
+          opacity:0.5;
+	}
+
+	img.animacion2{
+		-webkit-clip-path: polygon(0% 57%, 100% 57%, 100% 100%, 0% 100%); /*personajes*/
+		-moz-clip-path: polygon(0% 57%, 100% 57%, 100% 100%, 0% 100%); /*personajes*/
+		clip-path: polygon(0% 57%, 100% 57%, 100% 100%, 0% 100%); /*personajes*/
+	}
+	img.animacion2:hover{
+		-webkit-clip-path: polygon(0% 57%, 100% 57%, 100% 100%, 0% 100%); /*personajes*/
+		-webkit-animation: animation-clip-path-hover 2s infinite;
+		-moz-clip-path: polygon(0% 57%, 100% 57%, 100% 100%, 0% 100%); /*personajes*/
+		-moz-animation: animation-clip-path-hover 2s infinite;
+		clip-path: polygon(0% 57%, 100% 57%, 100% 100%, 0% 100%); /*personajes*/
+		animation: animation-clip-path-hover 2s infinite;
+	}
+
+	@-webkit-keyframes animation-clip-path-hover {
+	  0% {
+	     -webkit-clip-path: polygon(0% 57%, 100% 57%, 100% 100%, 0% 100%); /*personajes*/
+	  }
+	  50% {
+	     -webkit-clip-path:polygon(0% 0, 100% 0%, 100% 100%, 0% 100%);
+	  }
+	  100% {
+	     -webkit-clip-path: polygon(0% 57%, 100% 57%, 100% 100%, 0% 100%); /*personajes*/
+	  }
+	}
+
+	@-moz-keyframes animation-clip-path-hover {
+	  0% {
+	   -moz-clip-path: polygon(0% 57%, 100% 57%, 100% 100%, 0% 100%); /*personajes*/
+	  }
+	  50% {
+	    -moz-clip-path:polygon(0% 0, 100% 0%, 100% 100%, 0% 100%);
+	  }
+	  100% {
+	    -moz-clip-path: polygon(0% 57%, 100% 57%, 100% 100%, 0% 100%); /*personajes*/
+	  }
+	}
+
+	@keyframes animation-clip-path-hover {
+	  0% {
+	    clip-path: polygon(0% 57%, 100% 57%, 100% 100%, 0% 100%); /*personajes*/
+	  }
+	  50% {
+	    clip-path:polygon(0% 0, 100% 0%, 100% 100%, 0% 100%);
+	  }
+	  100% {
+	    clip-path: polygon(0% 57%, 100% 57%, 100% 100%, 0% 100%); /*personajes*/
+	  }
+	}
+
+	@-webkit-keyframes animation-clip-path {
+	    from { -webkit-clip-path: polygon(35% 57%, 41% 57%, 44% 100%, 35% 100%); opacity:0.5;}
+	    to {-webkit-clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0% 100%); opacity:1;
+	}
+
+	@-moz-keyframes animation-clip-path {
+	    from { -moz-clip-path: polygon(35% 57%, 41% 57%, 44% 100%, 35% 100%); opacity:0.5;}
+	    to {-moz-clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0% 100%); opacity:1;
+	}
+
+	@keyframes animation-clip-path {
+	    from { clip-path: polygon(35% 57%, 41% 57%, 44% 100%, 35% 100%); opacity:0.5;}
+	    to { clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0% 100%); opacity:1;
+	}
+
+    </style>
+    <body>
+        <header><h1>La propiedad clip-path en CSS para seleccionar regiones a mostrar en elementos</h1></header>
+        <section>
+		<h1>Rectángulos con polígonos</h1>
+		<img class="got rectangulo" src="juego-de-tronos.jpg" title="juegos de tronos personajes" alt="juegos de tronos personajes" />
+
+		<h1>Rectángulos con inset</h1>
+		<img class="got rectangulo2" src="juego-de-tronos.jpg" title="juegos de tronos personajes" alt="juegos de tronos personajes" />
+
+		<h1>Rectángulos con inset</h1>
+		<img class="got rectangulo3" src="juego-de-tronos.jpg" title="juegos de tronos personajes" alt="juegos de tronos personajes" />
+
+		<h1>Rectángulos con inset</h1>
+		<img class="got rectangulo4" src="juego-de-tronos.jpg" title="juegos de tronos personajes" alt="juegos de tronos personajes" />
+
+		<h1>Círculo</h1>
+		<img class="got circulo" src="juego-de-tronos.jpg" title="juegos de tronos personajes" alt="juegos de tronos personajes" />
+
+		<h1>Eclipse</h1>
+		<img class="got elipse" src="juego-de-tronos.jpg" title="juegos de tronos personajes" alt="juegos de tronos personajes" />
+
+		<h1>Otros polígonos</h1>
+		<img class="got otros" src="juego-de-tronos.jpg" title="juegos de tronos personajes" alt="juegos de tronos personajes" />
+
+		<h1>Animaciones 1</h1>
+		<img class="got animacion1" src="juego-de-tronos.jpg" title="juegos de tronos personajes" alt="juegos de tronos personajes" />
+
+		<h1>Animaciones 2</h1>
+		<img class="got animacion2" src="juego-de-tronos.jpg" title="juegos de tronos personajes" alt="juegos de tronos personajes" />
+	</section>
+    </body>
+</html>

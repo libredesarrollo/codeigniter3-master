@@ -1,0 +1,73 @@
+<html><head>
+        <link rel="stylesheet" href="example.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Mostrar contenido bajo demanda con solo HTML - Ejemplo 1</title>
+        <style>
+            .ejemplo1 details {
+                width:500px;
+                border-top: 3px solid #CCC;
+                border-bottom: 3px solid #CCC;
+                display: block;
+                margin:0 auto;
+
+                border-radius:10px;
+                background-color: #BBB;
+            }
+
+            .ejemplo1 details summary{
+                font-size:130%;
+                padding:5px 8px;
+                color:#FFF;
+                text-align: center;
+                font-weight:bold;
+            }
+
+            .ejemplo1 details > table td {
+                margin:25px 15px 15px 5px;
+            }
+
+            .ejemplo1 details > table td:first-child {
+                font-weight:bold;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Mostrar contenido bajo demanda con solo HTML - Ejemplo 1</h1>
+        </header>
+        <section class="ejemplo1">
+            <details>
+                <summary>Order #545645144</summary>
+                <table>
+                    <tr>
+                        <td>Fecha</td>
+                        <td>10/12/2015 12:45 pm</td>
+                    </tr>
+                    <tr>
+                        <td>Orden número</td>
+                        <td>#545645144</td>
+                    </tr>
+                    <tr>
+                        <td>Courier</td>
+                        <td>UPS</td>
+                    </tr>
+                    <tr>
+                        <td>Dirección</td>
+                        <td>1600 Ave NW, Washington, DC 20500, EEUU.</td>
+                    </tr>
+                    <tr>
+                        <td>Pedido</td>
+                        <td>
+                            <ul>
+                                <li>Apple iPhone 5.......... $799.00</li>
+                                <li>Amazon Fire TV Stick.... $39.00</li>
+                                <li>PlayStation TV.......... $79.00</li>
+                                <li>Total................... $917.00</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </details>
+        </section>
+    </body>
+</html>

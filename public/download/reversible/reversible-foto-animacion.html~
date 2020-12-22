@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title>Elementos reversibles al estilo 3D en CSS - Fotografías y Animaciones</title>
+        <link rel="stylesheet" href="example.css">
+</head>
+<body>
+    <header>
+        <h1>Elementos reversibles al estilo 3D en CSS - Fotografías y Animaciones</h1>
+    </header>
+    <div class="example1">
+        <div class="reversible reversibleImagen">
+            <div id="adelante"><img src="tigre.png">
+            </div>
+            <div id="atras"><img src="tigre2.png">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

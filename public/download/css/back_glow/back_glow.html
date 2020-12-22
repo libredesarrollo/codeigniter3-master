@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title>Caja de luz difuminada con CSS</title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                margin: 0 auto;
+                height: 100%;
+            }
+
+            body {
+                font-family: monospace;
+                justify-content: center;
+                background-color: #1d212b;
+            }
+
+            .back_light {
+                position: relative;
+                width: 500px;
+                height: 500px;
+                line-height: 500px;
+                text-align: center;
+                color: #252B37;
+                background-color: #151823;
+                animation: textColor 10s ease infinite;
+            }
+            .back_light:after {
+                position: absolute;
+                content: "";
+                top: 5vw;
+                left: 0;
+                right: 0;
+                z-index: -1;
+                height: 100%;
+                width: 100%;
+                margin: 0 auto;
+                transform: scale(0.75);
+                -webkit-filter: blur(5vw);
+                -moz-filter: blur(5vw);
+                -ms-filter: blur(5vw);
+                filter: blur(5vw);
+                background: linear-gradient(270deg, #0fffc1, #7e0fff);
+                background-size: 200% 200%;
+                animation: animateGlow 10s ease infinite;
+            }
+            @keyframes animateGlow {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+            @keyframes textColor {
+                0% {
+                    color: #7e0fff;
+                }
+                50% {
+                    color: #0fffc1;
+                }
+                100% {
+                    color: #7e0fff;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Caja de luz difuminada con CSS</h1>
+        </header>
+        <section class="example2">
+            <div class="back_light">BACKLIGHT</div>
+        </section>
+    </body>
+</html>

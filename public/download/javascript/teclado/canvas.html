@@ -1,0 +1,82 @@
+<html><head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Cómo crear anillos de circulos en JavaScript y Canvas</title>
+        <style>
+            body { 
+                margin: 0; 
+                padding: 0; 
+                overflow:hidden; 
+                width:100%;
+                background:hsla(0,0%,0%,1);
+                font-size:1.05em;
+            }
+
+        </style>
+    </head>
+    <body>
+        <canvas id="canv"></canvas>
+        <script>
+            var c = document.getElementById('canv');
+            var w = c.width = window.innerWidth;
+            var h = c.height = window.innerHeight;
+            var $ = c.getContext('2d');
+            var x = w/2;
+            var y = h/2;
+            var dosPi = Math.PI * 2;
+            var v = 5;
+
+            window.addEventListener('resize', function () {
+                c.width = window.innerWidth;
+                c.height = window.innerHeight;
+            }, false);
+
+            function draw() {
+                $.fillStyle = 'hsla(' + (x*y)/100 + ',100%, 50%, 1)';
+                $.beginPath();
+                $.arc(x, y, 8, 0, dosPi);
+                $.fill();
+            }
+
+            function go() {
+                $.fillStyle = 'hsla(0,0%,0%,.08)';
+                $.fillRect(0, 0, w, h);
+
+                if (x <= 0)
+                    x = 0;
+                if (y <= 0)
+                    y = 0;
+                
+                if (x >= w)
+                    x = w;
+                if (y >= h)
+                    y = h;
+
+                draw();
+
+                window.requestAnimationFrame(go);
+            }
+            go();
+
+            document.addEventListener('keydown', function (e) {
+                lastDownTarget = event.target;
+
+                if (e.keyCode === 37) {
+                    x-=v;
+                }
+
+                if (e.keyCode === 38) {
+                    y-=v;
+                }
+
+                if (e.keyCode === 39) {
+                    x+=v;
+                }
+
+                if (e.keyCode === 40) {
+                    y+=v;
+                }
+
+            }, false);
+        </script>
+    </body>
+</html>

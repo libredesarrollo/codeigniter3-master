@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta http-equiv='Content-Type' content='Type=text/html; charset=utf-8'>
+        <title>El elemento datalist en HTML5 - Ejemplo</title>
+        <link rel="stylesheet" href="example.css">
+    </head>
+    <body>
+        <header><h1>El elemento datalist en HTML5</h1></header>
+        <section>
+			<label>Navegador preferido</label>
+			<input list="navegadores" type="text">
+			<label>Buscador preferido:</label>	
+			<input list="urls" type="url">
+			<label>Número de teléfonos muy usados al registrarnos:</label>
+			<input list="telefonos" type="tel">
+			<label>Campo de busqueda:</label>
+			<input list="navegadores" type="search">
+			
+			<datalist id="telefonos">
+				<option value="Internet Explorer">
+				<option value="Firefox">
+				<option value="Chrome">
+				<option value="Opera">
+				<option value="Safari">
+			</datalist>	
+			<datalist id="navegadores">
+				<option value="Internet Explorer">
+				<option value="Firefox">
+				<option value="Chrome">
+				<option value="Opera">
+				<option value="Safari">
+			</datalist>
+			<datalist id="urls">
+				<option value="http://www.google.com" label="Google">
+				<option value="http://www.bing.com" label="Bing">
+				<option value="http://www.yahoo.com" label="Yahoo">
+			</datalist>
+		</section>
+    </body></html>

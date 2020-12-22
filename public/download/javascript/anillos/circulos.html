@@ -1,0 +1,67 @@
+<html><head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Cómo crear anillos de circulos en JavaScript y Canvas</title>
+        <style>
+            body { 
+                margin: 0; 
+                padding: 0; 
+                overflow:hidden; 
+                width:100%;
+                background:hsla(0,0%,0%,1);
+                font-size:1.05em;
+            }
+
+        </style>
+    </head>
+    <body>
+        <canvas id="canv"></canvas>
+        <script>
+            var c = document.getElementById('canv');
+            var w = c.width = window.innerWidth;
+            var h = c.height = window.innerHeight;
+            var $ = c.getContext('2d');
+            var v = 0; // velocidad
+            var dst = 100; // cercania
+            var rings = 10; // numero de anillos de circulos
+            var circs = 20; // numero de circulos
+            var dosPi = Math.PI * 2; // dos veces PI
+
+            window.addEventListener('resize', function () {
+                c.width = window.innerWidth;
+                c.height = window.innerHeight;
+            }, false);
+
+            function draw(ang) {
+                var col = -80;
+                for (var u = 0; u < rings; u++) {
+                    sd = Math.pow(u, 3) + dst; // distancia entre los anillos de circulos
+
+                    x = w / 2 + Math.cos(ang) * sd;
+                    y = h / 2 + Math.sin(ang) * sd;
+                    s = sd / 10;
+                    $.fillStyle = 'hsla(' + col * (u) + ',100%, 50%, 1)';
+                    $.beginPath();
+                    $.arc(x, y, s, 0, dosPi);
+                    $.fill();
+                }
+            }
+
+            function go() {
+                $.fillStyle = 'hsla(0,0%,0%,.08)';
+                $.fillRect(0, 0, w, h);
+                v += 0.02;
+
+                if (v >= 5)
+                    v = 0;
+
+                for (var i = 0; i < circs; i++) {
+                    ang = (v + (i / circs * dosPi));
+                    draw(ang);
+                }
+
+                window.requestAnimationFrame(go);
+            }
+            go()
+        </script>
+    </body>
+</html>

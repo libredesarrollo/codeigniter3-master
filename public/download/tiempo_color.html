@@ -1,0 +1,55 @@
+<html>
+<head>
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+  color:#FFF;
+  font-size:80px;
+  font-family: Arial, Helvetica, Verdana;
+}
+
+#hexadecimal{
+  color: white; 
+  padding: 5px 0 10px 0;
+  vertical-align: text-bottom; 
+  position:relative;
+  top:35%;
+  margin: 0;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<div id="hexadecimal"></div>
+</body>
+
+<script>
+function MostrarTiempoColor() {
+	d = new Date();
+	h = d.getHours();
+	m = d.getMinutes();
+	s = d.getSeconds();
+	
+	//obligo el numero a ser representado en dos digitos
+	if(h <= 9) h = '0'+h;
+	if(m <= 9) m = '0'+m;
+	if(s <= 9) s = '0'+s;
+	
+	// genero el color
+	color = "#"+h+m+s;
+
+	//cambio el color de fondo
+	document.body.style.background = color;
+
+	//registro el color generado
+	document.getElementById("hexadecimal").innerHTML = color;
+	
+	//actualizo la funcion cada segundo
+	setTimeout(MostrarTiempoColor, 1000);
+}
+
+//llamo a la funcion inicialmente (al cargar el documento)
+MostrarTiempoColor();
+</script>
+</html>

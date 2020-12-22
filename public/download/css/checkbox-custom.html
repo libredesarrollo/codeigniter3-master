@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title>¿Cómo crear un checkbox personalizado en CSS?</title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            .custom-checkbox{
+                width: 100px;
+                height: 50px;
+            }
+            .custom-checkbox input{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                margin:0;
+                padding:0;
+                z-index: 1; 
+                opacity:0;
+
+            }
+            [class*=custom-checkbox-switch] {
+                position: relative;
+                width: 100%;
+                height:  100%;
+                border-radius:40px;
+                margin:0;
+                transition:1s all;
+            }
+            .custom-checkbox input ~ .custom-checkbox-switch-0 {
+                border:4px solid rgb(0,0,0);
+                background: rgba(0,0,0,.3);
+                top:-50px;
+            }
+            .custom-checkbox input ~ .custom-checkbox-switch-1 {
+                border:4px solid rgb(0,255,0);
+                background: rgba(0,255,0,.3);
+                top:-108px;
+            }
+            .custom-checkbox input ~ .custom-checkbox-ball {
+                position: relative;
+                background:#CCC;
+                border-radius:25px;
+                top:-162px;
+                width: 50px;
+                height: 50px;
+                transform: translateX(54px);
+                transition:1s all;
+                -webkit-transform: translateX(54px);
+                -webkit-transition:1s all;
+                -moz-transform: translateX(54px);
+                -moz-transition:1s all;
+            }
+            .custom-checkbox input:checked ~ .custom-checkbox-ball {
+                transform: translateX(4px);
+                -webkit-transform: translateX(4px);
+                -moz-transform: translateX(4px);
+            }
+
+            .custom-checkbox input:checked ~ .custom-checkbox-switch-0 {
+                opacity:0;
+            }
+            .custom-checkbox input:not(:checked) ~ .custom-checkbox-switch-1 {
+                opacity:0;
+            }
+
+
+            .custom-checkbox input:not(:checked) ~ .custom-checkbox-ball {
+                background:rgb(0,0,0);
+            }
+
+            .custom-checkbox input:checked ~ .custom-checkbox-ball {
+                background:rgb(0,255,0);
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>¿Cómo crear un checkbox personalizado en CSS?</h1>
+        </header>
+        <section>
+            <div class="custom-checkbox">
+                <input type="checkbox" />
+                <div class="custom-checkbox-switch-0"></div>
+                <div class="custom-checkbox-switch-1"></div>  
+                <div class="custom-checkbox-ball"></div>  
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+

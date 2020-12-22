@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title></title>
+        <script>
+            var myWorker = new Worker("primo.js");
+
+            myWorker.postMessage(50000);
+
+            myWorker.onmessage = function (oEvent) {
+                console.log("Números primos : " + oEvent.data);
+            };
+
+            myWorker.onerror = function (oEvent) {
+                console.log("A ocurrido un error en el archivo: " + oEvent.filename + " en la línea " + oEvent.lineno + " " + oEvent.message);
+            };
+        </script>
+    </head>
+    <body>
+        <h1>Vea la consola</h1>
+    </body>
+</html>

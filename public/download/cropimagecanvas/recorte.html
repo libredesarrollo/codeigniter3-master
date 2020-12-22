@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Recorte de Imágenes con HTML5 Canvas</title>
+    <head>
+
+        <link href="example.css" media="all" rel="stylesheet" type="text/css" />
+        <style type="text/css">
+
+            #hoverCut{
+                background: rgba(0,0,0,.5);
+                position:absolute;
+                padding:0;
+                margin:0;
+                border:1px dotted rgba(256,256,256,.5);
+            }
+
+            #hoverCut:hover{
+                display:none;
+            }
+        </style>
+        <script type="text/javascript" src="jquery.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Crop imagen con Canvas</h1>
+        </header>
+        <section>
+            <article>
+                <h1>Canvas</h1>
+                <canvas id="canvas" width="700" height="370">Tu navegador no soporta canvas.</canvas>
+                <div id="hoverCut"></div>
+                <h1>Imagen recortada</h1>
+                <img id="canvasImg"/>
+                <a id="downloadImage" download="image" href="">Descargar</a>
+            </article>
+        </section>
+        <script>
+            //*** variables globales
+
+            // canvas y su contexto
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+
+            // imagen en donde se colocará la imagen cortada
+            var canvasImg = document.getElementById('canvasImg');
+
+            // ruta a una imagen fuente
+            var imgSource = "image.png";
+
+            // punto X y Y del primer click sobre el canvas
+            var iniX;
+            var iniY;
+
+            // punto X y Y del segundo click sobre el canvas
+            var endX;
+            var endY;
+
+            // anchura y altura calculada a partir del primer y segundo click
+            var imgW;
+            var imgH;
+
+            $(document).ready(function() {
+                loadImageToCanvas();
+                init();
+            });
+
+            // hover que se surperpondran sobre el canvas segun la seleccion del usuario
+            var hover = document.getElementById('hoverCut');
+
+            // inicializo los componentes para el recorte de la imagen
+            function init() {
+                // primer click del usuario que indica la zona que voy a a recortar
+                iniX = -1;
+                iniY = -1;
+
+                // primer click del usuario que indica la zona que voy a a recortar
+                endX = -1;
+                endY = -1;
+
+                // anchura de la imagen recortada
+                imgW = -1;
+                imgH = -1;
+
+                // indica si coloco el hover
+                hoverBol = false;
+
+                // div hover
+                $(hover).css("width", 0);
+                $(hover).css("height", 0);
+
+            }
+
+            // pinto un div sobre el canvas desde el primer click del usuario 
+            // hasta donde el usuario mueva el raton
+            $(canvas).mousemove(function(e) {
+                // si hubo un primer click por el usuario
+                if (iniX >= 0) {
+                    var offset = $(this).offset();
+
+                    endX = e.clientX - offset.left + $("body").scrollLeft();
+                    endY = e.clientY - offset.top + $("body").scrollTop();
+
+                    imgW = endX - iniX;
+                    imgH = endY - iniY;
+
+                    $(hover).css("width", imgW - 3);
+                    $(hover).css("height", imgH - 3);
+                }
+            });
+
+            // click sobre el canvas
+            $(canvas).click(function(e) {
+                var offset = $(this).offset();
+
+                auxX = e.clientX - offset.left + $("body").scrollLeft();
+                auxY = e.clientY - offset.top + $("body").scrollTop();
+
+                // primer click
+                if (iniX < 0) {
+                    // primer punto
+                    iniX = auxX;
+                    iniY = auxY;
+
+                    $(hover).css("left", e.clientX + $("body").scrollLeft());
+                    $(hover).css("top", e.clientY + $("body").scrollTop());
+
+                    // segundo click
+                } else {
+                    // segundo punto
+                    endX = auxX;
+                    endY = auxY;
+
+                    // dimenciones de la nueva imagen
+                    imgW = endX - iniX;
+                    imgH = endY - iniY;
+
+                    // guardo la imagen en un tag img
+                    newImg = new Image();
+                    newImg.src = imgSource;
+
+                    // cuando terminde de cargar la imagen
+                    newImg.onload = function() {
+                        // limpio el canvas (para que el corte sea limpio)
+                        ctx.clearRect(0, 0, newImg.width, newImg.height);
+
+                        // reescalo el canvas para que quede solo la img y ningun espacio en blanco
+                        canvas.width = imgW;
+                        canvas.height = imgH;
+
+                        // corto la imagen
+                        ctx.drawImage(this, iniX, iniY, imgW, imgH, 0, 0, imgW, imgH);
+
+                        // guardo el corte en una imagen
+                        saveCanvasToImage();
+                        // cargo de nuevo la imagen en el canvas
+                        loadImageToCanvas();
+
+                        // limpio la seleccion y los click
+                        init();
+                    };
+                }
+            });
+
+            // cargo el contenido del canvas hacia un tag img
+            function loadImageToCanvas() {
+
+                // creo un objeto de tipo Image y le asigno una imagen fuente
+                newImg = new Image();
+                newImg.src = imgSource;
+
+                // pinto la imagen en el canvas solo si se ha terminado de cargar 
+                newImg.onload = function() {
+                    //reescalo el canvas al tamano de la imagen
+                    canvas.width = newImg.width;
+                    canvas.height = newImg.height;
+                    ctx.drawImage(newImg, 0, 0);
+                };
+            }
+
+            // guardo el canvas en una imagen
+            function saveCanvasToImage() {
+                var dataURL = canvas.toDataURL();
+                canvasImg.src = dataURL;
+                document.getElementById("downloadImage").href = dataURL;
+            }
+        </script>
+    </body>
+</html>

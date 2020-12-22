@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            .fondo { 
+                width: 300px;
+                height: 300px;
+                background: rgb(91, 91, 91);
+                margin: 5px;
+                float: left;
+                box-shadow: 0 0 15px #222;
+                animation:    blackAndWhite 10s infinite;
+                -webkit-animation:    blackAndWhite 10s infinite;
+            }
+
+            .fondo h4{ 
+                color:#FFF;
+                text-align:center;
+                background:#000;
+            }
+
+            @keyframes blackAndWhite {
+                0% {background: rgb(0,0,0);}
+            50% {background: rgb(255,255,255)}
+            100% {background: rgb(0,0,0);}
+            }
+
+            @-webkit-keyframes blackAndWhite {
+                0% {background: rgb(0,0,0);}
+            50% {background: rgb(255,255,255)}
+            100% {background: rgb(0,0,0);}
+            }
+
+
+            .fondo svg{
+                margin: 40px 0 0 80px;
+            }
+            .fondo:nth-child(1) circle{
+                mix-blend-mode: normal; 
+                -webkit-mix-blend-mode: normal; 
+                -moz-mix-blend-mode: normal; 
+            }
+            .fondo:nth-child(2) circle{
+                mix-blend-mode: multiply; 
+                -webkit-mix-blend-mode: multiply; 
+                -moz-mix-blend-mode: multiply; 
+            }
+            .fondo:nth-child(3) circle{
+                mix-blend-mode: screen; 
+                -webkit-mix-blend-mode: screen; 
+                -moz-mix-blend-mode: screen; 
+            }
+            .fondo:nth-child(4) circle{
+                mix-blend-mode: overlay; 
+                -webkit-mix-blend-mode: overlay; 
+                -moz-mix-blend-mode: overlay; 
+            }
+            .fondo:nth-child(5) circle{
+                mix-blend-mode: darken; 
+                -webkit-mix-blend-mode: darken; 
+                -moz-mix-blend-mode: darken; 
+            }
+            .fondo:nth-child(6) circle{
+                mix-blend-mode: lighten; 
+                -webkit-mix-blend-mode: lighten; 
+                -moz-mix-blend-mode: lighten; 
+            }
+            .fondo:nth-child(7) circle{
+                mix-blend-mode: color-dodge; 
+                -webkit-mix-blend-mode: color-dodge; 
+                -moz-mix-blend-mode: color-dodge; 
+            }
+            .fondo:nth-child(8) circle{
+                mix-blend-mode: color-burn; 
+                -webkit-mix-blend-mode: color-burn; 
+                -moz-mix-blend-mode: color-burn; 
+            }
+            .fondo:nth-child(9) circle{
+                mix-blend-mode: hard-light; 
+                -webkit-mix-blend-mode: hard-light; 
+                -moz-mix-blend-mode: hard-light; 
+            }
+            .fondo:nth-child(10) circle{
+                mix-blend-mode: soft-light; 
+                -webkit-mix-blend-mode: soft-light; 
+                -moz-mix-blend-mode: soft-light; 
+            }
+            .fondo:nth-child(11) circle{
+                mix-blend-mode: difference; 
+                -webkit-mix-blend-mode: difference; 
+                -moz-mix-blend-mode: difference; 
+            }
+            .fondo:nth-child(12) circle{
+                mix-blend-mode: exclusion; 
+                -webkit-mix-blend-mode: exclusion; 
+                -moz-mix-blend-mode: exclusion; 
+            }
+            .fondo:nth-child(13) circle{
+                mix-blend-mode: hue; 
+                -webkit-mix-blend-mode: hue; 
+                -moz-mix-blend-mode: hue; 
+            }
+            .fondo:nth-child(14) circle{
+                mix-blend-mode: saturation; 
+                -webkit-mix-blend-mode: saturation; 
+                -moz-mix-blend-mode: saturation; 
+            }
+            .fondo:nth-child(15) circle{
+                mix-blend-mode: color; 
+                -webkit-mix-blend-mode: color; 
+                -moz-mix-blend-mode: color; 
+            }
+            .fondo:nth-child(16) circle{
+                mix-blend-mode: luminosity; 
+                -webkit-mix-blend-mode: luminosity; 
+                -moz-mix-blend-mode: luminosity; 
+            }
+
+            section{
+                margin:70px auto;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>La propiedad mix-blend-mode en CSS - SVG</h1>
+        </header>
+        <section>
+            <div class="fondo">
+                <h4>1 mix-blend-mode: normal;</h4>
+                <svg>
+                <circle cx="40" cy="40" r="40" fill="red"/>
+                <circle cx="80" cy="40" r="40" fill="lightgreen"/>
+                <circle cx="60" cy="80" r="40" fill="blue"/>
+                </svg>
+            </div>
+
+            <div class="fondo">
+                <h4>2 mix-blend-mode: multiply;</h4>
+                <svg>
+                <circle cx="40" cy="40" r="40" fill="red"/>
+                <circle cx="80" cy="40" r="40" fill="lightgreen"/>
+                <circle cx="60" cy="80" r="40" fill="blue"/>
+                </svg>
+            </div>
+
+            <div class="fondo">
+                <h4>3 mix-blend-mode: screen;</h4>
+                <svg>
+                <circle cx="40" cy="40" r="40" fill="red"/>
+                <circle cx="80" cy="40" r="40" fill="lightgreen"/>
+                <circle cx="60" cy="80" r="40" fill="blue"/>
+                </svg>
+            </div>
+
+            <div class="fondo">
+                <h4>4 mix-blend-mode: overlay;</h4>
+                <svg>
+                <circle cx="40" cy="40" r="40" fill="red"/>
+                <circle cx="80" cy="40" r="40" fill="lightgreen"/>
+                <circle cx="60" cy="80" r="40" fill="blue"/>
+                </svg>
+            </div>
+
+            <div class="fondo">
+                <h4>5 mix-blend-mode: darken;</h4>
+                <svg>
+                <circle cx="40" cy="40" r="40" fill="red"/>
+                <circle cx="80" cy="40" r="40" fill="lightgreen"/>
+                <circle cx="60" cy="80" r="40" fill="blue"/>
+                </svg>
+            </div>
+
+            <div class="fondo">
+                <h4>6 mix-blend-mode: lighten;</h4>
+                <svg>
+                <circle cx="40" cy="40" r="40" fill="red"/>
+                <circle cx="80" cy="40" r="40" fill="lightgreen"/>
+                <circle cx="60" cy="80" r="40" fill="blue"/>
+                </svg>
+            </div>
+
+            <div class="fondo">
+                <h4>7 mix-blend-mode: color-dodge;</h4>
+                <svg>
+                <circle cx="40" cy="40" r="40" fill="red"/>
+                <circle cx="80" cy="40" r="40" fill="lightgreen"/>
+                <circle cx="60" cy="80" r="40" fill="blue"/>
+                </svg>
+            </div>
+            <div class="fondo">
+                <h4>8 mix-blend-mode: color-burn;</h4>
+                <svg>
+                <circle cx="40" cy="40" r="40" fill="red"/>
+                <circle cx="80" cy="40" r="40" fill="lightgreen"/>
+                <circle cx="60" cy="80" r="40" fill="blue"/>
+                </svg>
+            </div>
+
+            <div class="fondo">
+                <h4>9 mix-blend-mode: hard-light;</h4>
+                <svg>
+                <circle cx="40" cy="40" r="40" fill="red"/>
+                <circle cx="80" cy="40" r="40" fill="lightgreen"/>
+                <circle cx="60" cy="80" r="40" fill="blue"/>
+                </svg>
+            </div>
+
+            <div class="fondo">
+                <h4>10 mix-blend-mode: soft-light;</h4>
+                <svg>
+                <circle cx="40" cy="40" r="40" fill="red"/>
+                <circle cx="80" cy="40" r="40" fill="lightgreen"/>
+                <circle cx="60" cy="80" r="40" fill="blue"/>
+                </svg>
+            </div>
+
+            <div class="fondo">
+                <h4>11 mix-blend-mode: difference;</h4>
+                <svg>
+                <circle cx="40" cy="40" r="40" fill="red"/>
+                <circle cx="80" cy="40" r="40" fill="lightgreen"/>
+                <circle cx="60" cy="80" r="40" fill="blue"/>
+                </svg>
+            </div>
+
+            <div class="fondo">
+                <h4>12 mix-blend-mode: exclusion;</h4>
+                <svg>
+                <circle cx="40" cy="40" r="40" fill="red"/>
+                <circle cx="80" cy="40" r="40" fill="lightgreen"/>
+                <circle cx="60" cy="80" r="40" fill="blue"/>
+                </svg>
+            </div>
+
+            <div class="fondo">
+                <h4>13 mix-blend-mode: hue;</h4>
+                <svg>
+                <circle cx="40" cy="40" r="40" fill="red"/>
+                <circle cx="80" cy="40" r="40" fill="lightgreen"/>
+                <circle cx="60" cy="80" r="40" fill="blue"/>
+                </svg>
+            </div>
+
+            <div class="fondo">
+                <h4>14 mix-blend-mode: saturation;</h4>
+                <svg>
+                <circle cx="40" cy="40" r="40" fill="red"/>
+                <circle cx="80" cy="40" r="40" fill="lightgreen"/>
+                <circle cx="60" cy="80" r="40" fill="blue"/>
+                </svg>
+            </div>
+            <div class="fondo">
+                <h4>15 mix-blend-mode: color;</h4>
+                <svg>
+                <circle cx="40" cy="40" r="40" fill="red"/>
+                <circle cx="80" cy="40" r="40" fill="lightgreen"/>
+                <circle cx="60" cy="80" r="40" fill="blue"/>
+                </svg>
+            </div>
+
+            <div class="fondo">
+                <h4>16 mix-blend-mode: luminosity;</h4>
+                <svg>
+                <circle cx="40" cy="40" r="40" fill="red"/>
+                <circle cx="80" cy="40" r="40" fill="lightgreen"/>
+                <circle cx="60" cy="80" r="40" fill="blue"/>
+                </svg>
+            </div>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>¿Cómo crear una imagen en Blanco y Negro o en Escala de Grises?</title>
+<head>
+<link href="example.css" media="all" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<header>
+		<h1>¿Cómo crear una imagen en Blanco y Negro o en Escala de
+			Grises?</h1>
+	</header>
+	<section>
+		<article>
+			<h1>Canvas</h1>
+			<canvas id="canvas">
+                    <p>Tu navegador no soporta Canvas.</p>
+                </canvas>
+			<h1>Imagen en Blanco y Negro o en Escala de Grises</h1>
+			<img id="resul" />
+			<img src="image.png"/>
+			<a id="downloadImage" download="image" href="">Descargar</a>
+
+		</article>
+	</section>
+	<script>
+		var canvas = document.getElementById('canvas');// canvas
+		var ctx = canvas.getContext('2d'); // contexto
+		var imgResul = document.getElementById('resul');// imagen en blanco y negro o en escala de grises
+
+		var srcImg = "image.png";// imagen fuente
+
+		// nueva imagen
+		img = new Image();
+		img.src = srcImg;
+
+		// cargo la imagen fuente
+		img.onload = function() {
+
+			// reescalamos el canvas a las dimenciones de la imagen
+			canvas.width = img.width;
+			canvas.height = img.height;
+
+			// dibujamos la imagen en el Canvas
+			ctx.drawImage(this, 0, 0);
+			getGrayScale();
+
+		};
+
+		// pinta una imagen en balcno y negro o en escala de grises
+		function getGrayScale() {
+
+			// obtenemos el ImageData
+			var img = ctx.getImageData(0, 0, canvas.width, canvas.height);
+			var imgData = img.data;
+
+			// recorremos la imagen por pixeles
+			for (var i = 0, n = imgData.length; i < n; i += 4) {
+				
+				//Aplicamos la formula del contraste; consiste en sumar cada uno de los 
+				//canales que componen al canal RGB de la misma y promediarlos
+				gris = parseInt((imgData[i] + imgData[i + 1] + imgData[i + 2]) / 3);
+
+				/*
+				 *Tambien es posible obtener una imagen en escala 
+				de grisesigualando los canales; es decir
+				imgData[i + 1] = imgData[i];
+				imgData[i + 2] = imgData[i];
+
+				imgData[i] = imgData[i];
+				imgData[i + 2] = imgData[i];
+
+				imgData[i] = imgData[i + 2];
+				imgData[i + 1] = imgData[i + 2];
+				 */
+
+				imgData[i] = gris;
+				imgData[i + 1] = gris;
+				imgData[i + 2] = gris;
+			}
+
+			// retornamos la data modificada al Canvas
+			ctx.putImageData(img, 0, 0);
+			dataURL = canvas.toDataURL();
+			imgResul.src = dataURL;
+			// referencio la imagen para su posterior descarga
+			document.getElementById("downloadImage").href = dataURL;
+		}
+	</script>
+</body>
+</html>

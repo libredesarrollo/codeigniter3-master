@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>El Drag and Drop en HTML5 (JavaScript) ejemplo 2</title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            span {
+                display:block;
+                font-size:25px;
+                color:#FFF;
+                text-align:center;
+            }
+            /*
+             * propiedades de las cajas (arrastrables)
+             */
+            div[id ^='caja'] {
+                width:330px;
+                height:auto;
+                background:rgba(204, 0, 0, 0.8);
+                border: 3px solid rgba(204, 0, 0, 1);
+                margin:5px auto;
+                padding:5px;
+                color:#FFF;
+            }
+            div[id ^='caja']:after {
+                content:"  Fuera del contenedor"
+            }
+            /*
+             * propiedades que van a tomar el elemento arrastrable luego de que  este se suelte dentro de su contenedor
+             */
+            div[id ^='contenedor'] div[id ^='caja'] {	
+                background:rgba(0,178,255,0.8);
+                border: 3px solid rgba(0,178,255, 1);
+                float:right;
+            }
+            div[id ^='contenedor'] div[id ^='caja'] span {
+                color:#FFF;
+            }
+            div[id ^='contenedor'] div[id ^='caja']:after {
+                content:"  Dentro del contenedor  "
+            }
+            /*
+             * propiedades del contenedor
+             */
+            div[id ^='contenedor'] {
+                width:350px;
+                height:200px;
+                background:rgba(38,104,127,0.8);
+                border: 3px solid rgba(38,104,127, 1);
+                margin:5px auto;
+                padding:5px;
+            }
+        </style>
+        <script>
+            function dragstart(caja, event) {
+                // el elemento a arrastrar
+                event.dataTransfer.setData('Data', caja.id);
+            }
+
+            function drag(target, event) {
+                console.log("drag");
+                return false;
+            }
+
+            function dragend(target, event) {
+                console.log("dragend");
+                return false;
+            }
+
+            function dragenter(target, event) {
+                console.log("dragenter");
+                return false;
+            }
+
+            function dragleave(target, event) {
+                console.log("dragleave");
+                return false;
+            }
+
+            function dragover(event) {
+                console.log("dragover");
+                event.preventDefault();
+                return false;
+            }
+
+            function drop(target, event) {
+                // obtenemos los datos
+                var caja = event.dataTransfer.getData('Data');
+                // agregamos el elemento de arrastre al contenedor
+                target.appendChild(document.getElementById(caja));
+            }
+
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>El Drag and Drop en HTML5 (JavaScript) ejemplo 2</h1>
+        </header>
+        <section>
+
+            <!-- elementos arrastrables -->
+            <div id="caja1" draggable="true" ondragstart="dragstart(this, event)" ondrag="drag(this, event)" ondragend="dragend(this, event)"> <span>Caja 1</span>
+
+            </div>
+            <div id="caja2" draggable="true" ondragstart="dragstart(this, event)" ondrag="drag(this, event)" ondragend="dragend(this, event)"> <span>Caja 2</span>
+
+            </div>
+            <!-- contenedor -->
+            <div id="contenedor" ondrop="drop(this, event)" ondragenter="dragenter(this, event)" ondragover="dragover(event)" ondragleave="dragleave(this, event)"> <span>Contenedor</span>
+
+            </div>
+    </body>
+</html>
+

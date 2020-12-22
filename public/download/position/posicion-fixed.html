@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>Selector :target - Transiciones en CSS</title>
+<link rel="stylesheet" href="example.css">
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<style>
+section {
+	background: #FFFFFF;
+	width: 680px;
+	font-family: 'Open Sans', arial;
+	height:400px;
+}
+
+.parte {
+	opacity: 0;
+	background: rgba(255, 0, 0, 0.1);
+	transition: opacity 1s;
+	-webkit-transition: opacity 1s;
+}
+
+.parte:target {
+	opacity: 1;
+}
+
+nav {
+	position: fixed;
+	z-index: 1;
+	top: 100px;
+	left: 0;
+	background: #FFFFFF;
+}
+
+.padre{
+	background:rgba(255,0,0,0.5);
+	width:100%;
+	border:5px solid #CCC;
+	height:1500px;
+}
+
+.hijo{
+	background:rgba(0,0,255,1);
+	width:200px;
+	border:5px solid #666;
+	height:100px;
+	position:fixed;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+
+.hijo p{
+	color:#FFF;
+	font-size:50px;
+	margin: 20px 40%;
+}
+</style>
+</head>
+<body>
+	<section>
+		<div class="padre">
+			<div class="hijo" id="hijo"></div>
+<p>Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+Esto es un montón de texto sin sentido que tiene como fin mostrar el comportamiento del posicionamiento fixed.
+</p>
+
+		</div>
+	</section>
+</body>
+<script>
+var move=0;
+n=10;
+function cambiarPosicion(){
+	window.scrollTo(0,move);
+	move+=n;
+	// evita salirse de rango
+	if(document.body.scrollHeight < move || move<0){
+		n*=-1;
+		setTimeout(cambiarPosicion, 25);
+	}else
+		setTimeout(cambiarPosicion, 25);
+
+}
+cambiarPosicion()
+
+</script>
+
+</html>

@@ -1,0 +1,42 @@
+
+<html>
+    <head>
+        <meta http-equiv='Content-Type' content='Type=text/html; charset=utf-8'>
+        <title>El elemento dialog (diálogo) en HTML5 - Ejemplo</title>
+        <link rel="stylesheet" href="example.css">
+    </head>
+    <body>
+        <header><h1>El elemento dialog (diálogo) en HTML5 - Ejemplo</h1></header>
+        <section>
+            <table>
+                <tr>
+                    <th>Enero</th> 
+                    <th>Febrero</th> 
+                    <th>Más información</th> 
+                </tr> 
+                <tr> 
+                    <td>31</td> 
+                    <td>28</td> 
+                    <td><dialog onclick="closeDialog()"> El dialog está abierto <p>clic para cerrar</p> </dialog> <button onclick="showDialog()">Abrir</button></td> 
+                </tr> 
+            </table>
+        </section>
+        <script>
+            // referencia los elementos
+            var dialog = document.getElementsByTagName("dialog")[0];
+            var button = document.getElementsByTagName("button")[0];
+
+            //muesta el dialog
+            function showDialog() {
+                dialog.setAttribute("open", "open");
+                button.setAttribute("class", "close");
+            }
+
+            //oculta el dialog
+            function closeDialog() {
+                dialog.removeAttribute("open");
+                button.removeAttribute("class", "close");
+            }
+        </script>
+    </body>
+</html>

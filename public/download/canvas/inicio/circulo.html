@@ -1,0 +1,30 @@
+<html><head>
+        <link rel="stylesheet" href="example.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Dibujando una círculo en Canvas</title>
+        <style>
+            #myCanvas{
+                border: 1px solid #000;
+		margin: 0 auto;
+		display:block;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Dibujando una círculo en Canvas</h1>
+        </header>
+        <section class="ejemplo5">
+            <canvas id="myCanvas" width="300" height="200">
+                <p>Su navegador no soporta canvas :(</p>
+            </canvas>
+        </section>
+        <script>
+		var myCanvas = document.getElementById("myCanvas");
+		var ctx=myCanvas.getContext("2d");
+		ctx.beginPath();
+		ctx.arc(150,100,98,0,2*Math.PI);// circulo completo
+		ctx.stroke();
+        </script>
+    </body>
+</html>

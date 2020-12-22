@@ -1,0 +1,1 @@
+<?php echo create_past_next_article($article->id)["next"]; ?>

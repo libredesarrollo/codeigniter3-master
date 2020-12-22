@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            div.animation2 {
+                padding:1%;
+                margin:10px auto;
+                height:100%;
+                min-height:120px;
+                background: #FF0000; 
+                border-radius:0px
+                    width:50%;
+                -webkit-box-shadow:inset 0px 0px 0px 0px #BB0000;
+                -moz-box-shadow:inset 0px 0px 0px 0px #BB0000;
+                box-shadow:inset 0px 0px 0px 0px #BB0000;
+
+                -webkit-animation-name: cambiarColorFondo2; 
+                -moz-animation-name: cambiarColorFondo2; 
+                animation-name: cambiarColorFondo2;
+                -webkit-animation-duration: 8s;
+                -moz-animation-duration: 8s;
+                animation-duration: 8s;
+                -webkit-animation-iteration-count: infinite;
+                -moz-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+            }
+
+            @-webkit-keyframes cambiarColorFondo2 {   
+                0% {
+                background: #FF0000; 
+                width:50%
+            }
+            25% {
+                background: #FFAAAA;
+                width:80%;
+            }
+            50% {
+                -webkit-box-shadow:inset 0px 0px 0px 10px #BB0000;
+                box-shadow:inset 0px 0px 0px 10px #BB0000; 
+                border-radius:200px 
+            }
+            75% {
+                width:120px;
+            }
+            100% {
+                background: #FF0000; 
+                width:50%
+            }
+            }
+
+            @-moz-keyframes cambiarColorFondo2 {   
+                0% {
+                background: #FF0000; 
+                width:50%
+            }
+            25% {
+                background: #FFAAAA;
+                width:80%;
+            }
+            50% {
+                -moz-box-shadow:inset 0px 0px 0px 10px #BB0000;
+                box-shadow:inset 0px 0px 0px 10px #BB0000; 
+                border-radius:200px 
+            }
+            75% {
+                width:120px;
+            }
+            100% {
+                background: #FF0000; 
+                width:50%
+            }
+            }
+
+            @keyframes cambiarColorFondo2 {   
+                0% {
+                background: #FF0000; 
+                width:50%
+            }
+            25% {
+                background: #FFAAAA;
+                width:80%;
+            }
+            50% {
+                box-shadow:inset 0px 0px 0px 10px #BB0000; 
+                border-radius:200px 
+            }
+            75% {
+                width:120px;
+            }
+            100% {
+                background: #FF0000; 
+                width:50%
+            }
+            }
+        </style>
+    </head>
+    <body>
+        <header><h1>Animaciones de colores</h1></header>
+        <section>
+            <div class="animation2"></div>
+        </section>
+    </body>
+</html>

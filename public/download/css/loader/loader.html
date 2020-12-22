@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="example.css">
+        <title>Loader animado con solo CSS</title>
+        <style>
+            .circulo {
+                width:70px;
+                height:70px;
+                border-radius:50%;
+                border:5px solid rgb(204, 0, 0);
+                -webkit-animation: rotar 2s linear infinite;
+                -moz-animation: rotar 2s linear infinite;
+                animation: rotar 2s linear infinite;
+                margin: 0 auto;
+            }
+
+            .circulo:after{
+                content:' ';
+                width:20px;
+                height:20px;
+                background:rgb(204, 0, 0);
+                display:block;
+                border-radius:50%;
+            }
+
+            @-moz-keyframes rotar { 100% { -moz-transform: rotate(360deg); } }
+            @-webkit-keyframes rotar { 100% { -webkit-transform: rotate(360deg); } }
+            @keyframes rotar { 100% { transform: rotate(360deg); transform:rotate(360deg); } }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Loader animado con solo CSS</h1>
+        </header>
+        <section>
+            <div class="circulo"></div>
+        </section>
+    </body>
+</html>

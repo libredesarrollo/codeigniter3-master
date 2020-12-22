@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="example.css">
+        <title>Gradientes SVG en HTML</title>
+        <style>
+            .example2 svg {
+                margin: 40px 0 0 80px;
+                width: 100%;
+                height: 300px;
+                height: 150px;
+                width: 400px;
+                display: block;
+            }
+
+            .example2 stop {
+                stop-opacity: 1
+            }
+
+            .example2 stop:nth-child(1) {
+                stop-color: rgb(255, 255, 0)/*Amarillo*/
+            }
+
+            .example2 stop:nth-child(2) {
+                stop-color: rgb(255, 0, 0)/*Rojo*/
+            }
+
+            .example2 stop:nth-child(3) {
+                stop-color: rgb(0, 255, 0)/*Verde*/
+            }
+
+            .example2 stop:nth-child(4) {
+                stop-color: rgb(0, 0, 255)/*Azul*/
+            }
+
+            .example2 stop:nth-child(5) {
+                stop-color: rgb(0, 0, 0)/*Negro*/
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Gradientes SVG en HTML</h1>
+        </header>
+        <section>
+            <div class="example2">
+                <h3>Dos colores horizontal</h3>
+
+                <svg>
+                <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" />
+                <stop offset="100%" />
+                </linearGradient>
+                </defs>
+                <ellipse cx="200" cy="70" rx="100" ry="55" fill="url(#gradient)" />
+                </svg>
+
+                <h3>Tres colores vertical</h3>
+                <svg>
+                <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" />
+                <stop offset="45%" />
+                <stop offset="100%" />
+                </linearGradient>
+                </defs>
+                <ellipse cx="200" cy="70" rx="100" ry="55" fill="url(#gradient)" />
+                </svg>
+
+                <h3>Cuatro colores lateral</h3>
+                <svg>
+                <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="50%">
+                <stop offset="0%" />
+                <stop offset="33%" />
+                <stop offset="66%" />
+                <stop offset="100%" />
+                </linearGradient>
+                </defs>
+                <ellipse cx="200" cy="70" rx="100" ry="55" fill="url(#gradient)" />
+                </svg>
+
+                <h3>Cinco colores</h3>
+                <svg>
+                <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" />
+                <stop offset="25%" />
+                <stop offset="50%" />
+                <stop offset="75%" />
+                <stop offset="100%" />
+                </linearGradient>
+                </defs>
+                <ellipse cx="200" cy="70" rx="100" ry="55" fill="url(#gradient)" />
+                </svg>
+
+                <h3>Dos colores horizontal</h3>
+
+                <svg>
+                <defs>
+                <radialGradient id="gradient" cx="50%" cy="50%" fx="50%" fy="50%">
+                <stop offset="0%" />
+                <stop offset="100%" />
+                </radialGradient>
+                </defs>
+                <ellipse cx="200" cy="70" rx="100" ry="55" fill="url(#gradient)" />
+                </svg>
+
+                <h3>Tres colores vertical</h3>
+
+                <svg>
+                <defs>
+                <radialGradient id="gradient" cx="20%" cy="30%" fx="50%" fy="50%">
+                <stop offset="0%" />
+                <stop offset="45%" />
+                <stop offset="100%" />
+                </radialGradient>
+                </defs>
+                <ellipse cx="200" cy="70" rx="100" ry="55" fill="url(#gradient)" />
+                </svg>
+
+                <h3>Cuatro colores lateral</h3>
+
+                <svg>
+                <defs>
+                <radialGradient id="gradient" cx="50%" cy="50%" fx="50%" fy="50%">
+                <stop offset="0%" />
+                <stop offset="33%" />
+                <stop offset="66%" />
+                <stop offset="100%" />
+                </radialGradient>
+                </defs>
+                <ellipse cx="200" cy="70" rx="100" ry="55" fill="url(#gradient)" />
+                </svg>
+            </div>
+        </section>
+    </body>
+</html>

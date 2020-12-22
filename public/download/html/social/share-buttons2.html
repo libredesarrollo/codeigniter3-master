@@ -1,0 +1,104 @@
+<html class=" -webkit-">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Cómo crear nuestros propios botones sociales para compartir</title>
+        <link rel="stylesheet" href="example.css">
+
+<style>
+&#60;style&#62;
+#share-buttons {
+    width: 400px;
+    display:block;
+    margin: 0 auto;
+    -ms-transform: scale(.8,.8);
+    -webkit-transform: scale(.8,.8);
+    transform: scale(.8,.8);
+}
+#share-buttons img {
+    width: 35px;
+    padding: 5px;
+    border: 0;
+    display: inline;
+}
+
+#share-buttons a{
+    width: 50px;
+    height: 50px;
+    display: inline-block;   
+}
+
+#share-buttons i{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    background-image: url("icons.png");
+}
+.fb_50_color{
+    background-position: -50px -60px;
+}
+.in_50_color{
+    background-position: -200px -60px;
+}
+.pin_50_color{
+    background-position: -350px -60px;
+}
+.gmail_50_color{
+    background-position: -400px -60px;
+}
+.tb_50_color {
+    background-position: -250px -60px;
+}
+.twitter_50_color {
+    background-position: 0px -60px;
+}
+</style>
+
+<body>
+        <header>
+            <h1>Cómo crear nuestros propios botones sociales para compartir</h1>
+        </header>
+        <section>
+<div id="share-buttons">
+        <!-- Facebook -->
+        <a class="social-button" href="http://www.facebook.com/sharer.php?u=http://www.desarrollolibre.net/blog/tema/238/html/efectos-hovers-sobre-imagenes-con-css&t=Efectos hover sobre imágenes con CSS">
+            <i class="fb_50_color"></i>
+        </a>
+
+        <!-- Google+ -->
+        <a class="social-button" href="https://plus.google.com/share?url=http://sh.st/UPQTP">
+            <i class="gmail_50_color"></i>
+        </a>
+
+        <!-- LinkedIn -->
+        <a class="social-button" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://sh.st/UPQTP&amp;title=Cargas asíncronas de imágenes con jQuery en una web">
+            <i class="in_50_color"></i>
+        </a>
+
+        <!-- Tumblr-->
+        <a class="social-button" href="http://www.tumblr.com/share/link?url=http://sh.st/UPQTP&amp;title=Cargas asíncronas de imágenes con jQuery en una web">
+            <i class="tb_50_color"></i>
+        </a>
+
+        <!-- Twitter -->
+        <a class="social-button" href="https://twitter.com/share?url=http://sh.st/UPQTP&amp;text=Cargas asíncronas de imágenes con jQuery en una web">
+            <i class="twitter_50_color"></i>
+        </a>
+    </div>
+<section>
+
+    <script>
+        var lba = document.getElementsByClassName("social-button")
+
+        function myPopup() {
+            window.open(this.href, 'mywin',
+                    'left=20,top=20,width=500,height=500,toolbar=1,resizable=0');
+            event.preventDefault();
+            return false;
+        }
+
+        for (var i = 0; i < lba.length; i++) {
+            lba[i].addEventListener("click", myPopup, false);
+        }
+
+    </script>
+</body>
+</html>

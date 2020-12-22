@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title>Animando los SVG con CSS</title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            .example2 svg {
+                display: block;
+                margin: 10px auto;
+                width:300px;
+                height:300px;			
+            }
+            .example2 rect#b {
+                fill:rgba(255, 255, 255, 1);
+            }
+            .example2 rect#c {
+                fill:rgba(204, 204, 0, 1);
+                -webkit-animation: c ease-in-out 3s infinite ;
+                animation: c ease-in-out 3s infinite ;
+                -moz-animation: c ease-in-out 3s infinite ;
+            }
+            .example2 rect#bd {
+                fill:rgba(204, 204, 0, 1);
+                -webkit-animation: bd ease-in-out 10s infinite;
+                animation: bd ease-in-out 10s infinite;
+                -moz-animation: bd ease-in-out s infinite;
+            }
+            .example2 rect#bi {
+                fill:rgba(204, 204, 0, 1);
+                -webkit-animation: bi ease-in-out 10s infinite ;
+                animation: bi ease-in-out 10s infinite ;
+                -moz-animation: bi ease-in-out 10s infinite ;
+            }
+            .example2 rect#pi {
+                fill:rgba(204, 204, 0, 1);
+                -webkit-animation: pi ease-in-out 10s infinite ;
+                animation: pi ease-in-out 10s infinite ;
+                -moz-animation: pi ease-in-out 10s infinite ;
+            }
+            .example2 rect#pd {
+                fill:rgba(204, 204, 0, 1);
+                -webkit-animation: pd ease-in-out 10s infinite ;
+                animation: pd ease-in-out 10s infinite ;
+                -moz-animation: pd ease-in-out 10s infinite ;
+            }
+            .example2 rect#antena1 {
+                fill:rgba(204, 204, 0, 1);
+                -webkit-transform: rotateZ(11deg);
+                -moz-transform: rotateZ(11deg);
+                transform: rotateZ(11deg);
+                -webkit-animation: head ease-in-out 10s infinite ;
+                animation: head ease-in-out 10s infinite ;
+                -moz-animation: head ease-in-out 10s infinite ;
+            }
+            .example2 rect#antena2 {
+                fill:rgba(204, 204, 0, 1);
+                -webkit-transform: rotateZ(-17deg);
+                -moz-transform: rotateZ(-17deg);
+                transform: rotateZ(-17deg);
+                -webkit-animation: head ease-in-out 10s infinite ;
+                animation: head ease-in-out 10s infinite ;
+                -moz-animation: head ease-in-out 10s infinite ;
+
+            }
+
+            .cabeza{
+                -webkit-animation: head ease-in-out 10s infinite ;
+                animation: head ease-in-out 10s infinite ;
+                -moz-animation: head ease-in-out 10s infinite ;
+            }
+
+            .example2 circle{
+                fill:rgba(255, 255, 255, 1);
+            }
+            .example2 ellipse{
+                fill:rgba(204, 204, 0, 1);
+            }
+            .example2 line{
+                stroke-width:2;
+                stroke:rgba(0, 204, 0, 1);
+            }
+
+            /*************************************Brazo derecho*/
+            @-webkit-keyframes bd {
+                0% {
+                -moz-transform: translate(50px,0);
+                -webkit-transform: translate(50px,0);
+                transform: translate(50px,0);
+                opacity:0;}
+            10% { 
+                -moz-transform: translate(0,0);
+                -webkit-transform: translate(0,0);
+                transform: translate(0,0);
+                opacity:1;}
+            90% {
+                -moz-transform: translate(0px,0);
+                -webkit-transform: translate(0px,0);
+                transform: translate(0px,0);
+                opacity:1;}
+            99% {
+                opacity:0;}
+            100% {
+                -moz-transform: translate(50px,0);
+                -webkit-transform: translate(50px,0);
+                transform: translate(50px,0);
+                opacity:0;}
+            }
+            @-moz-keyframes bd {
+                0% {
+                -moz-transform: translate(50px,0);
+                -webkit-transform: translate(50px,0);
+                transform: translate(50px,0);
+                opacity:0;}
+            10% { 
+                -moz-transform: translate(0,0);
+                -webkit-transform: translate(0,0);
+                transform: translate(0,0);
+                opacity:1;}
+            90% {
+                -moz-transform: translate(0px,0);
+                -webkit-transform: translate(0px,0);
+                transform: translate(0px,0);
+                opacity:1;}
+            99% {
+                opacity:0;}
+            100% {
+                -moz-transform: translate(50px,0);
+                -webkit-transform: translate(50px,0);
+                transform: translate(50px,0);
+                opacity:0;}
+            }
+
+            @keyframes bd {
+                0% {
+                -moz-transform: translate(50px,0);
+                -webkit-transform: translate(50px,0);
+                transform: translate(50px,0);
+                opacity:0;}
+            10% { 
+                -moz-transform: translate(0,0);
+                -webkit-transform: translate(0,0);
+                transform: translate(0,0);
+                opacity:1;}
+            90% {
+                -moz-transform: translate(0px,0);
+                -webkit-transform: translate(0px,0);
+                transform: translate(0px,0);
+                opacity:1;}
+            99% {
+                opacity:0;}
+            100% {
+                -moz-transform: translate(50px,0);
+                -webkit-transform: translate(50px,0);
+                transform: translate(50px,0);
+                opacity:0;}
+            }
+
+            /*************************************Brazo izquierdo*/
+            @keyframes bi {
+                0% { 
+                -moz-transform: translate(-50px,0);
+                -webkit-transform: translate(-50px,0);
+                transform: translate(-50px,0);
+                opacity:0;}
+            10% {
+                -moz-transform: translate(-50px,0);
+                -webkit-transform: translate(-50px,0);
+                transform: translate(-50px,0);
+                opacity:0;}
+            20% {
+                -moz-transform: translate(0px,0);
+                -webkit-transform: translate(0px,0);
+                transform: translate(0px,0);
+                opacity:1;}
+            90% {
+                -moz-transform: translate(0px,0);
+                -webkit-transform: translate(0px,0);
+                transform: translate(0px,0);
+                opacity:1;}
+            99% {
+                opacity:0;}
+            100% {
+                -moz-transform: translate(-50px,0);
+                -webkit-transform: translate(-50px,0);
+                transform: translate(-50px,0);
+                opacity:0;}
+            }
+            @-webkit-keyframes bi {
+                0% { 
+                -moz-transform: translate(-50px,0);
+                -webkit-transform: translate(-50px,0);
+                transform: translate(-50px,0);
+                opacity:0;}
+            10% {
+                -moz-transform: translate(-50px,0);
+                -webkit-transform: translate(-50px,0);
+                transform: translate(-50px,0);
+                opacity:0;}
+            20% {
+                -moz-transform: translate(0px,0);
+                -webkit-transform: translate(0px,0);
+                transform: translate(0px,0);
+                opacity:1;}
+            90% {
+                -moz-transform: translate(0px,0);
+                -webkit-transform: translate(0px,0);
+                transform: translate(0px,0);
+                opacity:1;}
+            99% {
+                opacity:0;}
+            100% {
+                -moz-transform: translate(-50px,0);
+                -webkit-transform: translate(-50px,0);
+                transform: translate(-50px,0);
+                opacity:0;}
+            }
+            @-moz-keyframes bi {
+                0% { 
+                -moz-transform: translate(-50px,0);
+                -webkit-transform: translate(-50px,0);
+                transform: translate(-50px,0);
+                opacity:0;}
+            10% {
+                -moz-transform: translate(-50px,0);
+                -webkit-transform: translate(-50px,0);
+                transform: translate(-50px,0);
+                opacity:0;}
+            20% {
+                -moz-transform: translate(0px,0);
+                -webkit-transform: translate(0px,0);
+                transform: translate(0px,0);
+                opacity:1;}
+            90% {
+                -moz-transform: translate(0px,0);
+                -webkit-transform: translate(0px,0);
+                transform: translate(0px,0);
+                opacity:1;}
+            99% {
+                opacity:0;}
+            100% {
+                -moz-transform: translate(-50px,0);
+                -webkit-transform: translate(-50px,0);
+                transform: translate(-50px,0);
+                opacity:0;}
+            }
+
+            /*************************************Pierna derecho*/
+            @keyframes pd {
+                0% { 
+                -moz-transform: translate(0,-50px);
+                -webkit-transform: translate(0,-50px);
+                transform: translate(0,-50px);
+                opacity:0;}
+            20% {
+                -moz-transform: translate(0,-50px);
+                -webkit-transform: translate(0,-50px);
+                transform: translate(0,-50px);
+                opacity:0;}
+            30% {
+                -moz-transform: translate(0,0);
+                -webkit-transform: translate(0,0);
+                transform: translate(0,0);
+                opacity:1;}
+            90% {
+                -moz-transform: translate(0,0);
+                -webkit-transform: translate(0,0);
+                transform: translate(0,0);
+                opacity:1;}
+            99% {
+                opacity:0;}
+            100% {
+                -moz-transform: translate(0,-50px);
+                -webkit-transform: translate(0,-50px);
+                transform: translate(0,-50px);
+                opacity:0;}
+            }
+            @-moz-keyframes pd {
+                0% { 
+                -moz-transform: translate(0,-50px);
+                -webkit-transform: translate(0,-50px);
+                transform: translate(0,-50px);
+                opacity:0;}
+            20% {
+                -moz-transform: translate(0,-50px);
+                -webkit-transform: translate(0,-50px);
+                transform: translate(0,-50px);
+                opacity:0;}
+            30% {
+                -moz-transform: translate(0,0);
+                -webkit-transform: translate(0,0);
+                transform: translate(0,0);
+                opacity:1;}
+            90% {
+                -moz-transform: translate(0,0);
+                -webkit-transform: translate(0,0);
+                transform: translate(0,0);
+                opacity:1;}
+            99% {
+                opacity:0;}
+            100% {
+                -moz-transform: translate(0,-50px);
+                -webkit-transform: translate(0,-50px);
+                transform: translate(0,-50px);
+                opacity:0;}
+            }
+            @-webkit-keyframes pd {
+                0% { 
+                -moz-transform: translate(0,-50px);
+                -webkit-transform: translate(0,-50px);
+                transform: translate(0,-50px);
+                opacity:0;}
+            20% {
+                -moz-transform: translate(0,-50px);
+                -webkit-transform: translate(0,-50px);
+                transform: translate(0,-50px);
+                opacity:0;}
+            30% {
+                -moz-transform: translate(0,0);
+                -webkit-transform: translate(0,0);
+                transform: translate(0,0);
+                opacity:1;}
+            90% {
+                -moz-transform: translate(0,0);
+                -webkit-transform: translate(0,0);
+                transform: translate(0,0);
+                opacity:1;}
+            99% {
+                opacity:0;}
+            100% {
+                -moz-transform: translate(0,-50px);
+                -webkit-transform: translate(0,-50px);
+                transform: translate(0,-50px);
+                opacity:0;}
+            }
+            /*************************************Pierna izquierda*/
+            @keyframes pi {
+                0% { 
+                -moz-transform: translate(0,-50px);
+                -webkit-transform: translate(0,-50px);
+                transform: translate(0,-50px);
+                opacity:0;}
+            30% {
+                -moz-transform: translate(0,-50px);
+                -webkit-transform: translate(0,-50px);
+                transform: translate(0,-50px);
+                opacity:0;}
+            40% {
+                -moz-transform: translate(0,0);
+                -webkit-transform: translate(0,0);
+                transform: translate(0,0);
+                opacity:1;}
+            90% {
+                -moz-transform: translate(0,0);
+                -webkit-transform: translate(0,0);
+                transform: translate(0,0);
+                opacity:1;}
+            99% {
+                opacity:0;}
+            100% {
+                -moz-transform: translate(0,-50px);
+                -webkit-transform: translate(0,-50px);
+                transform: translate(0,-50px);
+                opacity:0;}
+            }
+            @-webkit-keyframes pi {
+                0% { 
+                -moz-transform: translate(0,-50px);
+                -webkit-transform: translate(0,-50px);
+                transform: translate(0,-50px);
+                opacity:0;}
+            30% {
+                -moz-transform: translate(0,-50px);
+                -webkit-transform: translate(0,-50px);
+                transform: translate(0,-50px);
+                opacity:0;}
+            40% {
+                -moz-transform: translate(0,0);
+                -webkit-transform: translate(0,0);
+                transform: translate(0,0);
+                opacity:1;}
+            90% {
+                -moz-transform: translate(0,0);
+                -webkit-transform: translate(0,0);
+                transform: translate(0,0);
+                opacity:1;}
+            99% {
+                opacity:0;}
+            100% {
+                -moz-transform: translate(0,-50px);
+                -webkit-transform: translate(0,-50px);
+                transform: translate(0,-50px);
+                opacity:0;}
+            }
+            @-moz-keyframes pi {
+                0% { 
+                -moz-transform: translate(0,-50px);
+                -webkit-transform: translate(0,-50px);
+                transform: translate(0,-50px);
+                opacity:0;}
+            30% {
+                -moz-transform: translate(0,-50px);
+                -webkit-transform: translate(0,-50px);
+                transform: translate(0,-50px);
+                opacity:0;}
+            40% {
+                -moz-transform: translate(0,0);
+                -webkit-transform: translate(0,0);
+                transform: translate(0,0);
+                opacity:1;}
+            90% {
+                -moz-transform: translate(0,0);
+                -webkit-transform: translate(0,0);
+                transform: translate(0,0);
+                opacity:1;}
+            99% {
+                opacity:0;}
+            100% {
+                -moz-transform: translate(0,-50px);
+                -webkit-transform: translate(0,-50px);
+                transform: translate(0,-50px);
+                opacity:0;}
+            }
+
+            /*************************************cabeza*/
+            @keyframes head {
+                0% { 
+                opacity:0;}
+            40% {
+                opacity:0;}
+            50% {
+                opacity:1;}
+            90% {
+                opacity:1;}
+            99% {
+                opacity:0;}
+            100% {
+                opacity:0;}
+            }
+            @-moz-keyframes head {
+                0% { 
+                opacity:0;}
+            40% {
+                opacity:0;}
+            50% {
+                opacity:1;}
+            90% {
+                opacity:1;}
+            99% {
+                opacity:0;}
+            100% {
+                opacity:0;}
+            }
+            @-webkit-keyframes head {
+                0% { 
+                opacity:0;}
+            40% {
+                opacity:0;}
+            50% {
+                opacity:1;}
+            90% {
+                opacity:1;}
+            99% {
+                opacity:0;}
+            100% {
+                opacity:0;}
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Animando los SVG con CSS</h1>
+        </header>
+        <section class="example2">
+            <svg>
+            <!--cabeza-->
+            <ellipse cx="170" cy="100" rx="50" ry="45" class="cabeza"></ellipse>
+            Su navegador no soporta SVG :/s
+
+            <!--antena izquierdo-->
+            <rect x="197" y="0" width="4" height="30" rx="3" ry="3" id="antena1"></rect>
+            Su navegador no soporta SVG :/
+
+            <!--antena derecho-->
+            <rect x="124" y="77" width="4" height="30" rx="3" ry="3" id="antena2"></rect>
+            Su navegador no soporta SVG :/
+
+            <!--ojos-->
+            <circle cx="150" cy="80" r="7"></circle>
+            Su navegador no soporta SVG :/
+            <circle cx="190" cy="80" r="7"></circle>
+            Su navegador no soporta SVG :/
+
+            <!--pierna izquierdo-->
+            <rect x="140" y="190" width="20" height="60" rx="15" ry="15" id="pi"></rect>
+            Su navegador no soporta SVG :/
+            <!--pierna derecho-->
+            <rect x="180" y="190" width="20" height="60" rx="15" ry="15" id="pd"></rect>
+            Su navegador no soporta SVG :/
+
+            <!--brazo izquierdo-->
+            <rect x="90" y="100" width="20" height="100" rx="15" ry="15" id="bi"></rect>
+            Su navegador no soporta SVG :/
+
+            <!--torzo-->
+            <rect x="120" y="90" width="100" height="120" rx="15" ry="15" id="c"></rect>
+            Su navegador no soporta SVG :/
+            <!--brazo derecho-->
+            <rect x="230" y="100" width="20" height="100" rx="15" ry="15" id="bd"></rect>
+            Su navegador no soporta SVG :/
+
+            <rect x="115" y="100" width="110" height="10" id="b" class="cabeza"></rect>
+            Su navegador no soporta SVG :/
+            </svg>
+        </section>
+    </body>
+</html>

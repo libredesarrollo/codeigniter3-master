@@ -1,0 +1,76 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <link rel="stylesheet" href="example.css">
+        <title>El secreto de las animaciones en JavaScript (requestAnimationFrame()) 3</title>
+        <style>
+            body {
+                width: 100%;
+                overflow: hidden;
+            }
+
+            #canvas3 {
+                width: 1000px;
+                height: 500px;
+                border-left:3px solid #DDDDDD;
+                border-right:3px solid #DDDDDD;
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
+
+    </head>
+    <body>
+        <header>
+            <h1>El secreto de las animaciones en JavaScript (requestAnimationFrame()) 3</h1>
+        </header>
+        <section>
+            <canvas id="canvas3" ></canvas>
+        </section>
+        <script>
+            var canvas3 = document.getElementById('canvas3');
+            var ctx3 = canvas3.getContext('2d');
+
+            // obtenemos las dimensiones del canvas
+            var width3 = canvas3.width = window.innerWidth;
+            var height3 = canvas3.height = window.innerHeight;
+
+            // posiciones
+            var x3 = width3;
+            var y3 = 0;
+
+            // velocidad
+            var vx3 = -8;
+            var vy3 = 2;
+
+            // animation loop
+            function animar3() {
+                // limpia canvas
+                ctx3.clearRect(0, 0, width3, height3);
+                // dibuja un cuadrado de 10x10
+                ctx3.fillRect(x3, y3, 10, 10);
+
+                // actualizamos la posicion
+                x3 += vx3;
+                y3 += vy3;
+
+                // animamos
+                requestAnimationFrame(animar3);
+
+                // verificamos que no se salga de rango
+                if (vx3 > 0) {
+                    if (x3 > width3)
+                        vx3 *= -1;
+                    if (y3 > height3) {
+                        vx3 = -8;
+                        vy3 = 2;
+                        x3 = width3;
+                        y3 = 0;
+                    }
+                } else
+                if (x3 < 0)
+                    vx3 *= -1;
+            }
+            animar3();
+        </script>
+    </body>
+</html>

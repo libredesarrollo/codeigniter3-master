@@ -1,0 +1,73 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>Página visible</title>
+<style>
+</style>
+<script>
+	window.onload = function() {
+		// obtenemos el prefijo
+		var prefix = getPrefix();
+
+		// obtenemos la propiedad y el evento
+		var hidden = getHiddenProperty(prefix);
+		var visibilityChangeEvent = getVisibilityEvent(prefix);
+
+		// eschudador del evento visibilitychange
+		document.addEventListener(visibilityChangeEvent, function(e) {
+
+			// el documento esta oculto
+			if (document[hidden]) {
+				console.log("Página oculta");
+				document.title = 'Página oculta';
+				// Hacer algo...
+			} else {
+				console.log("Página visible");
+				document.title = 'Página visible';
+				// Hacer algo mas ...
+			}
+
+		});
+	}
+
+	// Obtenemos el prefijo para cada navegador
+	function getPrefix() {
+		// verificamos si el navegador soporta el prefijo por defecto
+		if ('hidden' in document) 
+			return null;
+		
+		// otros prefijos posibles
+		var prefixes = [ 'moz', 'ms', 'o', 'webkit' ];
+
+		for (var i = 0; i < prefixes.length; i++) {
+			var testPrefix = prefixes[i] + 'Hidden';
+			if (testPrefix in document) 
+				return prefixes[i]; // retornamos el prefijo
+		}
+
+		// el navegador no soporta la API
+		return null;
+	}
+
+	// Obtenemos la propiedad
+	function getHiddenProperty(prefix) {
+		if (prefix) {
+			return prefix + 'Hidden';
+		} else {
+			return 'hidden';
+		}
+	}
+
+	// Obtenemos el prefijo para acceder al evento visibilitychange
+	function getVisibilityEvent(prefix) {
+		if (prefix) {
+			return prefix + 'visibilitychange';
+		} else {
+			return 'visibilitychange';
+		}
+	}
+</script>
+</head>
+<body>
+</body>
+</html>

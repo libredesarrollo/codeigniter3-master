@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="example.css">
+        <title>Botones sombra en CSS</title>
+        <style>
+            .example .boton_sombra {
+                color: #FFF;
+                background: #0BF;
+                padding: 20px;
+                margin: 25px auto;
+                font-family: 'OpenSansBold', sans-serif;
+                font-size: 14px;
+                font-weight: bold;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                display: block;
+                text-align: center;
+                cursor: pointer;
+                width: 300px;
+                box-shadow: 0 0 10px 2px #F00;
+            }
+
+            .example .boton_sombra_sindifuminado {
+                color: #FFF;
+                background: #0BF;
+                padding: 20px;
+                margin: 25px auto;
+                font-family: 'OpenSansBold', sans-serif;
+                font-size: 14px;
+                font-weight: bold;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                display: block;
+                text-align: center;
+                cursor: pointer;
+                width: 300px;
+                box-shadow: inset 0 0 0 7px #F00;
+            }
+
+            .example .boton_sombra_interna {
+                color: #FFF;
+                background: #0BF;
+                padding: 20px;
+                margin: 25px auto;
+                font-family: 'OpenSansBold', sans-serif;
+                font-size: 14px;
+                font-weight: bold;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                display: block;
+                text-align: center;
+                cursor: pointer;
+                width: 300px;
+                box-shadow: inset 0 0 10px 2px #F00;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Botones sombra en CSS</h1>
+        </header>
+        <section>
+            <div class="example">
+                <h3>Sombra</h3>
+                <div class="boton_sombra">Mi botón</div>
+                <h3>Sombra interna</h3>
+                <div class="boton_sombra_interna">Mi botón</div>
+                <h3>Sombra interna sin difuminado</h3>
+                <div class="boton_sombra_sindifuminado">Mi botón</div>
+            </div>
+        </section>
+    </body>
+</html>

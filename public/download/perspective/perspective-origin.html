@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>Entendiendo la propiedad perspective Origin - Ejemplo</title>
+<script
+	src="jquery-1.11.2.min.js"></script>
+<link rel="stylesheet" href="example.css">
+
+
+
+<style>
+section{
+   background: none;
+	boder:none;
+box-shadow:none
+}
+
+/*Caras*/
+.front {
+   background: rgba(0, 0, 0, 0.3);
+   transform: translateZ(50px);
+   -webkit-transform: translateZ(50px);
+}
+.back {
+   background: rgba(0, 255, 0, 1);
+   color: black;
+   transform: rotateY(180deg) translateZ(50px);
+   -webkit-transform: rotateY(180deg) translateZ(50px);
+}
+.right {
+   background: rgba(196, 0, 0, 0.7);
+   transform: rotateY(90deg) translateZ(50px);
+   -webkit-transform: rotateY(90deg) translateZ(50px);
+}
+.left {
+   background: rgba(0, 0, 196, 0.7);
+   transform: rotateY(-90deg) translateZ(50px);
+   -webkit-transform: rotateY(-90deg) translateZ(50px);
+}
+.top {
+   background: rgba(196, 196, 0, 0.7);
+   transform: rotateX(90deg) translateZ(50px);
+   -webkit-transform: rotateX(90deg) translateZ(50px)
+}
+.bottom {
+   background: rgba(196, 0, 196, 0.7);
+   transform: rotateX(-90deg) translateZ(50px);
+   -webkit-transform: rotateX(-90deg) translateZ(50px);
+}
+.face {
+   display: block;
+   position: absolute;
+   width: 100px;
+   height: 100px;
+   border: none;
+   line-height: 100px;
+   font-size: 60px;
+   color: white;
+   text-align: center;
+}
+/*contenedor del cubo*/
+#example1{
+   width: 100px;
+   height: 100px;
+   margin: 50px auto;
+    perspective-origin: 50% 50%;
+    -webkit-perspective-origin: 50% 50%;
+   -moz-perspective-origin: 50% 50%;
+   backface-visibility: visible;
+   -webkit-backface-visibility: visible;
+   -moz-backface-visibility: visible;
+   -webkit-perspective: 300px;
+   -moz-perspective: 300px;
+ perspective: 300px;
+   -webkit-transform-style: preserve-3d;
+   -moz-transform-style: preserve-3d;
+ transform-style: preserve-3d;
+}
+
+</style>
+</head>
+<body>
+	<header>
+		<h1>Entendiendo la propiedad perspective Origin - Ejemplo</h1>
+	</header>
+	<section>
+		<div class="example1" id="example1">
+
+                  <div class="face front">1</div>
+                  <div class="face back">2</div>
+                  <div class="face right">3</div>
+                  <div class="face left">4</div>
+                  <div class="face top">5</div>
+                  <div class="face bottom">6</div>
+		</div>
+
+	</section>
+
+<script>
+
+var perspective = 0;
+var i=1;
+// cambia la propiedad perspective-origin
+function changePerspectiveOrigin(){ 
+
+	// alteramos la posicion del observador
+	perspective+=i;
+	if(perspective == 200 || perspective == 0)
+		i*=-1;
+
+	// establecemos el nuevo valor
+	document.getElementById("example1").style.perspectiveOrigin=perspective+"px "+perspective+"px";
+	document.getElementById("example1").style.MozPerspectiveOrigin=perspective+"px "+perspective+"px";
+	document.getElementById("example1").style.WebkitPerspectiveOrigin=perspective+"px "+perspective+"px";
+	// invocamos a la funcion pasado 10 ms
+	setTimeout(changePerspectiveOrigin, 10);
+}
+
+changePerspectiveOrigin();
+
+</script>
+
+</body>
+</html>

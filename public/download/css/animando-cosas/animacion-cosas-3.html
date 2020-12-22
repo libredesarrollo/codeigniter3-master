@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title>Animando cosas con CSS</title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background: #191f27;
+            }
+
+            .container {
+                width: 200px;
+                height: 100px;
+                padding-top: 100px;
+                margin: 0 auto;
+            }
+
+            .ball {
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                border-radius: 50px;
+            }    
+            .ball:nth-child(1) {
+                background: #ff005d;
+                -webkit-animation: move1 1.5s infinite ease-in-out;
+                -moz-animation: move1 1.5s infinite ease-in-out;
+                animation: move1 1.5s infinite ease-in-out;  
+                -webkit-transform: translate(0,0); 
+            }
+
+            .ball:nth-child(2) {
+                background: #35ff99;
+                -webkit-animation: move2 1.5s infinite ease-in-out;
+                0%  { -webkit-transform: translate(50px,0);    }
+            -moz-animation: move2 1.5s infinite ease-in-out;
+            animation: move2 1.5s infinite ease-in-out;
+            }
+            .ball:nth-child(3) {
+                background: #008597;
+                -webkit-transform: translate(50px,50px); 
+                -webkit-animation: move3 1.5s infinite ease-in-out;
+                -moz-animation: move3 1.5s infinite ease-in-out;
+                animation: move3 1.5s infinite ease-in-out;
+            }
+
+            .ball:nth-child(4) {
+                background: #ffcc00;
+                -webkit-transform: translate(0,50px); 
+                -webkit-animation: move4 1.5s infinite ease-in-out;
+                -moz-animation: move4 1.5s infinite ease-in-out;
+                animation: move4 1.5s infinite ease-in-out;
+            }
+            .ball:nth-child(5) {
+                background: #444;
+                -webkit-transform: translate(21px,21px); 
+                width: 15px;
+                height: 15px;
+            }
+
+            @-webkit-keyframes move1 {
+                0%   { -webkit-transform: translate(0,0);   }
+            25%  { -webkit-transform: translate(25px,25px);    }
+            50%  { -webkit-transform: translate(50px,0); border-radius: 0;   }
+            75%  { -webkit-transform: translate(25px,25px);    }
+            100%   { -webkit-transform: translate(0,0);   }
+            }
+
+            @-webkit-keyframes move2 {
+                0%  { -webkit-transform: translate(50px,0);    }
+            25%  { -webkit-transform: translate(25px,25px);    }
+            50%   { -webkit-transform: translate(0,0);  border-radius: 0; }
+            75%  { -webkit-transform: translate(25px,25px);    }
+            100%  { -webkit-transform: translate(50px,0);    }
+            }
+
+            @-webkit-keyframes move3 {
+                0%   { -webkit-transform: translate(50px,50px);   }
+            25%  { -webkit-transform: translate(25px,25px);    }
+            50%  { -webkit-transform: translate(0,50px);   border-radius: 0; }
+            75%  { -webkit-transform: translate(25px,25px);    }
+            100%   { -webkit-transform: translate(50px,50px);   }
+            }
+
+            @-webkit-keyframes move4 {
+                0%  { -webkit-transform: translate(0,50px);    }
+            25%  { -webkit-transform: translate(25px,25px);    }
+            50%   { -webkit-transform: translate(50px,50px);  border-radius: 0; }
+            75%  { -webkit-transform: translate(25px,25px);    }
+            100%  { -webkit-transform: translate(0,50px);    }
+            }
+
+            @-moz-keyframes move1 {
+                0%   { -moz-transform: translate(0,0);   }
+            25%  { -moz-transform: translate(25px,25px);    }
+            50%  { -moz-transform: translate(50px,0); border-radius: 0;   }
+            75%  { -moz-transform: translate(25px,25px);    }
+            100%   { -moz-transform: translate(0,0);   }
+            }
+
+            @-moz-keyframes move2 {
+                0%  { -moz-transform: translate(50px,0);    }
+            25%  { -moz-transform: translate(25px,25px);    }
+            50%   { -moz-transform: translate(0,0);  border-radius: 0; }
+            75%  { -moz-transform: translate(25px,25px);    }
+            100%  { -moz-transform: translate(50px,0);    }
+            }
+
+            @-moz-keyframes move3 {
+                0%   { -moz-transform: translate(50px,50px);   }
+            25%  { -moz-transform: translate(25px,25px);    }
+            50%  { -moz-transform: translate(0,50px);   border-radius: 0; }
+            75%  { -moz-transform: translate(25px,25px);    }
+            100%   { -moz-transform: translate(50px,50px);   }
+            }
+
+            @-moz-keyframes move4 {
+                0%  { -moz-transform: translate(0,50px);    }
+            25%  { -moz-transform: translate(25px,25px);    }
+            50%   { -moz-transform: translate(50px,50px);  border-radius: 0; }
+            75%  { -moz-transform: translate(25px,25px);    }
+            100%  { -moz-transform: translate(0,50px);    }
+            }
+
+            @keyframes move1 {
+                0%   { transform: translate(0,0);   }
+            25%  { transform: translate(25px,25px);    }
+            50%  { transform: translate(50px,0); border-radius: 0;   }
+            75%  { transform: translate(25px,25px);    }
+            100%   { transform: translate(0,0);   }
+            }
+
+            @keyframes move2 {
+                0%  { transform: translate(50px,0);    }
+            25%  { transform: translate(25px,25px);    }
+            50%   { transform: translate(0,0);  border-radius: 0; }
+            75%  { transform: translate(25px,25px);    }
+            100%  { transform: translate(50px,0);    }
+            }
+
+            @keyframes move3 {
+                0%   { transform: translate(50px,50px);   }
+            25%  { transform: translate(25px,25px);    }
+            50%  { transform: translate(0,50px);   border-radius: 0; }
+            75%  { transform: translate(25px,25px);    }
+            100%   { transform: translate(50px,50px);   }
+            }
+
+            @keyframes move4 {
+                0%  { transform: translate(0,50px);    }
+            25%  { transform: translate(25px,25px);    }
+            50%   { transform: translate(50px,50px);  border-radius: 0; }
+            75%  { transform: translate(25px,25px);    }
+            100%  { transform: translate(0,50px);    }
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Animando cosas con CSS</h1>
+        </header>
+        <section class="example2">
+            <div class="container">
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="ball"></div>
+            </div>
+        </section>
+    </body>
+</html>

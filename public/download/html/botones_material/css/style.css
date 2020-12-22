@@ -1,0 +1,85 @@
+body {
+	line-height: 1;
+	background:#AC3D07;
+	margin:0;
+	overflow:hidden;
+}
+    
+.filter-btn {
+  position: absolute;
+  z-index: 2;
+  bottom: 50%;
+  right: 50%;
+  width: 40px;
+  height: 40px;
+  
+  transition: all 1s;
+}
+.filter-btn span {
+  width: 40px;
+  height: 40px;
+  background: #DE5513;
+  /*box-shadow: 5px solid #DE5513;-+----*/
+  display: block;
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  line-height: 40px;
+  border-radius: 50%;
+  font-size: 22px;
+  z-index:999;
+  box-shadow: 0 0 20px rgba(220, 220, 220, 0.50);   
+}
+.filter-btn a{
+  position: absolute;
+  background: #DE5513;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  top: 0;
+  right: 0;
+  display:block;
+  color:#fff;
+  z-index:99;
+  font-size:22px;
+  transition: all .4s cubic-bezier(.68, 1, .265, 1);
+  box-shadow: 0 0 20px rgba(220, 220, 220, 0.50);
+}
+
+.filter-btn.open span.toggle-btn.ion-android-funnel {
+  background-color: #AC3D07;  
+}
+.filter-btn.open .ion-android-funnel:before {
+  content: "\f2d7";
+  
+}
+
+.filter-btn.open a:nth-child(1) {
+  transform: translate(0,-55px);
+}
+.filter-btn.open a:nth-child(2) {
+  transform: translate(-50px,-34px);
+}
+.filter-btn.open a:nth-child(3) {
+  transform: translate(50px,-34px);
+}
+.filter-btn.open a:nth-child(4) {
+      transform: translate(50px,20px);
+}
+.filter-btn.open a:nth-child(5) {
+      transform: translate(-50px,20px);
+}
+.filter-btn.open a:nth-child(6) {
+      transform: translate(0,55px);
+}
+
+
+footer{
+    height:20px;
+    width:100%;
+    background: #AC3D07;   
+    position:absolute;
+    bottom:0%; 
+}

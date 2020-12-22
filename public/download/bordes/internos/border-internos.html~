@@ -1,0 +1,153 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <link rel="stylesheet" href="example.css">
+        <title>Truco para los bordes en CSS: Bordes internos</title>
+        <style>
+            .example .container33 {
+                color: #FFF;
+                background: #0BF;
+                padding: 20px;
+                margin: 22% 0.3% 0 0;
+                font-family: 'OpenSansBold', sans-serif;
+                font-size: 35px;
+                font-weight: bold;
+                display: block;
+                text-align: center;
+                cursor: pointer;
+                width: 33%;
+ 		float:left;
+		  -webkit-box-sizing: border-box;
+		  -moz-box-sizing: border-box;
+		  box-sizing: border-box;
+                box-shadow: inset 0 0 0 7px #08B;
+                -webkit-transition: all ease 0.8s;
+                -moz-transition: all ease 0.8s;
+                transition: all ease 0.8s;
+            }
+
+            .example .border1 {
+                box-shadow: inset 0 0 0 3px #08B;
+                -webkit-transition: all ease 0.8s;
+                -moz-transition: all ease 0.8s;
+                transition: all ease 0.8s;
+            }
+
+            .example .border2 {
+                box-shadow: inset 0 0 0 10px #08B;
+                -webkit-transition: all ease 0.8s;
+                -moz-transition: all ease 0.8s;
+                transition: all ease 0.8s;
+            }
+
+            .example .container33:hover {
+                box-shadow: inset 0 0 0 15px #08B;
+            }
+
+            .example .container {
+                color: #FFF;
+                background: #0BF;
+                padding: 20px;
+                margin: 25px auto;
+                font-family: 'OpenSansBold', sans-serif;
+                font-size: 35px;
+                font-weight: bold;
+                display: block;
+                text-align: center;
+                cursor: pointer;
+                width: 200px;
+                height: 150px;
+                box-shadow: inset 0 0 0 7px #08B;
+            }
+
+            .example .border3 {
+                box-shadow: inset 0 0 0 3px #08B;
+            }
+
+            .example .border4 {
+                box-shadow: inset 0 0 0 13px #08B;
+            }
+
+            .example .border5 {
+                box-shadow: inset 0 13px 0 0 #08B;
+            }
+
+            .example .border6 {
+                box-shadow: inset 13px 0 0 0 #08B;
+            }
+
+            .example .border7 {
+                box-shadow: inset -13px 0 0  #08B;
+            }
+
+            .example .border8 {
+                box-shadow: inset 0 -13px 0  #08B;
+            }
+
+            .example .border9 {
+                box-shadow: inset 13px -13px 0 0 #08B;
+            }
+
+            .example .border10 {
+                box-shadow: inset -13px -13px 0 0 #08B;
+            }
+
+            .example .border11 {
+                box-shadow: inset 13px 13px 0 0 #08B;
+            }
+
+            .example .border12 {
+                box-shadow: inset -13px -13px 0 0 #08B;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Truco para los bordes en CSS: Bordes internos</h1>
+        </header>
+        <section>
+            <div class="example">
+                <h1>Alineación de contenedores con borde (width:33%)</h1>
+                <div class="container33">1</div>
+                <div class="container33 border1">2</div>
+                <div class="container33 border2">3</div>
+            </div>
+
+            <div class="example">
+                <h1>Bordes simétricos en varios tamaños</h1>
+                <div class="container border3">Bordes de 3px</div>
+                <div class="container">Bordes de 7px</div>
+                <div class="container border4">Bordes de 13px</div>
+            </div>
+
+            <div class="example">
+                <h1>Borde superior</h1>
+                <div class="container border5">Borde de 13px</div>
+            </div>
+
+            <div class="example">
+                <h1>Borde izquierdo</h1>
+                <div class="container border6">Borde de 13px</div>
+            </div>
+
+            <div class="example">
+                <h1>Borde derecho</h1>
+                <div class="container border7">Borde de 13px</div>
+            </div>
+
+            <div class="example">
+                <h1>Borde inferior</h1>
+                <div class="container border8">Borde de 13px</div>
+            </div>
+
+            <div class="example">
+                <h1>Bordes en diagonal</h1>
+                <div class="container border9">Bordes de 13px</div>
+                <div class="container border10">Bordes de 13px</div>
+                <div class="container border11">Bordes de 13px</div>
+                <div class="container border12">Bordes de 13px</div>
+            </div>
+        </section>
+    
+
+</body></html>

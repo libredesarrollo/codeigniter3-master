@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="example.css" media="all" rel="stylesheet" type="text/css" />
+        <title>¿Cómo mostrar hojas de cálculo de Google Sheets con jQuery?</title>
+
+        <script type="text/javascript" src="jquery.min.js"></script>    
+        <script type="text/javascript" src="jquery.sheetrock.min.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <h1>¿Cómo mostrar hojas de cálculo de Google Sheets con jQuery?</h1>
+        </header>
+        <section>
+            <table id="statistics"></table>
+        </section>
+        <script type="text/javascript">
+
+        // deninimos la URL compartida
+            var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1oALUEh0t_MFBIkWP_KibU2ylR6tHHTQ6gZJ94JvhJCg/edit#gid=0';
+        // cargamos la hoja de calculo
+            $('#statistics').sheetrock({
+                url: mySpreadsheet,
+                sql: "select A,C,E order by E desc",
+            });
+        </script>
+    </body>
+</html>

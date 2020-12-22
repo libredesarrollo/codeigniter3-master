@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title>Formas geométricas con CSS (parte 2)</title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            #pentagon1 {
+                position: relative;
+                width: 0px;
+                border-width: 0 23px 0;
+                border-style: solid;
+                border-color: red transparent;
+            }
+            #pentagon1:before {
+                content: "";
+                position: absolute;
+                height: 0;
+                width: 0;
+                top: -90px;
+                left: -24px;
+                border-width: 0 50px 40px;
+                border-style: solid;
+                border-color: transparent transparent red;
+            }
+
+            #pentagon2 {
+                position: relative;
+                width: 54px;
+                border-width: 50px 23px 0;
+                border-style: solid;
+                border-color: red transparent;
+            }
+
+
+            #hexagon1 {
+                width: 0;
+                height: 55px;
+                background: red;
+                position: relative;
+            }
+            #hexagon1:before {
+                content: "";
+                position: absolute;
+                top: -25px;
+                left: 0;
+                width: 0;
+                height: 0;
+                border-width: 0 50px 25px;
+                border-style: solid;
+                border-color: transparent transparent red;
+            }
+
+            #hexagon2 {
+                width: 0;
+                height: 55px;
+                background: red;
+                position: relative;
+            }
+
+            #hexagon2:after {
+                content: "";
+                position: absolute;
+                bottom: -25px;
+                left: 0;
+                width: 0;
+                height: 0;
+                border-width: 25px 50px 0;
+                border-style: solid;
+                border-color: red transparent transparent;
+            }
+
+            #hexagon3 {
+                width: 100px;
+                height: 55px;
+                background: red;
+                position: relative;
+            }
+
+            #octagono1 {
+                width: 0;
+                height: 100px;
+                background: red;
+                position: relative;
+            }
+
+            #octagono1:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                border-width: 0 29px 29px;
+                border-style: solid;
+                border-color: #FFF #FFF red;
+
+                width: 42px;
+                height: 0;
+            }
+
+
+            #octagono2 {
+                width: 0;
+                height: 100px;
+                background: red;
+                position: relative;
+            }
+
+            #octagono2:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+
+                border-width: 29px 29px 0;
+                border-style: solid;
+                border-color: red #FFF #FFF;
+
+                width: 42px;
+                height: 0;
+            }
+
+            #octagono3 {
+                width: 100px;
+                height: 100px;
+                background: red;
+                position: relative;
+            }
+
+            #pentagon1,#pentagon2,#hexagon1,#hexagon2,#octagono1,#octagono2,#octagono3{
+                margin:100px 0 0 0;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Formas geométricas con CSS (parte 2)</h1>
+        </header>
+        <section>
+            <div id="pentagon1">
+            </div>
+            <div id="pentagon2">
+            </div>
+            <div id="hexagon1">
+            </div>
+            <div id="hexagon2">
+            </div>
+            <div id="hexagon3">
+            </div>
+            <div id="octagono1">
+            </div>
+            <div id="octagono2">
+            </div>
+            <div id="octagono3">
+            </div>
+        </section>
+    </body>
+</html>
+

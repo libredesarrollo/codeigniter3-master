@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>Selector :target - Transiciones en CSS</title>
+<link rel="stylesheet" href="example.css">
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<style>
+section {
+	background: #FFFFFF;
+	width: 680px;
+	font-family: 'Open Sans', arial;
+}
+
+.parte {
+	opacity: 0;
+	background: rgba(255, 0, 0, 0.1);
+	transition: opacity 1s;
+	-webkit-transition: opacity 1s;
+}
+
+.parte:target {
+	opacity: 1;
+}
+
+nav {
+	position: fixed;
+	z-index: 1;
+	top: 100px;
+	left: 0;
+	background: #FFFFFF;
+}
+</style>
+</head>
+<body>
+	<header>
+		<h1>Selector :target - Transiciones en CSS</h1>
+	</header>
+	<section>
+		<nav>
+			<ul>
+				<li><a href="#parte1">Parte 1</a></li>
+				<li><a href="#parte2">Parte 2</a></li>
+				<li><a href="#parte3">Parte 3</a></li>
+				<li><a href="#parte4">Parte 4</a></li>
+			</ul>
+		</nav>
+		<div id="parte1" class="parte">
+			<span>
+				<h1>Parte 1</h1>
+				<p>Esto es un monto de texto sin sentido que tiene la finalidad
+					de llenar espacio para mostrar un contenido.</p>
+				<p>Esto es un monto de texto sin sentido que tiene la finalidad
+					de llenar espacio para mostrar un contenido.</p>
+				<p>Esto es un monto de texto sin sentido que tiene la finalidad
+					de llenar espacio para mostrar un contenido.</p>
+				<p>Esto es un monto de texto sin sentido que tiene la finalidad
+					de llenar espacio para mostrar un contenido.</p>
+			</span>
+		</div>
+		<div id="parte2" class="parte">
+			<span>
+				<h1>Parte 2</h1>
+				<p>Esto es un monto de texto sin sentido que tiene la finalidad
+					de llenar espacio para mostrar un contenido.</p>
+				<p>Esto es un monto de texto sin sentido que tiene la finalidad
+					de llenar espacio para mostrar un contenido.</p>
+				<p>Esto es un monto de texto sin sentido que tiene la finalidad
+					de llenar espacio para mostrar un contenido.</p>
+				<p>Esto es un monto de texto sin sentido que tiene la finalidad
+					de llenar espacio para mostrar un contenido.</p>
+			</span>
+		</div>
+		<div id="parte3" class="parte">
+			<span>
+				<h1>Parte 3</h1>
+				<p>Esto es un monto de texto sin sentido que tiene la finalidad
+					de llenar espacio para mostrar un contenido.</p>
+				<p>Esto es un monto de texto sin sentido que tiene la finalidad
+					de llenar espacio para mostrar un contenido.</p>
+				<p>Esto es un monto de texto sin sentido que tiene la finalidad
+					de llenar espacio para mostrar un contenido.</p>
+				<p>Esto es un monto de texto sin sentido que tiene la finalidad
+					de llenar espacio para mostrar un contenido.</p>
+			</span>
+		</div>
+		<div id="parte4" class="parte">
+			<span>
+				<h1>Parte 4</h1>
+				<p>Esto es un monto de texto sin sentido que tiene la finalidad
+					de llenar espacio para mostrar un contenido.</p>
+				<p>Esto es un monto de texto sin sentido que tiene la finalidad
+					de llenar espacio para mostrar un contenido.</p>
+				<p>Esto es un monto de texto sin sentido que tiene la finalidad
+					de llenar espacio para mostrar un contenido.</p>
+				<p>Esto es un monto de texto sin sentido que tiene la finalidad
+					de llenar espacio para mostrar un contenido.</p>
+			</span>
+		</div>
+	</section>
+</body>
+</html>

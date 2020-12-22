@@ -1,0 +1,30 @@
+<html><head>
+        <link rel="stylesheet" href="example.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Dibujando una línea en Canvas</title>
+        <style>
+            #myCanvas{
+                border: 1px solid #000;
+		margin: 0 auto;
+		display:block;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Dibujando una línea en Canvas</h1>
+        </header>
+        <section class="ejemplo5">
+            <canvas id="myCanvas" width="300" height="200">
+                <p>Su navegador no soporta canvas :(</p>
+            </canvas>
+        </section>
+        <script>
+            var myCanvas = document.getElementById("myCanvas");
+            var ctx = myCanvas.getContext("2d");
+            ctx.moveTo(0, 0);
+            ctx.lineTo(300, 200);
+            ctx.stroke();
+        </script>
+    </body>
+</html>

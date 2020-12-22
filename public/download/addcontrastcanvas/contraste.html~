@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Cambiar el contraste a una imagen con Canvas</title>
+    <head>
+        <link href="example.css" media="all" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <header>
+            <h1>Cambiar el contraste a una imagen con Canvas</h1>
+        </header>
+        <section>
+            <article>
+                <h1>Canvas</h1>
+				<canvas id="canvas">
+					<p>Tu navegador no soporta Canvas.</p>
+				</canvas>
+				<label>Contraste <input type="range" id="contrast" min="-90" max="90" step="5" value="0"></label>
+				
+            </article>
+        </section>
+        <script>
+			var canvas = document.getElementById('canvas');// canvas
+			var ctx = canvas.getContext('2d'); // contexto
+			var contrast = document.getElementById("contrast");// input de tipo rango
+			var srcImg = "image.png";// imagen fuente
+			
+			// nueva imagen
+			img = new Image();
+			img.src = srcImg;
+			
+			// cargo la imagen
+			img.onload = function() {
+			
+				// reescalamos el canvas a las dimenciones de la imagen
+				canvas.width = img.width;
+				canvas.height = img.height;
+			
+				// dibujamos la imagen en el Canvas
+				ctx.drawImage(this, 0, 0);
+				
+			};
+
+			// aumenta el contraste
+			function AddContrast(val) {
+K = val;
+				//combino la formula para obtener el contraste con el valor obtenido del elemento ranges
+				var contrast = Math.tan(val * Math.PI / 180.0);
+
+				// reescalamos el canvas a las dimenciones de la imagen
+				canvas.width = img.width;
+				canvas.height = img.height;
+			
+				// dibujamos la imagen en el Canvas
+				ctx.drawImage(img, 0, 0);
+				
+				// obtenemos el ImageData
+				var imgd = ctx.getImageData(0, 0, canvas.width, canvas.height);
+				var pix = imgd.data;
+				
+				// cambiamos el contraste
+for (var i = 0, n = pix.length; i < n; i += 4) {
+    //cambio los valores rojo, verde y azul de cada pixel
+    pix[i] = rangeColor(pix[i] + K);
+    pix[i + 1] = rangeColor(pix[i + 1] + K);
+    pix[i + 2] = rangeColor(pix[i + 2] + K);
+}
+				
+				// retornamos la data modificada al Canvas
+				ctx.putImageData(imgd, 0, 0);
+			}
+			
+			// permite mantener el color en el rango 0-255
+			function rangeColor(pix) {
+				if (pix < 0)
+					pix = 0;
+				if (pix > 255)
+					pix = 255;
+
+				return pix;
+			}
+			
+		// evento qeuse ejecuta cada vez que aumentemos/decrementemos el contraste
+		contrast.addEventListener('change', function() {
+            var val = parseInt(this.value);
+            AddContrast(val);
+        });
+        </script>
+    </body>
+</html>

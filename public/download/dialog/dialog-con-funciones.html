@@ -1,0 +1,53 @@
+
+<html>
+    <head>
+        <meta http-equiv='Content-Type' content='Type=text/html; charset=utf-8'>
+        <title>El elemento dialog (diálogo) en HTML5 - Ejemplo</title>
+        <link rel="stylesheet" href="example.css">
+    </head>
+    <body>
+        <header><h1>El elemento dialog (diálogo) en HTML5 - Ejemplo</h1></header>
+        <section>
+            <table>
+                <tr>
+                    <th>Enero</th> 
+                    <th>Febrero</th> 
+                    <th>Más información</th> 
+                </tr> 
+                <tr> 
+                    <td>31</td> 
+                    <td>28</td> 
+                    <td>
+                <dialog> <p>El dialog está abierto</p> <button onclick="closeDialog()">Clic para cerrar</button> </dialog> <button onclick="showDialog()">Abrir con show()</button><button onclick="showDialog2()">Abrir con showModal()</button></td> 
+                </tr> 
+            </table>
+        </section>
+        <script>
+        	// referencia los elementos
+                var dialog = document.getElementsByTagName("dialog")[0];
+                var buttonOpen = document.getElementsByTagName("button")[1];
+                var buttonOpen2 = document.getElementsByTagName("button")[2];
+
+                // mostramos el dialog invocando a la funcion show()
+                function showDialog() {
+                    dialog.show();
+                    buttonOpen.setAttribute("class", "close");
+                    buttonOpen2.setAttribute("class", "close");
+                }
+
+                function showDialog2() {
+                    dialog.showModal();
+                    buttonOpen.setAttribute("class", "close");
+                    buttonOpen2.setAttribute("class", "close");
+                }
+
+                // ocultamos el dialog invocando a la funcion close()
+                function closeDialog() {
+                    dialog.close();
+                    buttonOpen.removeAttribute("class", "close");
+                    buttonOpen2.removeAttribute("class", "close");
+                }
+        </script>
+    </body>
+
+</html>

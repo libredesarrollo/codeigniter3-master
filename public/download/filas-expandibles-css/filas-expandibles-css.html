@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title></title>
+        <style>
+            body {
+                color: rgba(255, 255, 255, 0);
+                font-size:20px;
+                font-family: sans-serif;
+                margin: 0;
+                padding: 0;
+                background: #f25648;
+            }
+
+            div img{
+                opacity:0;
+                width:8%;
+                height:auto;
+                display: block;
+                margin: 1% auto;
+                transition:opacity 1s; 
+            }
+
+            div p{
+		margin:0;
+		padding:5px;
+            }
+
+            div:hover img{
+                opacity:1;
+            }
+
+            div {
+                margin: 0;
+                padding: 0;
+                display:block;
+                width:100%;
+                height:20%;
+                transition:height 1s,color 1s; 
+            }
+            div:hover{
+                height:40%;
+                color:rgba(255, 255, 255, 1);
+            }
+            div:nth-child(1) {
+                background: #aaAA33;
+            }
+
+            div:nth-child(2) {
+                background: #22AAff;
+            }
+
+            div:nth-child(3) {
+                background: #EEEEEE;
+            }
+
+            div:nth-child(4) {
+                background: #111111;
+            }
+
+            div:hover {
+                color: rgba(255, 255, 255, 1);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>
+                <p>Android</p>
+                <img src="android.png"/>
+        </div>
+     	<div>
+                <p>Windows Phone 8</p>
+                <img src="windows-8-phone.png"/>
+        </div>
+     	<div>
+                <p>IOS</p>
+                <img src="ios.png"/>
+        </div>
+     	<div>
+                <p>BlackBerry</p>
+                <img src="blackberry.png"/>
+        </div>
+    </body>
+</html>

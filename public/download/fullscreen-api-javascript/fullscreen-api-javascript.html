@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="example.css">
+        <title>Ejemplo de la API de Fullscreen en JavaScript</title>
+        <style>
+            img{
+                width: 100%;
+                height:auto;
+                max-width: 500px;
+                margin: 0 auto;
+                display:block;
+            }
+
+            img:-webkit-full-screen {
+                max-width: 100%;
+            }
+
+            img:-moz-full-screen {
+                max-width: 100%;
+            }
+
+            img:-ms-fullscreen {
+                max-width: 100%;
+            }
+
+            img:fullscreen {
+                max-width: 100%;
+            }
+
+            p{
+                display:block;
+                text-align:center;
+                color:#666;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Ejemplo de la API de Fullscreen en JavaScript</h1>
+        </header>
+        <section>
+            <img id="img" src="tigre.png">
+            <p>Clic en la imagen...</p>
+        </section>
+    </body>
+    <script>
+        window.onload = function() {
+            // obtenemos el prefijo
+            var prefix = getPrefix();
+
+            // obtenemos la propiedad y el evento
+            var fullscreenEnabled = getProperty(prefix, 'fullscreenEnabled',
+                    'FullscreenEnabled');
+            var requestFullscreen = getProperty(prefix, 'requestFullscreen',
+                    'RequestFullscreen');
+            var fullscreenElement = getProperty(prefix, 'fullscreenElement',
+                    'FullscreenElement');
+            var exitFullscreen = getProperty(prefix, 'exitFullscreen',
+                    'ExitFullscreen');
+            var fullscreenChangeEvent = getFullSreenEvent(prefix);
+
+            element = document.getElementById("img");
+
+            element.onclick = function() {
+                if (document[fullscreenEnabled]) {
+
+                    if (document[fullscreenElement])
+                        document[exitFullscreen]();
+                    else
+                        element[requestFullscreen]();
+
+                }
+            }
+
+            // eschudador del evento visibilitychange
+            document.addEventListener(fullscreenChangeEvent, function(e) {
+                console.log("Entrando/Saliendo del modo Fullscreen");
+
+            });
+        }
+
+        // Obtenemos el prefijo para cada navegador
+        function getPrefix() {
+
+            // verificamos si el navegador soporta el prefijo por defecto
+            if ('fullscreenEnabled' in document) {
+                console.log("getPrefix", null);
+                return null;
+            }
+
+            // otros prefijos posibles
+            var prefixes = ['moz', 'ms', 'o', 'webkit'];
+
+            for (var i = 0; i < prefixes.length; i++) {
+                var testPrefix = prefixes[i] + 'FullscreenEnabled';
+                if (testPrefix in document) {
+                    console.log("getPrefix", prefixes[i]);
+                    return prefixes[i]; // retornamos el prefijo
+                }
+            }
+            console.log("getPrefix", null);
+            // el navegador no soporta la API
+            return null;
+        }
+
+        // Obtenemos la propiedad
+        function getProperty(prefix, property1, property2) {
+            if (prefix) {
+                console.log("getProperty", prefix + property2);
+                return prefix + property2;
+            } else {
+                console.log("getProperty", property1);
+                return property1;
+            }
+
+        }
+
+        // Obtenemos el prefijo para acceder al evento visibilitychange
+        function getFullSreenEvent(prefix) {
+            if (prefix) {
+                console.log("getFullSreenEvent", prefix + 'fullscreenchange');
+                return prefix + 'fullscreenchange';
+            } else {
+                console.log("getFullSreenEvent", 'fullscreenchange');
+                return 'fullscreenchange';
+            }
+        }
+    </script>
+</html>

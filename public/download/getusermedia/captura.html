@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+	<head>
+
+<script>
+navigator.getUserMedia = ( navigator.getUserMedia ||
+                       navigator.webkitGetUserMedia ||
+                       navigator.mozGetUserMedia ||
+                       navigator.msGetUserMedia);
+
+navigator.getUserMedia (
+
+   // constraints
+   {
+      video: true,
+      audio: false
+   },
+
+   // successCallback
+   function(localMediaStream) {
+      var video = document.querySelector('video');
+      video.src = window.URL.createObjectURL(localMediaStream);
+   },
+   
+   // errorCallback
+   function(err) {
+    console.log("Ocurrió el siguiente error: " + err);
+   }
+
+);
+
+</script>
+</head>
+<body>
+	
+<video></video>
+
+</body>
+</html>
+

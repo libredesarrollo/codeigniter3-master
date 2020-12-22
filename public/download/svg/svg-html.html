@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title>Dibujando nuestro propios SVG en HTML (parte 1)</title>
+        <link rel="stylesheet" href="example.css">
+        <link rel="stylesheet" href="grid.css">
+        <style>
+		.example2 svg {
+			display: block;
+			margin: 10px auto;
+			width:100%;
+			max-height:200px;
+			border-bottom: 3px solid #EEE;
+			
+		}
+		.example2 rect#r {
+			fill:rgba(204, 0, 0, 0.6);
+			stroke-width:2;
+			stroke:rgba(204, 0, 0, 1);
+		}
+		.example2 rect#c {
+			fill:rgba(204, 204, 0, 0.6);
+			stroke-width:10;
+			stroke:rgba(204, 204, 0, 1);
+		}
+		.example2 circle{
+			fill:rgba(204, 204, 204, 0.6);
+			stroke-width:10;
+			stroke:rgba(204, 204, 204, 1);
+		}
+		.example2 ellipse{
+			fill:rgba(0, 204, 204, 0.6);
+			stroke-width:10;
+			stroke:rgba(0, 204, 204, 1);
+		}
+		.example2 line{
+			stroke-width:2;
+			stroke:rgba(0, 204, 0, 1);
+		}
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Dibujando nuestro propios SVG en HTML (parte 1)</h1>
+        </header>
+        <section class="example2">
+		<h1>Rectánculo</h1>
+		<svg>
+		  <rect x="40%" y="5%" rx="5" ry="5" width="300" height="100" id="r"></rect>
+			Su navegador no soporta SVG :/
+		</svg>
+
+		<h1>Cuadrado</h1>
+		<svg>
+		  <rect x="40%" y="5%" width="100" height="100" rx="15" ry="15" id="c"></rect>
+			Su navegador no soporta SVG :/
+		</svg>
+
+		<h1>Circulo</h1>
+		<svg>
+		  <circle cx="40%" cy="50" r="40"></circle>
+			Su navegador no soporta SVG :/
+		</svg>
+
+		<h1>Elipse</h1>
+		<svg>
+		  <ellipse cx="40%" cy="50" rx="80" ry="40"></ellipse>
+			Su navegador no soporta SVG :/
+		</svg>
+
+		<h1>Línea</h1>
+		<svg>
+		  <line x1="0" y1="0" x2="100%" y2="100%"></line>
+			Su navegador no soporta SVG :/
+		</svg>
+        </section>
+    </body>
+</html>

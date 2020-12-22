@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            div.transition1 {
+                width:80%;
+                padding:1%;
+                margin:10px auto;
+                height:100%;
+            }
+            .transition1{
+                background:red;
+                -wedkit-transition:background 4s;
+                -moz-transition:background 4s;
+                transition:background 4s;
+            }
+            .transition1:hover{
+                background:blue
+            }
+
+        </style>
+    </head>
+    <body>
+        <header><h1></h1></header>
+        <section>
+            <div class="transition1"><h1>Transición de colores</h1>
+                <p class="note">(Posiciona el cursor encima)</div>
+        </section>
+    </body>
+</html>

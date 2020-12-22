@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>Entendiendo la propiedad perspective (perspectiva) - Ejemplo</title>
+<script
+	src="jquery-1.11.2.min.js"></script>
+<link rel="stylesheet" href="example.css">
+
+<style>
+.example1 div{
+	border: 2px solid #111;
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+	background:#333;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: perspective(100px) rotateY(60deg);
+	transform: perspective(100px) rotateY(60deg);
+}
+.example1 span{
+	width: 100%;
+	height: auto;	
+	margin: 10% 0;
+	color:#FFF;
+	font-size:70px;
+	display:block;
+	text-align:center;
+}
+.example1 span:nth-child(1) {
+	font-size:30px;
+	margin: 2% 0;
+}
+
+</style>
+</head>
+<body>
+	<header>
+		<h1>Entendiendo la propiedad perspective (perspectiva) - Ejemplo</h1>
+	</header>
+	<section style="">
+		<div class="example1">
+			<div id="cuadro">
+				<span>Perspective:</span>
+				<span>100</span>
+			</div>
+		</div>
+	</section>
+
+<script>
+
+var perspective = 10;
+var i=1;
+// cambia la propiedad perspective
+function changePerspective(){ 
+	
+	// alteramos la posicion del objeto
+	perspective+=i;
+	if(perspective == 101 || perspective == 10)
+		i*=-1;
+	
+	// establecemos el nuevo valor
+	document.getElementById("cuadro").style.WebkitTransform="perspective("+perspective+"px) rotateY(10deg)";
+	document.getElementById("cuadro").style.MozTransform="perspective("+perspective+"px) rotateY(10deg)";
+	document.getElementById("cuadro").children[1].innerHTML="("+perspective+"px)";
+	// invocamos a la funcion pasado 50 ms
+	setTimeout(changePerspective, 50);
+}
+
+changePerspective();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            div.ejemploFinal {
+                float:left;	
+                width:30%;
+                padding:1%;
+                margin:5px 1% 5px 0;
+                height:100%;
+            }
+
+            div.ejemploFinal:nth-child(1){
+                background:#FFFF00;
+            }
+            div.ejemploFinal:nth-child(2){
+                background:#0022FF;
+                -wedkit-transition:background 1s;
+                transition:background 1s;
+            }
+            div.ejemploFinal:nth-child(3){
+                background:#FF0000;
+            }
+            div.ejemploFinal:nth-child(1):hover{
+                background:#FFFF00;
+                -webkit-animation-name: cambiarColorFondo; 
+                animation-name: cambiarColorFondo;
+                -webkit-animation-duration: 1s;
+                animation-duration: 1s;
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+            }
+            div.ejemploFinal:nth-child(2):hover{
+                background:#FF0000;
+            }
+            div.ejemploFinal:nth-child(3):hover{
+                background:#FFFF00;
+            }
+
+            @keyframes cambiarColorFondo {   
+                from { background: #FFFF00;}   
+            to   { background: #0022FF;}  
+            }
+            @-webkit-keyframes cambiarColorFondo {   
+                from { background: #FFFF00;}   
+            to   { background: #0022FF;}  
+            }
+
+            @media (max-width:800px){
+                section div {
+                    float:left;	
+                    width:99%;
+                    padding:1%;
+                    margin:5px 0 5px 0;
+                    height:100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header><h1></h1></header>
+        <section>
+            <div class="ejemploFinal"><h1>Con animación</h1></div>
+            <div class="ejemploFinal"><h1>Con transición</h1></div>
+            <div class="ejemploFinal"><h1>Sin animaciones y sin transiciones</h1></div>
+        </section>
+    </body>
+</html>

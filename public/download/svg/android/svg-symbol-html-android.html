@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>El elemento symbol para los SVG en HTML</title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            .example2 svg {
+                display: block;
+                margin: 10px auto;
+                width:1000px;
+                height:1000px;			
+            }
+            .example2 rect#b {
+                fill:rgba(255, 255, 255, 1);
+            }
+            .example2 rect#c {
+                fill:rgba(204, 204, 0, 1);
+            }
+            .example2 rect#antena1 {
+                fill:rgba(204, 204, 0, 1);
+                -webkit-transform: rotateZ(11deg);
+                -moz-transform: rotateZ(11deg);
+                transform: rotateZ(11deg);
+            }
+            .example2 rect#antena2 {
+                fill:rgba(204, 204, 0, 1);
+                -webkit-transform: rotateZ(-17deg);
+                -moz-transform: rotateZ(-17deg);
+                transform: rotateZ(-17deg);
+            }
+
+            .example2 circle{
+                fill:rgba(255, 255, 255, 1);
+            }
+            .example2 ellipse{
+                fill:rgba(204, 204, 0, 1);
+            }
+            .example2 line{
+                stroke-width:2;
+                stroke:rgba(0, 204, 0, 1);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>El elemento symbol para los SVG en HTML</h1>
+        </header>
+        <section class="example2">
+            <svg>
+
+            <defs>
+            <symbol id= "android" viewBox= "0 0 500 500">
+                <!--cabeza-->
+                <ellipse cx="170" cy="100" rx="50" ry="45"></ellipse>
+                Su navegador no soporta SVG :/s
+
+                <!--antena izquierdo-->
+                <rect x="197" y="0" width="4" height="30" rx="3" ry="3" id="antena1"></rect>
+                Su navegador no soporta SVG :/
+
+                <!--antena derecho-->
+                <rect x="124" y="77" width="4" height="30" rx="3" ry="3" id="antena2"></rect>
+                Su navegador no soporta SVG :/
+
+                <!--ojos-->
+                <circle cx="150" cy="80" r="7"></circle>
+                Su navegador no soporta SVG :/
+                <circle cx="190" cy="80" r="7"></circle>
+                Su navegador no soporta SVG :/
+
+                <!--pierna izquierdo-->
+                <rect x="140" y="190" width="20" height="60" rx="15" ry="15" id="c"></rect>
+                Su navegador no soporta SVG :/
+                <!--pierna derecho-->
+                <rect x="180" y="190" width="20" height="60" rx="15" ry="15" id="c"></rect>
+                Su navegador no soporta SVG :/
+
+                <!--brazo izquierdo-->
+                <rect x="90" y="100" width="20" height="100" rx="15" ry="15" id="c"></rect>
+                Su navegador no soporta SVG :/
+
+                <!--torzo-->
+                <rect x="120" y="90" width="100" height="120" rx="15" ry="15" id="c"></rect>
+                Su navegador no soporta SVG :/
+                <!--brazo derecho-->
+                <rect x="230" y="100" width="20" height="100" rx="15" ry="15" id="c"></rect>
+                Su navegador no soporta SVG :/
+
+                <rect x="115" y="100" width="110" height="10" id="b"></rect>
+                Su navegador no soporta SVG :/
+            </symbol>
+            </defs>
+
+
+            <use xlink:href= "#android" width= "150" height= "250" />
+            <use xlink:href= "#android" width= "300" height= "500" />
+            <use xlink:href= "#android" width= "600" height= "1000" />
+            </svg>
+
+        </section>
+    </body>
+</html>

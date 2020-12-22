@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title>Elementos reversibles al estilo 3D en CSS - Animaciones</title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+
+            @-webkit-keyframes reverso {
+                0%{
+                -webkit-transform : rotateY(0deg);
+                transform : rotateY(0deg);
+            }
+            50%{
+                -webkit-transform : rotateY(180deg);
+                transform : rotateY(180deg);
+            }
+            100%{
+                -webkit-transform : rotateY(0deg);
+                transform : rotateY(0deg);
+            }
+            }
+
+            @keyframes reverso {
+                0%{
+                -webkit-transform : rotateY(0deg);
+                transform : rotateY(0deg);
+            }
+            100%{
+                -webkit-transform : rotateY(180deg);
+                transform : rotateY(180deg);
+            }
+            }
+
+            .reversibleImagen{
+                -webkit-animation: reverso 5s infinite;
+                animation: reverso 5s infinite;
+            }
+
+        </style>
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Elementos reversibles al estilo 3D en CSS - Animaciones</h1>
+    </header>
+    <div class="example1">
+        <div class="reversible reversibleImagen">
+            <div id="adelante"><span>1</span>
+            </div>
+            <div id="atras"><span>2</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html><head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Dibujando un patron de puntos al azar con Canvas</title>
+		
+        <style type="text/css">
+            body{
+                margin:0;
+
+            }
+            #myCanvas{
+                width:100%;
+                height:100%;
+
+            }
+        </style>
+        <script type="text/javascript">
+            window.onload = function() {
+                var myCanvas = document.getElementById("myCanvas"); // canvas div
+
+				// anchura y altura del canvas
+                var width = myCanvas.width;
+                var height = myCanvas.height;
+
+                var radius = 1; // radio de las circunferencias
+                var n = 500; // cantidad de puntos
+
+				// la maxima posicion X Y que puede tener los puntos
+                var maxWidth = width - radius;
+                var maxHeight = height - radius;
+
+				// empezamos a dibujar
+                var ctx = myCanvas.getContext("2d");
+                for (i = 0; i < n; i++) {
+				// posiciones aleatorias entre 0 y la maxima posicion X Y que puede tener una los puntos
+                    var centerX = Math.floor(Math.random() * maxWidth);
+                    var centerY = Math.floor(Math.random() * maxHeight);
+
+                    ctx.beginPath();
+                    ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);// circulo completo
+                    ctx.fillStyle = "red"; // color de los puntos
+                    ctx.fill();
+                    ctx.stroke();
+                }
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="100%" height="100">
+            <p>Su navegador no soporta canvas :(</p>
+        </canvas>
+    </body>
+</html>

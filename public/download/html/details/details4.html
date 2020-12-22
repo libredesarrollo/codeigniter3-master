@@ -1,0 +1,71 @@
+<html><head>
+        <link rel="stylesheet" href="example.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Mostrar contenido bajo demanda con solo HTML - Ejemplo 4</title>
+        <style>
+            .ejemplo4 details {
+                width:500px;
+                display: block;
+                margin:0 auto;
+                border-radius:5px;
+                background-color: #EEE;
+            }
+
+            .ejemplo4 details summary{
+                font-size:110%;
+                padding:5px 8px;
+                font-weight:bold;
+                color:#222;
+                background-color: #EEE;
+            }
+
+            .ejemplo4 details[open] summary{
+                background-color: #08B;
+                color:#FFF;
+                border-radius:5px 5px 0 0;
+            }
+
+            .ejemplo4 details summary::details-marker {
+                color: #222;
+                font-size: 130%;
+            }
+
+            .ejemplo4 details summary::-webkit-details-marker {
+                color: #222;
+                font-size: 130%;
+            }
+
+            .ejemplo4 details[open] summary::details-marker {
+                color: #FFF;
+            }
+
+            .ejemplo4 details[open] summary::-webkit-details-marker {
+                color: #FFF;
+            }
+
+            .ejemplo4 details > img{
+                display:block;
+                border: 2px solid #BBB;
+                margin: 15px auto;
+            }
+            .ejemplo4 details > p {
+                text-align: center;
+                font-weight:bold;
+                padding-bottom: 15px;
+                color:#444;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Mostrar contenido bajo demanda con solo HTML - Ejemplo 4</h1>
+        </header>
+        <section class="ejemplo4">
+            <details open>
+                <summary>Tigre</summary>
+                <img src="tigre-200.jpg">
+                <p>Mi genial foto.</p>
+            </details>
+        </section>
+    </body>
+</html>

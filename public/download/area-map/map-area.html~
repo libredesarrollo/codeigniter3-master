@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta http-equiv='Content-Type' content='Type=text/html; charset=utf-8'>
+        <title>El elemento area y map en HTML - Ejemplo</title>
+        <link rel="stylesheet" href="example.css">
+        <script>
+        </script>
+    </head>
+    <body>
+        <header><h1>El elemento area y map en HTML</h1></header>
+        <section>
+            <img src="sistema_solar_planetas.png" width="700" height="300" alt="planetas del sistema solar"
+                 usemap="#planetasmap">
+
+            <map name="planetasmap">
+                <area shape="circle" coords="35,224,17" href="#" onclick="alert('Mercurio');" alt="Mercury">
+                <area shape="circle" coords="95,220,26" href="#" onclick="alert('Venus');" alt="Venus">
+                <area shape="circle" coords="165,217,29" href="#" onclick="alert('Tierra');" alt="Tierra">
+                <area shape="circle" coords="241,219,31" href="#" onclick="alert('Marte');" alt="Marte">
+                <area shape="circle" coords="392,226,66" href="#" onclick="alert('Jupiter');" alt="Jupiter">
+                <area shape="circle" coords="512,233,28" href="#" onclick="alert('Saturno');" alt="Saturno">
+                <area shape="circle" coords="600,231,28" href="#" onclick="alert('Urano');" alt="Urano">
+                <area shape="circle" coords="668,229,28" href="#" onclick="alert('Neptuno');" alt="Neptuno">
+            </map>
+
+        </section>
+    </body></html>

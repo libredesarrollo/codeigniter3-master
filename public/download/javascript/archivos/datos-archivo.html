@@ -1,0 +1,44 @@
+<html><head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>La API de archivos en JavaScript - datos de los archivos</title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            input{
+                padding: 4px 5px;
+                border: 1px solid rgba(0,178,255,1);
+                background: rgba(0,178,255,0.2);
+                color:#FFF;
+                margin: 0 auto;
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>La API de archivos en JavaScript - datos de los archivos</h1>
+        </header>
+        <section>
+            <input type="file" id="files" name="files[]" multiple onchange="filesInfo()" />
+            <div id="list"></div>
+        </section>
+        <script>
+            function filesInfo() {
+
+                if (!(window.FileList)) {
+                    console.log('La API FileList no está soportada');
+                    return;
+                }
+
+                var files = document.getElementById('files').files;
+
+                var output = [];
+                for (var i = 0, f; f = files[i]; i++) {
+                    output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+                            f.size, ' bytes, last modified: ',
+                            f.lastModifiedDate.toLocaleDateString(), '</li>');
+                }
+                document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+            }
+        </script>
+    </body>
+</html>

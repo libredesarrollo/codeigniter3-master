@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>La API de archivos en JavaScript - leer el contenido de los archivos con Drag and Drop</title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            #contenedor {
+                background:rgba(0,178,255,0.8);
+                border: 3px solid rgba(0,178,255, 1);
+                margin: 0 auto;
+                line-height: 120px;
+                text-align: center;
+                display: block;
+                height: 120px;
+                width: 90%;
+                color:#FFF;
+                font-size:28px;	
+                font-weight:bold;
+            }
+            #resultado {
+                width: 90%;
+                margin: 15px auto;
+                height: 400px;
+                border: 3px solid rgba(0,178,255, 1);
+            }
+        </style>
+
+    </head>
+    <body>
+        <header>
+            <h1>La API de archivos en JavaScript - leer el contenido de los archivos con Drag and Drop</h1>
+        </header>
+        <section>
+
+            <div id="contenedor">Arrastra el archivo aquí</div>
+            <textarea id="resultado"></textarea>
+            <script>
+
+                var MAX_BYTES = 102400; // 100 KB
+
+                function dragenter(event) {
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+
+                function dragover(event) {
+                    event.stopPropagation();
+                    event.preventDefault();
+                }
+
+                function drop(event) {
+
+                    console.log('drop', event);
+                    event.stopPropagation();
+                    event.preventDefault();
+
+                    var data = event.dataTransfer;
+                    var files = data.files;
+                    var file;
+                    var reader;
+
+                    for (var i = 0; i < files.length; i++) {
+                        file = files[i];
+                        reader = new FileReader();
+                        reader.onloadend = onFileLoaded;
+                        reader.readAsText(file);
+                    }
+                }
+
+                function onFileLoaded(event) {
+                    document.getElementById("resultado").value = event.currentTarget.result.substr(0, MAX_BYTES);
+                }
+
+                var contenedor = document.getElementById("contenedor");
+
+                contenedor.addEventListener("dragenter", dragenter, false);
+                contenedor.addEventListener("dragover", dragover, false);
+                contenedor.addEventListener("drop", drop, false);
+            </script>
+    </body>
+</html>
+

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title>Efectos con hover y transition (transiciones) en CSS (parte 2) -Filtros-</title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            body {
+                background:#333;
+            }
+            .cuerpo {
+                width: 30%;
+                height: 200px;
+                margin:30px 15px;
+                float:left;
+                transition:1s all;
+            }
+            .cuerpo img{
+                width:100%;
+                height:inherit;
+                object-fit: cover;
+                box-shadow: 0 0 20px #999;
+                border:2px solid #333;
+            }
+
+            .grayscale{
+                -webkit-filter: grayscale(100%);
+            }
+            .hue-rotate{
+                -webkit-filter: hue-rotate(220deg);
+            }
+            .sepia{
+                -webkit-filter: sepia(100%);
+            }
+            .contrast{
+                -webkit-filter: contrast(190%);
+            }
+            .saturate{
+                -webkit-filter: saturate(50%);
+            }
+            .blur{
+                -webkit-filter: blur(10px);
+            }
+            .invert{
+                -webkit-filter: invert(100%);
+            }
+            .brightness{
+                -webkit-filter: brightness(0.25);
+            }
+            .opacity{
+                -webkit-filter: opacity(34%);
+            }
+
+
+            .hue-rotate:hover{
+                -webkit-filter: hue-rotate(0deg);
+            }
+            .brightness:hover{
+                -webkit-filter: brightness(1);
+            }
+            .sepia:hover{
+                -webkit-filter: sepia(0);
+            }
+            .saturate:hover{
+                -webkit-filter: saturate(1);
+            }
+            .opacity:hover{
+                -webkit-filter: opacity(1);
+            }
+            .invert:hover{
+                -webkit-filter: invert(0);
+            }
+            .grayscale:hover{
+                -webkit-filter: grayscale(0);
+            }
+            .contrast:hover{
+                -webkit-filter: contrast(100%);
+            }
+            .blur:hover{
+                -webkit-filter: blur(0px);
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Efectos con hover y transition (transiciones) en CSS (parte 2) -Filtros-</h1>
+        </header>
+        <section>
+            <div class="cuerpo grayscale">
+                <img src="leon-200.jpg" />
+            </div>
+            <div class="cuerpo hue-rotate">
+                <img src="leon-200.jpg" />
+            </div>
+            <div class="cuerpo sepia">
+                <img src="leon-200.jpg" />
+            </div>
+            <div class="cuerpo contrast">
+                <img src="leon-200.jpg" />
+            </div>
+            <div class="cuerpo saturate">
+                <img src="chita-200.jpg" />
+            </div>
+            <div class="cuerpo blur">
+                <img src="leon-200.jpg" />
+            </div>
+            <div class="cuerpo invert">
+                <img src="leon-200.jpg" />
+            </div>
+            <div class="cuerpo brightness">
+                <img src="chita-200.jpg" />
+            </div>
+            <div class="cuerpo opacity">
+                <img src="leon-200.jpg" />
+            </div>
+        </section>
+    </body>
+</html>
+

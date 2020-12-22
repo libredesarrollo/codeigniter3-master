@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dibujar una Linea en Loop (ciclo) con HTML5 Canvas</title>
+<head>
+<link href="example.css" media="all" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<header>
+		<h1>Dibujar una Linea en Loop (ciclo) con HTML5 Canvas</h1>
+	</header>
+	<section>
+		<canvas id="canvas"></canvas>
+	</section>
+	<script>
+
+		var tamCanvas = 360; // tamano del canvas
+		var numCuadrados = 10; // numero de "pixeles" que conformaran la linea
+		var tam = 80; // tamano de los "pixeles" que conformaran la linea
+		var espaciado = (tamCanvas-tam)/(numCuadrados-1); //el espaciado entre cada "pixel"
+
+	        var canvas = document.getElementById('canvas');// canvas
+		var ctx = canvas.getContext('2d'); // contexto
+
+                // el tamano del canvas, un cuadrado
+		canvas.width = tamCanvas;
+		canvas.height = tamCanvas;
+
+		// pintamos la linea en un ciclo
+		for(var i=0; i<numCuadrados; i++){
+			// definimos el color y nivel de transparencia del cuadrado a pintar
+		    ctx.fillStyle = "rgba(255, 255, 255, 0.8)"; 
+                        // pintamos un rectangulo con todas sus esquinas iguales (cuadrado)
+		    ctx.fillRect(i*espaciado, i*espaciado, tam, tam);
+		}
+
+	</script>
+</body>
+</html>

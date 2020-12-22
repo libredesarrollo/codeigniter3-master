@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title>Obteniendo una captura de pantalla del portapapeles (clipboard) con JavaScript (Pega la imagen con Ctrl + V)</title>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            img{
+                width:50%;
+                height:auto;
+                display: block;
+                margin:0 auto;
+                border:5px solid #222;
+            }
+        </style>
+        <script>
+            window.addEventListener("paste", processEvent);
+
+            function processEvent(e) {
+
+                for (var i = 0; i < e.clipboardData.items.length; i++) {
+                    // get the clipboard item
+                    // obtengo el clipboard item
+                    var clipboardItem = e.clipboardData.items[0];
+                    var type = clipboardItem.type;
+
+                    // verifico si es una imagen
+                    if (type.indexOf("image") != -1) {
+
+                        // obtengo el contenido de la imagen BLOB
+                        var blob = clipboardItem.getAsFile();
+                        console.log("blob", blob);
+                        // creo un la URL del objeto
+                        var blobUrl = URL.createObjectURL(blob);
+                        console.log("blobUrl", blobUrl);
+                        // agrego la captura a mi imagen
+                        document.getElementsByTagName("img")[0].setAttribute("src", blobUrl);
+
+                    } else {
+                        console.log("No soportado " + type);
+                    }
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <header><h1>Obteniendo una captura de pantalla del portapapeles (clipboard) con JavaScript</h1></header>
+        <section>
+            <img>
+            <h3>(Pega la imagen con Ctrl + V)</h3>
+        </section>
+    </body>
+
+</html>

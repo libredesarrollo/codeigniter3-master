@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="example.css">
+        <style>
+            html, body
+            {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            h1{
+                color:#FFF;
+                margin: 50px 0;
+                display:block;
+                text-align: center;
+                font-size: 80px;
+                text-shadow: 0 0 20px #000;
+            }
+
+            .fondo { 
+                width: 100%;
+                height: 100%;
+                overflow:hidden;
+                background: rgb(91, 91, 91);
+                float: left;
+                background-image: url('tigre.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: right bottom; 
+                animation: transitionImage 30s infinite;
+                -webkit-animation: transitionImage 30s infinite;
+                -moz-animation: transitionImage 30s infinite;
+            }
+
+            @keyframes transitionImage {
+                0% {background-position: right bottom;background-image: url('tigre.jpg');opacity:1;}
+            20% {background-position: 0 0;opacity:0.5;background-image: url('chita.jpg');}
+
+            30% {}
+
+            35% {opacity:1;}
+            50% {background-position:left bottom; opacity:0.5;background-image: url('leon.jpg');}
+
+            60% {}
+
+            65% {opacity:1;}
+            80% {background-position:right top; opacity:0.5;background-image: url('tigre.jpg');}
+
+            90% {}
+
+            100% {background-position: right bottom;opacity:1;}
+            }
+
+            @-webkit-keyframes transitionImage {
+                0% {background-position: right bottom;background-image: url('tigre.jpg');opacity:1;}
+            20% {background-position: 0 0;opacity:0.5;background-image: url('chita.jpg');}
+
+            30% {}
+
+            35% {opacity:1;}
+            50% {background-position:left bottom; opacity:0.5;background-image: url('leon.jpg');}
+
+            60% {}
+
+            65% {opacity:1;}
+            80% {background-position:right top; opacity:0.5;background-image: url('tigre.jpg');}
+
+            90% {}
+
+            100% {background-position: right bottom;opacity:1;}
+            }
+
+            @-moz-keyframes transitionImage {
+                0% {background-position: right bottom;background-image: url('tigre.jpg');opacity:1;}
+            20% {background-position: 0 0;opacity:0.5;background-image: url('chita.jpg');}
+
+            30% {}
+
+            35% {opacity:1;}
+            50% {background-position:left bottom; opacity:0.5;background-image: url('leon.jpg');}
+
+            60% {}
+
+            65% {opacity:1;}
+            80% {background-position:right top; opacity:0.5;background-image: url('tigre.jpg');}
+
+            90% {}
+
+            100% {background-position: right bottom;opacity:1;}
+            }
+
+            section{
+                margin:70px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="fondo"><h1>Felinos</h1></div>
+
+    </body>
+</html>

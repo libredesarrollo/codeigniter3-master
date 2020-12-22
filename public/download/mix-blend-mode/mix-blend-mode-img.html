@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="example.css">
+        <style>
+
+            .fondo { 
+                width: 300px;
+                height: 300px;
+                background: rgb(91, 91, 91);
+                margin: 5px;
+                float: left;
+                box-shadow: 0 0 15px #222;
+                animation:    blackAndWhite 10s infinite;
+                -webkit-animation:    blackAndWhite 10s infinite;
+                -moz-animation:    blackAndWhite 10s infinite;
+            }
+
+            .fondo h4{ 
+                color:#FFF;
+                text-align:center;
+                background:#000;
+            }
+
+            @keyframes blackAndWhite {
+                0% {background: rgb(0,0,0);}
+            50% {background: rgb(255,255,255)}
+            100% {background: rgb(0,0,0);}
+            }
+
+            @-webkit-keyframes blackAndWhite {
+                0% {background: rgb(0,0,0);}
+            50% {background: rgb(255,255,255)}
+            100% {background: rgb(0,0,0);}
+            }
+
+            section{
+                margin:70px auto;
+            }
+
+            .img{
+                width: 24%;
+                height: 300px;
+                background: rgb(91, 91, 91);
+                margin: 5px 1% 0 0;
+                float: left;
+                box-shadow: 0 0 15px #222;
+                animation:    blackAndWhite 10s infinite;
+                -webkit-animation:    blackAndWhite 10s infinite;
+                -mo<-animation:    blackAndWhite 10s infinite;
+            }
+
+            .img img{
+                width: 98%;
+                height: 98%;
+                margin:1%;
+                object-fit: cover;
+            }
+
+            .img:nth-child(1) img{
+                mix-blend-mode: lighten; 
+                -webkit-mix-blend-mode: lighten; 
+                -moz-mix-blend-mode: lighten; 
+            }
+            .img:nth-child(2) img{
+                mix-blend-mode: multiply; 
+                -webkit-mix-blend-mode: multiply; 
+                -moz-mix-blend-mode: multiply; 
+            }
+            .img:nth-child(3) img{
+                mix-blend-mode: screen; 
+                -webkit-mix-blend-mode: screen; 
+                -moz-mix-blend-mode: screen; 
+            }
+            .img:nth-child(4) img{
+                mix-blend-mode: darken; 
+                -webkit-mix-blend-mode: darken; 
+                -moz-mix-blend-mode: darken; 
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>La propiedad mix-blend-mode en CSS - IMG</h1>
+        </header>
+        <section>
+
+            <div class="img">
+                <img src="tigre.png"/>
+            </div>
+
+            <div class="img">
+                <img src="tigre.png"/>
+            </div>
+
+            <div class="img">
+                <img src="tigre.png"/>
+            </div>
+
+            <div class="img">
+                <img src="tigre.png"/>
+            </div>
+
+        </section>
+    </body>
+</html>

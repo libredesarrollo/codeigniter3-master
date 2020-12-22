@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="example.css">
+    </head>
+    <body>
+        <header>
+            <h1></h1>
+        </header>
+        <div class="example1">
+            <div class="reversible">
+                <div id="adelante"><span>1</span>
+                </div>
+                <div id="atras"><span>2</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

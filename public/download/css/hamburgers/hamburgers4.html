@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <script src="js/jquery.min.js"></script>
+        <style>
+
+            .hamburger 
+            {
+                min-height: 30px;
+                max-width: 50px;
+            }
+
+            .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+                background-color: #48C;
+                position: absolute;
+                width: 40px;
+                height: 4px;
+                border-radius: 5px;
+                content: '';
+                transition-timing-function: ease;
+                transition-duration: .2s;
+                transition-property: opacity,-webkit-transform;
+                transition-property: transform,opacity;
+                transition-property: transform,opacity,-webkit-transform;
+            }
+
+            .hamburger-inner {
+                top: 30px;
+            }
+
+            .hamburger-inner:before {
+                top: -10px;
+            }
+
+            .hamburger-inner:after {
+                top: 10px;
+            }
+
+            .hamburger.open .hamburger-inner {
+
+            }
+
+            .hamburger.open .hamburger-inner:after {
+                top: 0;
+                transform: translate3d(-10px, -9px, 0) rotate(-45deg) scale(0.7, 1);
+                transition: top 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+            }
+
+            .hamburger.open .hamburger-inner:before {
+                bottom: 0;
+                transform: translate3d(-9px, 20px, 0) rotate(45deg) scale(0.7, 1);
+                transition: bottom 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hamburger">
+            <div class="hamburger-inner"></div>
+        </div>
+        <script>
+            $(function () {
+                $('.hamburger').click(function () {
+                    if (!$('.hamburger').hasClass("open"))
+                        $('.hamburger').toggleClass('open');
+                    else
+                        $('.hamburger').removeClass('open');
+                });
+            });
+        </script>
+    </body>
+</html>

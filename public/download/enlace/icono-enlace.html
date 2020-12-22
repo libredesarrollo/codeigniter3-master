@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="example.css">
+        <title>A[href*="github.com"]</title>
+        <style>
+            .example5 a {
+                background: #F00;
+                padding: 8px 5px;
+                border-radius:5px;
+                font-size: 27px;
+                margin: 0 auto;
+                text-align:center;
+                transition: background 1s;
+                -moz-transition: background 1s;
+                -webkit-transition: background 1s;
+            }
+
+            .example5 a:hover {
+                background: #D00;
+            }
+
+            .example5 a[href*="github.com"]:before {
+                content:url("github.png");
+                padding-right: 10px;
+            }
+
+            .example5 a[href*="google.com"]:before {
+                content:url("google.png");
+                padding-right: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>A[href*="github.com"]</h1>
+        </header>
+        <section>
+            <div class="example5">
+                <center>
+                    <a href="https://github.com/">GitHub</a>
+                </center>
+                <br><br><br>
+                <center>
+                    <a href="https://www.google.com">Google</a>
+                </center>
+            </div>
+        </section>
+    </body>
+</html>

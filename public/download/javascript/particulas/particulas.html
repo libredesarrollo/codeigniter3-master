@@ -1,0 +1,99 @@
+<html><head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>¿Cómo crear un punto luminoso con JavaScript y Canvas?</title>
+        <style>
+            body {
+                background: black;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canvas-club">
+        </canvas>
+        <script>
+            var c = document.getElementById("canvas-club");
+            var ctx = c.getContext("2d");
+            var w = c.width = window.innerWidth;
+            var h = c.height = window.innerHeight;
+            var particles = [];
+            var maxParticles = 100;
+            var size = 5;
+            var r = size / 2;
+            var clearColor = "rgba(0, 0, 0, .1)";
+
+            function random(min, max) {
+                return (Math.random() * (max - min)) + min;
+            }
+
+            function P() {
+            }
+
+            P.prototype = {
+                init: function () {
+                    this.x = random(0, (w - size));
+                    this.y = h + random(0, 20);
+                    this.vx = 0;
+                    this.vy = random(-1, -2);
+                },
+                draw: function () {
+                    var hue = (h - this.y) * .6;
+
+                    ctx.fillStyle = "hsla(" + hue + ", 100%, 50%, .8)";
+                    ctx.strokeStyle = "hsla(" + hue + ", 100%, 50%, " + this.alpha + ")";
+                    ctx.lineWidth = r / 2;
+
+                    ctx.beginPath();
+                    ctx.arc(this.x + r, this.y + r, r, 0, 2 * Math.PI, false);
+                    ctx.fill();
+
+                    this.update();
+                },
+                update: function () {
+
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    this.vx *= 1.15;
+                    if (this.y < h * .8 && Math.random() > .5) {
+                        this.vx = random(-1, 1);
+                        this.vy -= .05;
+                    }
+
+                    if (this.y + 50 < 0) {
+                        this.init();
+                    }
+                }
+            }
+
+            function setup() {
+
+                for (var i = 0; i < maxParticles; i++) {
+                    (function (x) {
+                        setTimeout(function () {
+                            var p = new P();
+                            p.init();
+                            particles.push(p);
+                        }, x * 100)
+
+                    })(i);
+                }
+            }
+            function anim() {
+
+                for (var i in particles) {
+                    var p = particles[i];
+                    p.draw();
+                }
+
+                ctx.fillStyle = clearColor;
+                ctx.fillRect(0, 0, w, h);
+
+                window.requestAnimationFrame(anim);
+            }
+
+            setup();
+            anim();
+
+        </script>
+    </body>
+</html>

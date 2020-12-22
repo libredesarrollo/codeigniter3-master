@@ -1,0 +1,70 @@
+section img{
+    max-width:95%;  
+    width:auto;  
+    height:auto; 
+    margin: 20px auto 10px auto; 
+    display: block; 
+    padding: 2px;
+}
+
+section canvas{
+    margin: 20px auto 10px auto; 
+    display: block; 
+}
+
+body {
+    background:#CEF;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #4CF;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+    min-height:80px;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0px 0px 3px #888;
+}
+
+header h1{ 
+    text-align: center;
+    font-size: 50px;
+    color: #FFF;
+    padding: 0;
+    margin: 0;
+}
+
+section {
+    width: 90%;
+    min-width: 220px;
+    max-width: 1200px;
+    min-height:500px;
+    padding: 20px 10px 10px 10px;
+    background: #4CF;
+    box-shadow: 0px 0px 3px #888;
+    margin: 90px auto;
+}
+
+section h1{ 
+    text-align: center;
+    font-size: 50px;
+    color: #FFF;
+}
+
+input{
+	width:80%;
+	margin:0 auto;
+	display: block;
+}
+label{
+	font-size: 30px;
+	color:#FFF;
+	padding:0 0;
+	margin:20px 5px; 
+}
+
+
